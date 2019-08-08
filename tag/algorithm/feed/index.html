@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>algorithm &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/algorithm/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Run-length encoding algorithm</title>
+		<link>http://www.thehypertext.com/2015/10/28/run-length-encoding-algorithm/</link>
+		<pubDate>Wed, 28 Oct 2015 01:06:58 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Learning Machines]]></category>
+		<category><![CDATA[algorithm]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[encoding]]></category>
+		<category><![CDATA[learning machines]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[run-time encoding]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=769</guid>
+		<description><![CDATA[<p>For our first assignment in Learning Machines, Patrick asked us to implement run-length encoding in Python.</p>
+<p><a href="http://www.thehypertext.com/2015/10/28/run-length-encoding-algorithm/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For our first assignment in Learning Machines, Patrick asked us to implement run-length encoding in Python.</p>
+<p>Below is my code, which includes encode and decode functions.</p><pre class="crayon-plain-tag">def encode(u):
+	# init tracking vars
+	enc = list()
+	cur = list(u[0])
+	# iterate through string
+	for i in range(1, len(u)):
+		if u[i] == u[i-1]:
+			cur.append(u[i])
+		else:
+			enc.append((len(cur), u[i-1]))
+			cur = list(u[i])
+	# handle last character
+	enc.append((len(cur), cur[0]))
+
+	def rep(tup):
+		# encode using backtick as delimeter
+		count, char = tup
+		if count == 1:
+			return char
+		else:
+			return "%s`%i`" % (char, count)
+
+	return ''.join(map(rep, enc))
+
+def decode(e):
+	# init tracking vars
+	result = list()
+	cur_num = list()
+	# switch var
+	on_num = False
+	# iterate through encoded string
+	for i, char in enumerate(e):
+		# if delimeter found...
+		if char == "`":
+			# switch on/off
+			on_num = not on_num
+			# if closing delimeter
+			if not on_num:
+				result.append(
+					rep_char*int(''.join(cur_num))
+				)
+				cur_num = list()
+			# if opening delimeter
+			elif on_num and i &gt; 0:
+				# repeated char is last
+				# added to result
+				rep_char = result.pop()
+		# if not delimeter and not on number
+		elif not on_num:
+			result.append(char)
+		# if not delimeter and on number
+		else:
+			cur_num.append(char)
+	return ''.join(result)
+
+
+
+if __name__ == '__main__':
+	import sys
+	to_encode = sys.argv[1]
+	encoded = encode(to_encode)
+	decoded = decode(encoded)
+	print encoded
+	print decoded
+	assert to_encode == decoded</pre><p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

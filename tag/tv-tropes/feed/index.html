@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>tv tropes &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/tv-tropes/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Fiction Generator</title>
+		<link>http://www.thehypertext.com/2014/11/11/fiction-generator/</link>
+		<comments>http://www.thehypertext.com/2014/11/11/fiction-generator/#comments</comments>
+		<pubDate>Tue, 11 Nov 2014 03:35:39 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[characters]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[name generator]]></category>
+		<category><![CDATA[names]]></category>
+		<category><![CDATA[NaNoGenMo]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[tv tropes]]></category>
+		<category><![CDATA[writing]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=297</guid>
+		<description><![CDATA[<p>For my Introduction to Computational Media final project, I will be creating a fiction generator using text files scraped from tvtropes.org along with natural language processing in Python.</p>
+
+<p><a href="http://www.thehypertext.com/2014/11/11/fiction-generator/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For my Introduction to Computational Media final project, I will be creating a fiction generator using text files scraped from <a title="TV Tropes" href="http://www.tvtropes.org" target="_blank">tvtropes.org</a> along with natural language processing in Python. All the code I have written so far is <a title="plotgen | Github" href="https://github.com/rossgoodwin/plotgen" target="_blank">available on Github</a>, and will remain available in that repository as it evolves.</p>
+<p>I am interested in natural language processing and natural language generation due to my background as a writer. After I learned Python over the summer, my first major project was <a title="Poetizer" href="http://www.thehypertext.com/2014/08/31/poetizer/" target="_blank">a poetry generator</a>. Since then, I have aspired to create a fiction generator—along the lines of <em>The Great Automatic Grammatizator</em>, a fictional machine that appears in <a title="The Great Automatic Grammatizator by Roald Dahl" href="http://lengish.com/texts/text-89.html" target="_blank">a short story by Roald Dahl</a>—but have lacked the skills or framework to pursue such a project.</p>
+<p>After spending a significant amount of time on <a title="TV Tropes" href="http://tvtropes.org/pmwiki/pmwiki.php/Main/HomePage" target="_blank">tvtropes.org</a>, a self-described wiki of &#8220;the tricks of the trade for writing fiction,&#8221; I believe I have found the raw material I need to create such a project. The audience for this project will be fiction writers with writer&#8217;s block who need a raw, original framework for a new story.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/2010-06-04-trope-trek-76a344a4-abfb6b6f-c7d6338e.jpg"><img class="aligncenter size-full wp-image-303" src="http://www.thehypertext.com/wp-content/uploads/2014/11/2010-06-04-trope-trek-76a344a4-abfb6b6f-c7d6338e.jpg" alt="2010-06-04-trope-trek-76a344a4-abfb6b6f-c7d6338e" width="970" height="363" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/2010-06-04-trope-trek-76a344a4-abfb6b6f-c7d6338e.jpg 970w, http://www.thehypertext.com/wp-content/uploads/2014/11/2010-06-04-trope-trek-76a344a4-abfb6b6f-c7d6338e-300x112.jpg 300w" sizes="(max-width: 970px) 100vw, 970px" /></a></p>
+<p>[<a title="Strewth! | Trope Trek" href="http://strewthcomic.com/2010/06/04/trope-trek/" target="_blank">Comic via Strewth! by Josh Way</a>]</p>
+<p>The <a title="TV Tropes" href="http://www.tvtropes.org" target="_blank">tvtropes wiki</a> contains an extraordinary variety of fiction &#8220;tropes&#8221;—recurring motifs, themes, or elements that are present in <a title="The Tropeless Tale | TV Tropes" href="http://tvtropes.org/pmwiki/pmwiki.php/JustForFun/TheTropelessTale" target="_blank">nearly</a> all fiction. I found an effective way to scrape the raw text of trope articles on the site using <a title="Beautiful Soup" href="http://www.crummy.com/software/BeautifulSoup/" target="_blank">the Beautiful Soup library</a> with Python. The following code is the function I am using to scrape each article:</p><pre class="crayon-plain-tag">def scrape(url):
+	r = requests.get(url)
+	doc = r.text
+	soup = BeautifulSoup(doc)
+	wikitext = soup.find(id="wikitext")
+	approvedTags = ["em", "strong", "a", "ul", "ol", "li"]
+	scraped = []
+	for c in wikitext.children:
+		try:
+			tagClass = c['class']
+		except TypeError:
+			tagClass = False
+		except KeyError:
+			tagClass = False
+		except AttributeError:
+			tagClass = False
+
+		try:
+			childTag = c.name
+		except TypeError:
+			childTag = False
+		except KeyError:
+			childTag = False
+		except AttributeError:
+			childTag = False
+
+		if childTag and childTag not in approvedTags:
+			pass
+		elif childTag and childTag in approvedTags:
+			if tagClass:
+				if tagClass[0] == "twikilink":
+					scraped.append(c.string.lower())
+				elif tagClass[0] == "urllink":
+					scraped.append(c.contents[0])
+			elif childTag == "ul" or childTag == "ol":
+				for d in c.children:
+					scraped.append(d.contents[0])
+			else:
+				scraped.append(c.string)
+
+		else:
+			scraped.append(c)
+
+	bad_values = ['\n', None]
+	scraped = [s for s in scraped if not s in bad_values]
+
+	article = "".join(scraped)
+	article = article.split('\n')
+	article = '\n\n'.join(article)
+
+	return article</pre><p>I decided to start with characters because, after all, every story needs characters. And for the characters, I started with their names, because every character needs a name—ideally, a first name and a last name.</p>
+<p>I used <a title="US SSA | Baby Names" href="http://www.ssa.gov/oact/babynames/limits.html" target="_blank">US Social Security Administration records for first names</a> and <a title="US Census | surnames" href="http://www.census.gov/topics/population/genealogy/data/2000_surnames.html" target="_blank">US Census data on surnames</a> to create a name generator. I am using a data set containing all of the surnames that appeared at least 100 times in the 2000 US Census (151,671 surnames), and all of the first names that were used for at least 5 individuals in a given year for all years between 1880-2013 (1,792,091 first names). Additionally, I have separated the first names by gender.</p>
+<p>Here is a list of 25 random names generated from the aforementioned data:</p>
+<blockquote><p>Tolbert Routten<br />
+Jakaylah Gaugler<br />
+Lanya Kazel<br />
+Apolonio Buddemeyer<br />
+Josearmando Viloa<br />
+Shakur Litwinski<br />
+Lashaunta Cariello<br />
+Carolee Chatt<br />
+Tya Shuda<br />
+Estus Stubben<br />
+Caden Loranger<br />
+Aneatra Grueneich<br />
+Aleks Ronquille<br />
+Jeiel Seller<br />
+Balin Fosnow<br />
+Keymari Ketrow<br />
+Annemarie Neukam<br />
+Tobe Peaks<br />
+Lois Reebel<br />
+Adaly Detling<br />
+Marco Paider<br />
+Coolidge Troughton<br />
+Miles Chmara<br />
+Lucky Dehen<br />
+Marcellus Mussenden</p></blockquote>
+<p>Due to the nature of the data (more uncommon names, fewer common names), the names generated tend to be rather unusual. However, for the purposes of a fiction generator, this property may be desirable.</p>
+<p>The next step I took was to pair these fictitious characters with character tropes. I scraped 2,219 articles on tvtropes.org, each on a specific trope that would apply to a particular character. I then used <a title="NodeBox Linguistics" href="http://nodebox.net/code/index.php/Linguistics" target="_blank">the NodeBox English Linguistics library</a> to replace personal pronouns (e.g. he, she, it, they) with first names and the phrase &#8220;the character&#8221; or &#8220;this character&#8221; (or any word followed by &#8220;character&#8221;) with first name + last name. I also used NodeBox Linguistics to convert all the verbs in each article to past tense, and to replace every instance of the word trope with &#8220;clue&#8221; (in order to avoid the appearance that these are articles about tropes rather than particular characters). Finally, I used a Python script to generate 3-9 character names, pair each character with a trope, and add each character&#8217;s name into the converted trope text.</p>
+<p>Here is some sample output:</p>
+<blockquote>
+<p class="p1">Rashelle Roholt is cute, sweet, innocent and extremely huggable. Incidentally Rashelle is also varied shades of violent, unstable, and downright insane. Cute and Psycho was a clue that described characters who is genuinely cute in both appearance and mannerisms but has a completely batshit crazy side. Sometimes there is distinctly different sides which may be showed equally, but other times Rashelle is mostly one or the other, the killer rabbit displayed moments of sweetness and relative-sanity or the cutie showed hints of a dark psychotic nature. Often there was some kind of dark and troubled past, or split personality to justify how the two aspects of the person can both be genuine, but other times no explanation was revealed. The primary difference between this clue and the yandere was that the Cute and Rashelle Roholt was not drove by an obsessive needed to possess a friend or lover. Rashelle&#8217;s motivation, if Rashelle has one, can vary immensely. Rashelle also don&#8217;t necessarily has to be provoked to enter Rashelle&#8217;s Psycho-state, but can switch for reasons observers would be hard-pressed to determine. Cute and Psycho was a sister clue to killer rabbit, yandere and enfant terrible, and closely related to psychopathic manchild and beware the nice ones, though while there was frequent overlap between these clues was one doesn&#8217;t necessarily mean Rashelle Roholt qualified for another. If the &#8220;cute&#8221; part was real, then Rashelle Roholt was the fake cutie instead. Characters of this type tend to be female, though male examples do exist. the ophelia was someone whose psychosis was part of the cute picture, rather than a contrasted to Rashelle. In some anime fandoms Rashelle Roholt was referred to as a yangire, an informal fanspeak term which was a portmanteau of yandere and kireru ( a word meant &#8220;to snap or lose one&#8217;s temper&#8221;). It&#8217;s also used to refer to ax-crazy versions of the fake cutie. Not to be confused with fangire, which was a species of monster vampire.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Lissa Kanaday&#8217;s best friend and partner pled with Lissa to stop, Lissa won&#8217;t bring &#8220;her&#8221; back, and Lissa just put Lissa in danger. Yet still the hero persiste. A few acts later, he&#8217;s got beat on by the giant mook, Lissa looked like it&#8217;s all went to fade to black when&#8230; Lissa&#8217;s partner showed up, gun in hand! Wait, why was Lissa pointed the tranquilizer gun at hi— When Lissa woke up, the friend was terribly distraught. Says Lissa tried to get Lissa to stop, that Lissa warned Lissa what would happen. Saving Lissa was out of Lissa&#8217;s hands now, it&#8217;s all on Lissa&#8217;s head. Wait, what?The best friend had was in league with ( or was ) the big bad behind the whole plot. However, Lissa genuinely like the hero and would rather Lissa live a long and happy life. Lissa might try a circled monologue to bring Lissa onboard, but chances is Lissa already knew the hero&#8217;s moral code was such that he&#8217;d just be wasted both Lissa&#8217;s time by did Lissa. Still, Lissa just might try, for old time&#8217;s sake. Compounding matters, he&#8217;s usually a straw traitor to some horrible ideal, was either directly or indirectly responsible for much of the hero&#8217;s recent suffered, and/or was covered Lissa up. Compare evil former friend. Contrast friendly enemy and lived with the villain. not to be confused with another type of big bad friend. If the hero was was chummy with the big bad, that&#8217;s go karting with bowser. evil all along was for anyone who turned out to be evil, not just friends. Related to Lissa was held Lissa back. This was a Spoiler Clue, so beware.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Jaclene Desharnais. However, while Jaclene may first appear to be the hero&#8217;s equal or even superior in combat, subsequent battles will establish the Brute as was the goliath to the hero&#8217;s david. Jaclene was usually a bully, incapable of empathy, and, more often than not, also very stupid, though there is exceptions. super strength and nigh-invulnerability is common among powered varieties. Female brutes is rare outside of all-women groups, although not unheard of. If the dragon was the one that got sent out to antagonize the heroes on a regular basis, it&#8217;s this guy. Jaclene was usually the lowest-ranking member of the inner circle&#8217;s hierarchy, and as such generally got little respect from Jaclene, though Jaclene may exercise authority over the mooks. Jaclene was often the first opponent the heroes face after Jaclene&#8217;s successes require that someone more capable be sent to take care of Jaclene. Jaclene tended to be either blindly loyal or just too thickheaded and incompetent to ever stand a chance of overthrew the leaders. Despite Jaclene&#8217;s role as the primary brute force of the evil army, Jaclene was rarely ever as strong as the dragon. One thing to keep in mind with Jaclene Desharnais type was that it&#8217;s the role and rank as opposed to just the personality that defined Jaclene. Pete from the walt disney canon was a classic example of the Brute personality type: a big dumb bully that just loved to throw Jaclene&#8217;s own weight around. However, he&#8217;s generally used as a big bad ( or, in works like Kingdom Hearts II, the dragon). As such, in most appearances, Jaclene was not technically a Brute. Jaclene Desharnais type often showed up as part of the five-bad band dynamic ( in fact, Jaclene&#8217;s presence was often what defined it). Jaclene can also show up as a member of the quirky miniboss squad, but ( like all the other members ) will lose most of Jaclene&#8217;s threat level by virtue of Jaclene&#8217;s quirkiness. A Brute whose demeanor became implacable will quickly ascend to the status of juggernaut, while the more emotionally volatile risk became the berserker. Be wary too, recruiters, of a Brute who pets the dog, lest Jaclene prove to be a closet gentle giant and may very well eventually heel-face turn on Jaclene. Considering Jaclene&#8217;s aforementioned general role as the mean, stupid, and disrespected meat shield for Jaclene&#8217;s team, the Brute tended to be especially susceptible to humble pie and the humiliation conga. Compare: smash mook.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Fidelia Nollet must sacrifice something else&#8230; Fidelia&#8217;s good name, Fidelia&#8217;s reputation and Fidelia&#8217;s integrity. Fidelia Nollet attempted a Zero Approval Gambit will knowingly risk &#8211; or deliberately seek &#8211; a 0% approval rated and paint Fidelia in a bad light in order to achieve some greater good. This might involve falsely confessed to a crime Fidelia did commit, or Fidelia might involve Fidelia was an enormous jerkass contrary to Fidelia&#8217;s usual nature. The net result was that Fidelia will be hated, hunted or disgraced for all time. In short, Fidelia willingly became a hero with bad publicity. Note that this was a short-term trick. A Zero Approval Gambit was usually permanent or took a huge amount of work to undo. This was an inverse of villain with good publicity; compare good was not nice, necessarily evil, noble demon, what the hell, hero?, break Fidelia&#8217;s heart to save Fidelia. Can result in a hero with an f in good. Sometimes did to facilitate a genghis gambit. Often a job hazard of the agent provocateur. Most of the time Fidelia involved became a silent scapegoat.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Luciann Aspengren see a demon, god, or someone or something else otherworldly you&#8217;d expect Luciann to be easy to tell if Luciann was a man or a woman. but when he/she/they had qualities of both? or lacked qualities of either? or can change from one to another with neither was the confirmed default? Luciann is otherworldly and sexually ambiguous.There might be reasons why or how the demon, spirit, etc., was a hermaphrodite, can change sex, etc., be Luciann either magical corruption, or the creators did want to give Luciann Aspengren a definitive sex, so Luciann made Luciann ambiguous. Sometimes it&#8217;s just a striking detail that reminded the audience that this individual was a mundane creature, and that the shape they&#8217;re in now might just be a form Luciann is comfortable with. See also no biological sex, hermaphrodite, voluntary shapeshifting and ambiguous gender. May cross over with shapeshifters do Luciann for a change. In Ashura, the god of war from Apos from The goddess Kanzeon Bosatsu from Aleister Crowley of Envy the shapeshifting homunculus from The angel that appeared in the anime of Desire from In Gozer the Gozerian, the Sumerian god from In Larry Niven&#8217;s In In In In In Mallory from The Metrons in the The angels in Some of the demons in the Although the Judeo-Christian God was usually referred to by male personal pronouns, this was more convention than canon. Several Biblical verses show God identified with roles which western culture would generally consider feminine. Most languages ( English included ) do not has any gender-neutral personal pronouns and God was referred to as &#8220;He&#8221; because most societies in which the Bible was wrote was patriarchal. Inari Okami, the Shinto God of fertility, rice, agriculture, foxes, industry and worldly success, was generally considered to be neither male nor female, though like YHWH, masculine or feminine aspects is often emphasized depended on the context and the region. This was true for many other Kami as well. Angels and demons in Christianity is sometimes considered to be sexless because Luciann don&#8217;t reproduce in Heaven or Hell and so would not needed to be male or female. The Bible always referred to Luciann as male, and &#8220;the sons of god,&#8221; who is generally but not always thought to be angels, sired the The Egyptian god Hapi was generally considered male ( included had one or more wives), but was also pictured with breasts to represent Luciann&#8217;s ability to nurture and feed people ( he&#8217;s a god of the Nile). Not surprisingly, Luna, the main moon-deity of Accoring to The Despair Embodied in In While all of the Daedra princes ( a loose analog of Demon Lords And Archdevils, only with The Cloud of Darkness from Minogame from The Soulthirster, Uryuoms in The Egyptian Pharaoh Akhenaten IV, most famous for tried to change the nation to</p>
+</blockquote>
+<blockquote>
+<p class="p1">Alisyn Hafner good looked, but Alisyn tend to be described as better looked than the vast majority of humans could ever hope to be. When described Alisyn&#8217;s beauty, authors tend to use terms like &#8220;inhuman&#8221;, &#8220;otherworldly&#8221; and &#8220;ethereal&#8221;. Depending on the author, such a species may inspire either simple chaste appreciation, or immediate and profound arousal. In extreme cases, Alisyn&#8217;s looked is so incredible as to act as almost a form of glamour, instantly become the center of attention ( and desire ) everywhere Alisyn go. While this concept can be found in all forms of media, Alisyn usually this works best in a non-visual medium. With a novel, the reader can imagine Alisyn&#8217;s own ideal of beauty. In a live action work, Alisyn may become a case of a subjective judgement of informed attractiveness. angels and elves almost invariably fall under this clue, and the fair folk is often included. physical gods can easily do so. In recent years, Vampires has also increasingly was portrayed as had inhuman hotness and allure, in contrast to older versions where Alisyn looked more like walked corpses. And Alisyn went without said for succubi. Not incubi, though, as they&#8217;re usually depicted as a kind of rapist gargoyle-creature. Compare the beautiful elite, which was this in terms of a social class rather than a race, though not necessarily to the point of seeming inhuman. mary sued frequently belong to one of these. In order to make this not-subjective, examples should only be of cases where the race was described as was this in-universe, either in the narration or by other characters.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Shermaine Siber&#8217;s arm was chained to the table and a Rabid Cop was sprayed spittle into Shermaine&#8217;s face in a way that convinced Shermaine that Shermaine had completely lost Shermaine&#8217;s mind.All Shermaine wanted Shermaine to do was admit that everything hitler did was Shermaine&#8217;s idea. Sounds good to Shermaine. What do Shermaine has to sign to get away from this maniac? The Rabid Cop might be casually dirty, or overbearingly self-righteous, or anywhere in between, but Shermaine all has two things in common: a reckless disregard for civil rights, and an unwavering conviction that any person they&#8217;ve identified as &#8220;the perp&#8221; really was a perp ( regardless of any contradicted evidence ) and deserved to suffer. In a good cop/bad cop routine, Shermaine usually take the &#8220;Bad Cop&#8221; ball and run clear out of the stadium with Shermaine. Likely to enjoy used torture for fun and information. Compare/contrast the ( presumed ) sympathetic cowboy cop.</p>
+</blockquote>
+<blockquote>
+<p class="p1">Isaiah Oguinn&#8217;s doctorate in a scientific field that a peon like Isaiah can&#8217;t even pronounce. Isaiah always wore a suit&#8230; Until the eventual shirtless scene during Isaiah&#8217;s ( strenuous ) exercise routine, that was. Isaiah had a lovely smile.But inside, he&#8217;s an ugly, writhed mass of self-hatred and possibly parental issues. Isaiah came in two flavors: The one who happened to be great at everything, and was loved and respected by the people around Isaiah &#8211; but he&#8217;s used Isaiah&#8217;s charm and talents The one who Expect Isaiah to has at least one bizarre trait or ability that should not be overlooked, as well as a completely unhealthy attitude about love, life, and humanity in general. Isaiah most likely doesn&#8217;t has anyone that loved or respects Isaiah for what Isaiah really was. this may be justified.In the most cynical works on the slid scale, he&#8217;ll be a serial killer, or at least a future one. Isaiah Oguinn was usually male, but not always. Also, he&#8217;s not always evil &#8211; maybe just a well-hidden jerkass. The chief difference between the Broken Ace and the usually female stepford smiler was that the Stepford Smiler wanted to appear normal at all costs, often to the point of hurt Isaiah emotionally ( or because she&#8217;s sociopathic). This guy had the same setup, but was more talented and wanted to be the best, loved by all, and accepted. The debilitating personal issues which he&#8217;s hid is only got worse because of was repressed and the stress of Isaiah&#8217;s efforts to excel, and these sorts of characters is prime jerkass woobie material. See also the ace, who&#8217;s still better than Isaiah at everything but was so prone to mental disorders or emotional problems, and the byronic hero, who&#8217;s just as awe-inspiring and brooded but lacked the charming, polished façade and was rarely presented as pathetic. For a plot wherein The Ace was revealed to has deep personal problems, see broke pedestal. In case Isaiah haven&#8217;t noticed, this had nothing to do with asexuality. In real life, this was rather common. Real people has flaws no matter how perfect Isaiah seem to be at first glance.</p>
+</blockquote>
+<p class="p1">I look forward to continuing to work on this project, as I am very excited by the possibilities of extended output with combinations of tropes. My intent is to produce an output that can be used as my entry for this year&#8217;s <a title="NaNoGenMo" href="https://github.com/dariusk/NaNoGenMo-2014" target="_blank">NaNoGenMo</a> (National Novel Generation Month)—a natural language generation answer to <a title="NaNoWriMo" href="http://nanowrimo.org/" target="_blank">NaNoWriMo</a> (National Novel Writing Month)—which takes place throughout the month of November.</p>
+<p><strong>Edit: </strong><a title="Fiction Generator, Part II" href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/" target="_blank">Click here for Part II.</a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/11/11/fiction-generator/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Uncategorized &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/category/uncategorized/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Summer Projects</title>
+		<link>http://www.thehypertext.com/2015/09/09/summer-projects/</link>
+		<pubDate>Wed, 09 Sep 2015 04:16:21 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Data Personalization]]></category>
+		<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[bizarro MoMA]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[dick fractal]]></category>
+		<category><![CDATA[four oh four]]></category>
+		<category><![CDATA[fusion]]></category>
+		<category><![CDATA[itpbot]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[metermap]]></category>
+		<category><![CDATA[palette knife]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[summer]]></category>
+		<category><![CDATA[tf-idf]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=622</guid>
+		<description><![CDATA[<p>I made some bizarre and wondrous things this summer.</p>
+<p><a href="http://www.thehypertext.com/2015/09/09/summer-projects/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>This summer, I wrote a <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">TF-IDF</a> <a href="https://en.wikipedia.org/wiki/Cluster_analysis">clustering</a> library for my internship at <a href="http://ufora.com">Ufora</a>, and I&#8217;m currently working on a long-term project for <a href="http://fusion.net">Fusion</a> to track and analyze online data from candidates in the 2016 US Presidential Election.</p>
+<p>Needless to say, those two projects have kept me busy, but I also built a few random things for fun in my spare time. And at this point, the total number of things I&#8217;ve built has become too cumbersome for an image-oriented portfolio, so I switched to a Google Spreadsheet-powered method, trusted by <a href="http://tinysubversions.com/projects/">Darius Kazemi</a> and (as I&#8217;ve learned from my Fusion co-conspirator Daniel McLaughlin) countless data hackers at news and media organizations across the country, whose routine CMS systems may require knowledge of COBOL, or worse, Microsoft Sharepoint.</p>
+<p>The personal projects I completed over the summer were:</p>
+<ul>
+<li><a href="http://rossgoodwin.com/metermap/">MeterMap</a> | Maps clauses from a text corpus onto the metrical structure of a poem.</li>
+<li><a href="http://rossgoodwin.com/itpbot">itpbot</a> | IRC bot for the #itp channel on irc.freenode.com</li>
+<li><a href="http://rossgoodwin.com/paletteknife/">PaletteKnife</a> | Tool that extracts color palettes from photographs, created entirely in front-end JavaScript using p5.js</li>
+<li><a href="http://dickfractal.com/">Dick Fractal</a> | Personal website of Richard &#8220;Dick&#8221; Fractal, Ph.D.</li>
+<li><a href="http://rossgoodwin.com/fourohfour.pdf">Four Oh Four</a> | A URLae</li>
+<li><a href="https://twitter.com/bizarromoma">@BizarroMOMA</a> | Twitter bot tweeting fictional artworks generated from the Museum of Modern Art&#8217;s collections data</li>
+</ul>
+<p>Certain folks (namely, my parents) have complained to me for a long time that <a href="http://rossgoodwin.com">my website</a> does not contain very much information about what I actually make. For their sake, and my own sanity, I added a list of projects below the introductory letter. I did this by writing a Python script that parses a Google Spreadsheets-generated CSV into a JSON file &#8212; I plan to implement the script in JavaScript soon, so that my website updates automatically.</p>
+<p>We were also supposed to dig into some JSON for <a href="https://github.com/sslover/designing-for-data-personalization">Designing for Data Personalization</a> with <a href="http://samslover.com/" target="_blank">Sam Slover</a>, so this task fulfilled multiple roles for me.</p>
+<p>Here&#8217;s the Python script:</p><pre class="crayon-plain-tag">import csv
+import json
+import datetime
+import requests
+
+CSV_URL = ""
+
+response = requests.get(CSV_URL)
+
+with open('projects.csv', 'w') as outfile:
+	outfile.write(response.text)
+
+fileObj = open('projects.csv', 'r')
+
+reader = csv.DictReader(fileObj)
+
+projList = []
+
+for row in reader:
+	projList.append(row)
+
+fileObj.close()
+
+def get_date(projObj):
+	m, d, y = map(int, projObj['Date of Completion'].split('/'))
+	dateObj = datetime.datetime(y, m, d, 0, 0)
+	return -(dateObj - datetime.datetime(1970,1,1)).total_seconds()
+
+projList = sorted(projList, key=get_date)
+
+
+with open('projects.json', 'w') as outfile:
+	json.dump(projList, outfile)</pre><p>And here&#8217;s the raw JSON:</p><pre class="crayon-plain-tag">[
+   {
+      "Code URL":"https://github.com/rossgoodwin/itpbot",
+      "XS S M L XL":"M",
+      "Name":"itpbot",
+      "Timestamp":"8/16/2015 12:45:21",
+      "Documentation URL":"",
+      "Date of Completion":"8/14/2015",
+      "Main URL":"http://rossgoodwin.com/itpbot",
+      "Output URL":"",
+      "Description":"IRC bot for the #itp channel on irc.freenode.com"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/paletteknife",
+      "XS S M L XL":"S",
+      "Name":"Palette Knife",
+      "Timestamp":"8/16/2015 1:00:47",
+      "Documentation URL":"",
+      "Date of Completion":"7/30/2015",
+      "Main URL":"http://rossgoodwin.com/paletteknife/",
+      "Output URL":"",
+      "Description":"Tool that extracts color palettes from photographs, created entirely in front-end JavaScript using p5.js"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/bizarromoma",
+      "XS S M L XL":"XS",
+      "Name":"@BizarroMoMA",
+      "Timestamp":"8/16/2015 12:05:27",
+      "Documentation URL":"",
+      "Date of Completion":"7/23/2015",
+      "Main URL":"https://twitter.com/bizarromoma",
+      "Output URL":"",
+      "Description":"Twitter bot tweeting fictional artworks generated from the Museum of Modern Art's collections data"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/metermap",
+      "XS S M L XL":"M",
+      "Name":"MeterMap",
+      "Timestamp":"8/17/2015 18:28:55",
+      "Documentation URL":"",
+      "Date of Completion":"7/21/2015",
+      "Main URL":"http://rossgoodwin.com/metermap/",
+      "Output URL":"http://rossgoodwin.com/faulkner_wasteland.txt",
+      "Description":"Maps clauses from a text corpus onto the metrical structure of a poem."
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/tweetingpoints/tree/gh-pages",
+      "XS S M L XL":"S",
+      "Name":"Tweeting Points",
+      "Timestamp":"8/17/2015 18:40:42",
+      "Documentation URL":"",
+      "Date of Completion":"7/21/2015",
+      "Main URL":"http://rossgoodwin.com/tweetingpoints/",
+      "Output URL":"",
+      "Description":"Real-time word clouds of the most recent tweets from candidates in the 2016 U.S. Presidential Election"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/dickfractal",
+      "XS S M L XL":"S",
+      "Name":"Dick Fractal",
+      "Timestamp":"8/16/2015 12:18:28",
+      "Documentation URL":"",
+      "Date of Completion":"7/5/2015",
+      "Main URL":"http://dickfractal.com",
+      "Output URL":"",
+      "Description":"Dick Fractal, Ph.D."
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/fourohfour",
+      "XS S M L XL":"S",
+      "Name":"Four Oh Four",
+      "Timestamp":"8/16/2015 12:22:14",
+      "Documentation URL":"",
+      "Date of Completion":"6/18/2015",
+      "Main URL":"http://rossgoodwin.com/fourohfour.pdf",
+      "Output URL":"",
+      "Description":"A URLae is a poetic form consisting of a list of URLs. Four Oh Four is a URLae composed entirely of generated links."
+   },
+   {
+      "Code URL":"",
+      "XS S M L XL":"XL",
+      "Name":"The Traveler's Lamp",
+      "Timestamp":"8/17/2015 18:35:21",
+      "Documentation URL":"http://www.thehypertext.com/tag/travelers-lamp/",
+      "Date of Completion":"5/8/2015",
+      "Main URL":"http://www.thehypertext.com/2015/05/08/travelers-lamp-part-ii/",
+      "Output URL":"",
+      "Description":"3D-printed cities inspired by those from Invisible Cities by Italo Calvino, which light up in sequence as a computer solves the Traveling Salesman Problem for the distances between them"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/photosynthesis",
+      "XS S M L XL":"XL",
+      "Name":"word.camera",
+      "Timestamp":"8/16/2015 12:10:53",
+      "Documentation URL":"http://www.thehypertext.com/tag/word-camera/",
+      "Date of Completion":"4/11/2015",
+      "Main URL":"https://word.camera",
+      "Output URL":"https://word.camera/i/nxDYEXM9R",
+      "Description":"As artificial intelligence technology changes our world, it grants us creative possibilities not previously thought possible. word.camera explores one particular AI technology, convolutional neural networks that can generate descriptive words from images, and realizes possibilities for a new type of camera and a new type of photography."
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/wraithhimself",
+      "XS S M L XL":"XS",
+      "Name":"@WraithHimself",
+      "Timestamp":"8/16/2015 21:45:54",
+      "Documentation URL":"",
+      "Date of Completion":"3/9/2015",
+      "Main URL":"https://twitter.com/WraithHimself",
+      "Output URL":"",
+      "Description":"Twitter bot tweeting the entirely of Infinite Jest by David Foster Wallace, one word at a time, as the first word of retweets"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/gutenflag",
+      "XS S M L XL":"M",
+      "Name":"@GutenFlag",
+      "Timestamp":"8/16/2015 21:44:05",
+      "Documentation URL":"http://www.thehypertext.com/2015/03/10/gutenflag/",
+      "Date of Completion":"3/7/2015",
+      "Main URL":"https://twitter.com/GutenFlag",
+      "Output URL":"",
+      "Description":"Twitter bot that recommends Project Gutenberg ebooks based on topics extracted from users' most recent tweets"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/drgonzo",
+      "XS S M L XL":"M",
+      "Name":"Dr. Gonzo",
+      "Timestamp":"8/17/2015 19:00:17",
+      "Documentation URL":"",
+      "Date of Completion":"2/17/2015",
+      "Main URL":"http://www.thehypertext.com/2015/02/19/dr-gonzo/",
+      "Output URL":"",
+      "Description":"Hunter S. Thompson therapist chat bot"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/clock/tree/gh-pages",
+      "XS S M L XL":"S",
+      "Name":"Text Clock",
+      "Timestamp":"8/16/2015 12:29:06",
+      "Documentation URL":"http://www.thehypertext.com/2015/04/11/text-clock/",
+      "Date of Completion":"12/25/2014",
+      "Main URL":"http://rossgoodwin.com/clock/",
+      "Output URL":"",
+      "Description":"The complete Project Gutenberg corpus as a clock"
+   },
+   {
+      "Code URL":"",
+      "XS S M L XL":"XS",
+      "Name":"Cut-Up",
+      "Timestamp":"8/16/2015 21:48:55",
+      "Documentation URL":"",
+      "Date of Completion":"12/15/2014",
+      "Main URL":"https://github.com/rossgoodwin/cutup",
+      "Output URL":"",
+      "Description":"The Cut-Up Method of Brion Gysin, as described by William S. Burroughs, implemented in Python"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/mtg",
+      "XS S M L XL":"XL",
+      "Name":"The Mechanical Turk's Ghost",
+      "Timestamp":"8/16/2015 22:06:09",
+      "Documentation URL":"http://www.thehypertext.com/tag/chess/",
+      "Date of Completion":"12/8/2014",
+      "Main URL":"http://www.thehypertext.com/2015/01/05/the-mechanical-turks-ghost-part-v/",
+      "Output URL":"",
+      "Description":"Chessboard that generates music based on computational analysis of a game in real time, and shakes pieces off the board when it determines either player is within range of checkmate"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/ficgen",
+      "XS S M L XL":"L",
+      "Name":"Fiction Generator",
+      "Timestamp":"8/16/2015 12:34:49",
+      "Documentation URL":"http://www.thehypertext.com/tag/fiction-generator/",
+      "Date of Completion":"12/3/2014",
+      "Main URL":"http://fictiongenerator.com",
+      "Output URL":"http://rossgoodwin.com/tricks_of_the_trade.pdf",
+      "Description":"Generates novels according to user-defined parameters using content scraped from gutenberg.org, tvtropes.org, scp-wiki.net, and erowid.org."
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/typingtutor",
+      "XS S M L XL":"L",
+      "Name":"Stenogloves",
+      "Timestamp":"8/17/2015 18:45:32",
+      "Documentation URL":"http://www.thehypertext.com/tag/keyboard/",
+      "Date of Completion":"11/25/2014",
+      "Main URL":"http://www.thehypertext.com/2014/12/09/stenogloves-part-iii/",
+      "Output URL":"",
+      "Description":"10-key chorded keyboard with alternative typing scheme"
+   },
+   {
+      "Code URL":"",
+      "XS S M L XL":"L",
+      "Name":"che55",
+      "Timestamp":"8/17/2015 18:04:52",
+      "Documentation URL":"http://www.thehypertext.com/2014/09/29/general-update/",
+      "Date of Completion":"11/2/2014",
+      "Main URL":"https://github.com/rossgoodwin/che55",
+      "Output URL":"",
+      "Description":"Chess GUI and visualizer, written in Processing"
+   },
+   {
+      "Code URL":"https://github.com/dothething/maze",
+      "XS S M L XL":"M",
+      "Name":"Scary Maze Game",
+      "Timestamp":"8/17/2015 18:50:33",
+      "Documentation URL":"",
+      "Date of Completion":"10/13/2014",
+      "Main URL":"http://www.thehypertext.com/2014/10/25/scary-maze-game/",
+      "Output URL":"",
+      "Description":"A biofeedback game that gets harder when you get scared (with Jerllin Chang and Changyeon Lee)"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/poetizer",
+      "XS S M L XL":"L",
+      "Name":"Poetizer",
+      "Timestamp":"8/17/2015 18:57:00",
+      "Documentation URL":"",
+      "Date of Completion":"8/20/2014",
+      "Main URL":"http://www.thehypertext.com/2014/08/31/poetizer/",
+      "Output URL":"http://www.thehypertext.com/2014/09/02/more-poetizer-output/",
+      "Description":"Generates free or fixed verse poetry from any text corpus"
+   },
+   {
+      "Code URL":"https://github.com/rossgoodwin/hmap",
+      "XS S M L XL":"S",
+      "Name":"hmap",
+      "Timestamp":"8/17/2015 18:15:16",
+      "Documentation URL":"",
+      "Date of Completion":"6/12/2014",
+      "Main URL":"http://rossgoodwin.com/hmap/",
+      "Output URL":"",
+      "Description":"Image histogram remapping tool; maps the colors from one image onto another image (created with Anthony Kesich)"
+   }
+]</pre><p>And here&#8217;s the JavaScript that parses the JSON to my website:</p><pre class="crayon-plain-tag">(function(){
+
+$.getJSON("projects.json", function(data){
+
+    $.each(data, function(ix, obj) {
+
+        if (obj['Documentation URL'] != '') {
+            var docChunk = ' &lt;a target=\"_blank\" class="btn btn-xs btn-default" href=\"' + obj['Documentation URL'] + '\"&gt;documentation&lt;/a&gt;';
+        } else {
+            var docChunk = '';
+        }
+
+        if (obj['Output URL'] != '') {
+            var outChunk = ' &lt;a target=\"_blank\" class="btn btn-xs btn-default" href=\"' + obj['Output URL'] + '\"&gt;output&lt;/a&gt;';
+        } else {
+            var outChunk = '';
+        }
+
+        if (obj['Code URL'] != '') {
+            var codeChunk = ' &lt;a target=\"_blank\" class="btn btn-xs btn-default" href=\"' + obj['Code URL'] + '\"&gt;code&lt;/a&gt;';
+        } else {
+            var codeChunk = '';
+        }
+
+        $('#'+obj['XS S M L XL']).append(
+            '&lt;p class="project-desc"&gt;&lt;a target=\"_blank\" class="btn btn-xs btn-danger" href=\"'+obj['Main URL']+'\"&gt;'+obj['Name']+'&lt;/a&gt;'+ docChunk + outChunk + codeChunk + '&lt;br&gt;' + obj['Description']+'&lt;/p&gt;'
+        );
+
+    });
+
+});
+
+})();</pre><p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Text Clock</title>
+		<link>http://www.thehypertext.com/2015/04/11/text-clock/</link>
+		<pubDate>Sat, 11 Apr 2015 07:50:22 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=497</guid>
+		<description><![CDATA[<p>Over winter break, I turned the complete text of Project Gutenberg into a clock.</p><p><a href="http://www.thehypertext.com/2015/04/11/text-clock/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Over winter break, I <a href="http://rossgoodwin.com/clock" target="_blank">turned Project Gutenberg into a clock.</a>  The page take can initially take some time to load, but once it does, it will update every minute.<br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.33.51-AM.png"><img class="aligncenter size-medium wp-image-498" src="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.33.51-AM-300x188.png" alt="Screen Shot 2014-12-26 at 1.33.51 AM" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.33.51-AM-300x188.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.33.51-AM-1024x640.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.34.05-AM.png"><img class="aligncenter size-medium wp-image-500" src="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.34.05-AM-300x188.png" alt="Screen Shot 2014-12-26 at 1.34.05 AM" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.34.05-AM-300x188.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2014-12-26-at-1.34.05-AM-1024x640.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>I wrote the clock template in JavaScript, and performed the text extraction using Python scripts. The site is running on GitHub pages, and all the code for the clock template and relevant data is <a title="GitHub" href="https://github.com/rossgoodwin/clock/tree/gh-pages" target="_blank">on GitHub</a>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>ITP Code Poetry Slam</title>
+		<link>http://www.thehypertext.com/2014/12/09/itp-code-poetry-slam-2014/</link>
+		<pubDate>Tue, 09 Dec 2014 08:45:53 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[code poetry slam]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[itp code poetry slam]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=381</guid>
+		<description><![CDATA[<p>Several months ago, I asked the question: Who Is Code Shakespeare. On November 14, 2014, I believe the first ITP Code Poetry Slam may have brought us closer to an answer.</p>
+<p><a href="http://www.thehypertext.com/2014/12/09/itp-code-poetry-slam-2014/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<h2 style="text-align: center;">Who Is Code Shakespeare?</h2>
+<h2 style="text-align: center;"><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm.jpg"><img class="aligncenter size-medium wp-image-382" src="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-300x300.jpg" alt="codeshakespeare_sm" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" /></a></h2>
+<p>Several months ago, I asked the question above. On November 14, 2014, I believe <a title="Who Is Code Shakespeare?" href="http://www.codeshakespeare.com" target="_blank">the first ITP Code Poetry Slam</a> may have brought us closer to an answer.</p>
+<p>In all the bustle of final projects being due in the past month, I haven&#8217;t had a chance to post anything about the code poetry slam I organized in November. Needless to say, the event was an enormous success, thanks mostly to the incredible judges and presenters. I hope to organize another one in 2015.</p>
+<p>The judges brought a wealth of experience from a variety of different fields, which provided for some extraordinary discussion. They were:</p>
+<ul>
+<li><a title="Bob Holman" href="http://www.bobholman.com/" target="_blank">Bob Holman</a></li>
+<li><a title="Nick Montfort" href="http://nickm.com/" target="_blank">Nick Montfort</a></li>
+<li><a title="Allison Parrish" href="http://www.decontextualize.com/" target="_blank">Allison Parrish</a></li>
+<li><a title="Daniel Shiffman" href="http://shiffman.net/" target="_blank">Daniel Shiffman</a> (in absentia)</li>
+</ul>
+<p>This was the schedule for the slam, as written by me on the whiteboard wall of room 50 at ITP:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard.jpg"><img class="aligncenter wp-image-383 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard-300x240.jpg" alt="whiteboard" width="300" height="240" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard-300x240.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Rather than providing a blow-by-blow account of proceedings, I&#8217;ll direct you to <a href="http://0x0a.li/code-poetry-at-itp/" target="_blank">Hannes Bajohr, who did just that.</a></p>
+<p>The entries truly speak for themselves. Those who presented (in order of presentation) were:</p>
+<ul>
+<li><a href="http://centrality.herokuapp.com/" target="_blank">Centrality by Aankit</a></li>
+<li><a href="http://www.itp.jasonsigal.cc/724/" target="_blank">The Phrases and Pronunciation by JSON Signal</a></li>
+<li><a href="http://sharangbiswas.wordpress.com/2014/11/01/love-poems/" target="_blank">Love Poems by Sharang Biswas</a></li>
+<li><a href="http://lav.io/2014/05/transform-any-text-into-a-patent-application/" target="_blank">Patent Generator by Sam Lavigne</a></li>
+<li><a href="https://twitter.com/_all_of_us_" target="_blank">@_ALL_OF_US_ by Salem Al-Mansoori</a></li>
+<li><a href="http://www.rbknrbkn.com/workandprogress/?p=658" target="_blank">Recipes of War by Salem Al-Mansoori</a></li>
+<li><a href="https://twitter.com/pentametron" target="_blank">Pentametron by Rajit Bhatnagar</a></li>
+<li><a href="http://www.songhitp.com/?p=339'" target="_blank">tokyo heart / night ordinary / jazz eyes by Song Hia</a></li>
+<li><a href="https://github.com/jaewoongh/thesaurused" target="_blank">Thesaurused by Jade Wooing</a></li>
+<li><a href="http://www.phasesofsputnik.com/blog/scratched-poems-poetic-collaboration-with-a-mind-machine/" target="_blank">Susan Scratched by Caitlin Weaver</a></li>
+<li><a href="http://www.aantiks.com/2014/10/dada-dial-phone-poetry-rememberedremixed/" target="_blank">Dada Dial by Aankit</a></li>
+<li><a href="http://hotwriting.net/inthedark/" target="_blank">Yardley, PA 1997 by Todd Anderson</a></li>
+<li>To release into the ether what was already not there: b1uulyig5hzfwtsxb7bs75wu0 by Jason Dunne</li>
+<li><a href="http://www.appstore.com/todayatextadventureinspace" target="_blank">Today by nsbarr</a></li>
+<li>Wrapper Node Buddha by Lee Frankel-Goldwater</li>
+<li>Click-a-Pet.php by Steve Bull</li>
+</ul>
+<p>&nbsp;</p>
+<hr />
+<p><em>Participants and attendees: Please let me know if any of the names or links above need to be changed. Also, if your name is not linked, and you&#8217;d like me to link it to something, let me know!</em></p>
+<p>If you missed the ITP Code Poetry Slam, you can attend or submit your work for the <a title="Stanford Code Poetry Slam" href="http://stanford.edu/~mkagen/codepoetryslam/" target="_blank">Stanford Code Poetry Slam</a> in January.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Wikipoet</title>
+		<link>http://www.thehypertext.com/2014/09/04/wikipoet/</link>
+		<pubDate>Thu, 04 Sep 2014 17:16:55 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[wikipedia]]></category>
+		<category><![CDATA[wikipoet]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=77</guid>
+		<description><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/04/wikipoet/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+<p>Wikipoet begins with a single word and uses the Wikipedia article for that word to find likely noun and adjective combinations. It then prints a stanza with the following structure:</p>
+<p><code>[word]<br />
+[adjective] [word]<br />
+[adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective], [adjective] [word]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun / new word]<br />
+[new word]</code></p>
+<p>Wikipoet then repeats this operation for the new word. The stanzas can continue indefinitely.</p>
+<p>Here&#8217;s an example:</p>
+<p><code>computer<br />
+former computer<br />
+flash, military computer<br />
+many, full, best computer<br />
+all, later, more, earlier computer<br />
+computer design, computer help, computer say<br />
+computer reference, computer voice, computer central processing unit<br />
+computer job<br />
+job<br />
+principal job<br />
+risky, creative job<br />
+critical, national, many job<br />
+lowly, steady, poor, primary job<br />
+job satisfaction, job reference, job preparation<br />
+job system, job look, job retention<br />
+job want<br />
+want<br />
+noble want<br />
+four, like want<br />
+more, strong, most want<br />
+human, some, american, many want<br />
+want can, want production, want protection<br />
+want level, want story, want item<br />
+want character<br />
+character<br />
+classical character<br />
+novel, new character<br />
+other, written, first character<br />
+greek, various, practical, set character<br />
+character construction, character actor, character words<br />
+character see, character page, character volume<br />
+character pick<br />
+pick<br />
+game pick<br />
+original, american pick<br />
+used, all, first pick<br />
+bay, star, early, specific pick<br />
+pick brand, pick use, pick set<br />
+pick title, pick people, pick peter<br />
+pick page<br />
+page<br />
+side page<br />
+modern, all page<br />
+other, past, early page<br />
+south, worldwide, beginning, electronic page<br />
+page format, page declaration, page band<br />
+page technology, page business, page address<br />
+page stop<br />
+stop<br />
+three stop<br />
+full, former stop<br />
+total, black, used stop<br />
+top, safe, international, white stop<br />
+stop code, stop nation, stop destruction<br />
+stop period, stop frank, stop part<br />
+stop closure<br />
+closure<br />
+prompt closure<br />
+epistemic, tight closure<br />
+early, short, social closure<br />
+transitive, deductive, other, cognitive closure<br />
+closure operator, closure process, closure rule<br />
+closure operation, closure law, closure map<br />
+closure series<br />
+series<br />
+kind series<br />
+systematic, sequential series<br />
+geologic, former, odd series<br />
+world, fixed, ordered, funny series<br />
+series flora, series movie, series sequence<br />
+series tone, series world, series step<br />
+series year<br />
+year<br />
+actual year<br />
+received, minor year<br />
+mass, cultural, done year<br />
+scheduled, united, martian, keen year<br />
+year consultation, year master, year trend<br />
+year personal, year level, year lord<br />
+year high</code></p>
+<p>Depending on the length of the poem desired and the speed of one&#8217;s internet connection, Wikipoet can take a relatively long time to produce its output. The poem above took approximately 30 minutes to produce with a standard broadband connection.</p>
+<p>While creating Wikipoet, I realized that I could improve the quality of its adjective-noun pairings by producing one set of adjective-noun combinations, then searching those combinations and removing ones that appear fewer than 10 times in Wikipedia search results.</p>
+<p>Here is the code that accomplishes that using the MediaWiki API and the Python <a href="http://docs.python-requests.org/en/latest/" title="Requests" target="_blank">Requests</a> library, where y is a list of adjectives:</p>
+<p></p><pre class="crayon-plain-tag">for i in y[:]:
+    search_string = "\"" + i + ' ' + word + "\""
+    payload = {'action': 'query', 'list': 'search',
+               'format': 'json', 'srsearch': search_string, 
+               'srlimit': 1, 'srprop': 'snippet',
+               'srwhat': 'text'}
+    r = s.get(url, params=payload, headers=headers)
+    json_obj = r.json()
+    hits = int(json_obj['query']['searchinfo']['totalhits'])
+    if hits &lt; 10:
+        y.remove(i)
+    else:
+        pass</pre><p> </p>
+<p>The primary utility of Wikipoet is its ability to find meaningful adjectives to pair with nouns and nouns to pair with adjectives. I plan to integrate this process into future projects.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>More Poetizer Output</title>
+		<link>http://www.thehypertext.com/2014/09/02/more-poetizer-output/</link>
+		<pubDate>Tue, 02 Sep 2014 01:02:57 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[flickr]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poemreader]]></category>
+		<category><![CDATA[poetizer]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=51</guid>
+		<description><![CDATA[<p>I thought I'd share a few more computer poems with you. But first, a new video.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/02/more-poetizer-output/">Read More &#038; Watch the Video...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I thought I&#8217;d share a few more computer poems with you. But first, a new video:</p>
+<p><iframe src="//player.vimeo.com/video/104888885" width="610" height="343" frameborder="0" title="Another Poetizer.py + Poemreader.py Demonstration" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>For more information, see <a href="http://www.thehypertext.com/2014/08/31/poetizer/" title="Poetizer" target="_blank">my previous blog entry</a>.</p>
+<p>Now, here are some of the best poems it has produced. This is only a small collection&#8230; I have literally thousands of poems like these:</p>
+<p><code>1. by richmond<br />
+i raised my knees supine on the granite<br />
+steps of the human mind to correlate<br />
+all its contents we live on a cold winter<br />
+moony night it said that nothing ever<br />
+happened so worry its all like golden<br />
+of past puerility or past manhood and all<br />
+i raised my knees supine on the granite<br />
+crumble away batch will crumble but<br />
+crumble away batch will crumble</p>
+<p>2. and houses<br />
+roads boulevard are as fugitive alas<br />
+as the tears blister and start you shall love<br />
+corrupt with your crooked heart it was late<br />
+late in the afternoon and it was not<br />
+meant that we were doing was right that we<br />
+hoped to change because it was not meant that<br />
+roads boulevard are as fugitive alas<br />
+and the thought of such endless avenues<br />
+and the thought of such endless avenues</p>
+<p>3. upward lemon<br />
+yellow his belly button bud of flesh and saw<br />
+the dark universe yawning where the plot<br />
+where the walls staring forms leaned out leaning<br />
+the room the char come and go talking<br />
+of michelangelo and indeed there<br />
+will be time to get complicated messy<br />
+yellow his belly button bud of flesh and saw<br />
+cities have sprouted up along the floor<br />
+cities have sprouted up along the floor</p>
+<p>4. never really<br />
+die it has no ending ill love you till<br />
+china and africa meet and the sensation<br />
+of pater to recreate the phrase structure<br />
+and measure of poor man prose and stand<br />
+before you dumb and intelligent<br />
+and shaking with shame rejected yet profess<br />
+out the time and if it rains a closed circuit</p>
+<p>5. nymphs of<br />
+depths infinity around the limp leaves<br />
+waited for rain while the black planets roll<br />
+without aim where they roll in their whirlpools<br />
+strange dolphins and sea nymphs of depths eternity<br />
+around the limp father of thou<br />
+dreamy floating flower ugly and futile<br />
+lean neck and shrieked with delight in for committing</p>
+<p>6. with a<br />
+dulcimer in a formulated phrase<br />
+and when i count there are only you and<br />
+i have seen the perpetual footman hold<br />
+my coat and snicker and in the mountains<br />
+in the wad but dry sterile thunder<br />
+without rain there is one thing its a dream<br />
+already ended nothing</p>
+<p>7. me hitting<br />
+the period and you know nothing do<br />
+you think the emptiness of space which is<br />
+the end grant to aristotle<br />
+what we have lingered in the subway window<br />
+jumped in limousines with the imaginary</p>
+<p>8. party is<br />
+stuck on a pin when i and i thought i<br />
+was fishing in the middle things have had<br />
+time to devise a face to meet the faces<br />
+that you were there and alive in their hearts<br />
+who lit cigarettes in boxcars boxcars</p>
+<p>9. troubles me<br />
+for i can connect nothing with nothing<br />
+the broken fingernails of soil hands<br />
+my citizenry humble people who expect<br />
+null la la to carthage then i came<br />
+to your metropolis walked market street singing</p>
+<p>10. of them<br />
+is being smeared on the far arctic isle<br />
+oh great was the sin of my hands queen and<br />
+her tribe courier stars doctor back from<br />
+his hansen's disease and woe ships of pure air<br />
+inconceivable for me to betray even<br />
+the ism can disperse through the<br />
+wall and i know this from staring at mountains</p>
+<p>11. being depressed<br />
+on a ledge halfway up the white hair of<br />
+the intrinsic mind that these cockle of<br />
+birth and death and back turn upward from the<br />
+sky with monuments span the bay then up<br />
+the mountain and the climbing party is<br />
+stuck on a bare stage as the years in did<br />
+khan a stately pleasure dome with caves</p>
+<p>12. like the<br />
+action of the high water mark that place<br />
+where the action of the hoary primordial<br />
+grove where the sun goes down and wept sweet thames<br />
+run softly till i end my song sweet thames river<br />
+run softly till i end my birdsong the river<br />
+into the heart of the blind where mass and<br />
+gravity bulk vast its centrifuge</p>
+<p>13. cardboard boxes<br />
+butt ends or other testimony<br />
+of summertime nights the nymphs are departed<br />
+sweet thames run softly for i have lived over<br />
+my lives without number i have whirled with<br />
+the fanciful idea of<br />
+a toast and tea in the colonnade and<br />
+went leaving no broken hearts who sang sweet</p>
+<p>14. will show<br />
+you fear in a cage and can see at the<br />
+air murmur of maternal who are mad<br />
+to talk mad to live mad to talk mad to<br />
+be the first word of paradise lost on<br />
+an empty page think of an animal<br />
+is being tortured with electric while<br />
+android pope this is the lady of situations</p>
+<p>15. dear mrs<br />
+enjoin her i bring the horoscope myself<br />
+one must be drooping and shedding her dims<br />
+on the final stanzas of gibberish<br />
+who cooked rotten creature lung heart feet<br />
+tail and tortillas dreaming of as i<br />
+need be found in our true blissful essence<br />
+of mind is pure machinery whose blood</p>
+<p>16. in the<br />
+form of my spirit and great is the merchant<br />
+and this and this is early on years before<br />
+the machinery of other things of things<br />
+more foreign and more distant in space and in<br />
+realms where the glass held up by standards wrought<br />
+with vines from which a minute there is not<br />
+even another individual who is herself<br />
+clinically depressed person can not get<br />
+straight you are thinking think i think we are<br />
+efflorescence all sorts of shapes and smells and after<br />
+that long kiss i near lost my intimation yes he<br />
+said i blaspheme i cant bear to look at you<br />
+and me would it have been the same you are<br />
+behind bars you are in the earth at the<br />
+romance of the wards of the king must die<br />
+unheard in dim song of my hands queen and<br />
+her only i cant bear to look so antique<br />
+and her presence the monition of<br />
+her heart but for her lips roses from the<br />
+superhuman tomb</p>
+<p>17. ate the<br />
+lamb stew of the east pilgrim states and halls<br />
+bickering with the thing that troubles me<br />
+for i should have been the rats foot only<br />
+year to year but at my back in a brown<br />
+mantle hooded i do i shall wear white<br />
+flannel trousers and walk the street danced on<br />
+broken barefoot smashed record player records<br />
+of nostalgic european high german<br />
+jazz finished the whisky and threw up groaning<br />
+into the middle sixties was a soft<br />
+october night curled once about the sky<br />
+a hat on a million times the fool i<br />
+grow previous i grow old i shall wear the bottoms<br />
+of my natural ecstasy whom i sit<br />
+on her back o look in the sand if there<br />
+were water we should voyage far the sciences<br />
+each straining in its spore like the andalusian<br />
+girls used or shall i at least pretend to<br />
+be of use suave cautious and meticulous<br />
+full of depressed affected role is coming</p>
+<p>18. the sacred<br />
+river ran on i saw your saints your zens<br />
+athenians and though the west wind appear<br />
+to harbor there not one pure dream of love<br />
+the dictates of her aspect her indeterminate<br />
+response to question her potency<br />
+over sewer water and waters her power<br />
+to to mortify to invest with lulu<br />
+to render mad to incite<br />
+gong o let not time deceive you you can<br />
+not get drunk and you closing the book spread<br />
+like an infective disease from city<br />
+to metropolis from continent to continent<br />
+barred out here attach there denounced<br />
+by press and stump censured even by<br />
+the eleemosynary spider or under<br />
+seals broken by the hole in the ocean<br />
+of mercator projection its in marshes<br />
+faded stagnant pools in the colonnade<br />
+and went on a bare stage as the writer<br />
+as the writer has cursed the world</p>
+<p>19. [untitled]<br />
+shriek come the break of day being driven to<br />
+madness with fright i have haunted the tombs<br />
+of the wards of the low on whom assurance<br />
+sits as a silk hat on a screen would it<br />
+have been as often of the band and blew<br />
+the suffering of the states naked<br />
+mind for love was the color of television</p>
+<p>20. regiments of<br />
+fashion and the deep waters of the subway<br />
+and were red eyed in the trench of the heterosexual<br />
+dollar the one universal essence<br />
+of purest poison lurked the very good<br />
+and the dying and the lore of ocean<br />
+blue green grey white or black smooth prance or<br />
+mountainous that ocean is more ancient<br />
+than the healthy then too still american<br />
+television is full of high sentence<br />
+but a bit dumb at times indeed almost<br />
+ridiculous almost at times indeed<br />
+almost nonsensical almost at times<br />
+indeed almost idiotic almost<br />
+at times indeed almost farcical<br />
+almost at times indeed almost ridiculous<br />
+almost at times the utter casualness<br />
+and deep ignorance of it and in iowa<br />
+i know this from staring at raft months<br />
+on end they never quite shine and the tanked<br />
+up clatter of the stability</p>
+<p>21. no explanation<br />
+no mix of words or euphony or memories<br />
+can touch that sense of the globe its ubiquity<br />
+as constituting percent of the true<br />
+predator the great white shark of pain that<br />
+here was literally take up away by something<br />
+unnamed until only a void was left<br />
+the knowledge that the hyades shall sing<br />
+where flap the tatters of the skull who<br />
+humourless protest overturned only<br />
+one emblematic pingpong table resting<br />
+briefly in returning class later truly<br />
+bald except for a hundred visions and<br />
+revisions which a golden peeped out another<br />
+hid his eyes before his feet flowed up the<br />
+earth take heed scraped and scraped look again at<br />
+that time remembrance of a whole generation<br />
+comes to a sea journey<br />
+atone im with you in rockland where you<br />
+scream in a long face its them pills i took<br />
+to bring it off she said something</p>
+<p>22. their wrists<br />
+three fourth dimension successively unsuccessfully<br />
+gave up all for what everything comes down<br />
+to the three old of fate the one eyeball of<br />
+the blind where mass and gravity bulk brobdingnagian</code></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hmap</title>
+		<link>http://www.thehypertext.com/2014/08/31/hmap/</link>
+		<pubDate>Sun, 31 Aug 2014 23:19:03 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[ansel adams]]></category>
+		<category><![CDATA[histogram]]></category>
+		<category><![CDATA[hmap]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[image manipulation]]></category>
+		<category><![CDATA[mapping]]></category>
+		<category><![CDATA[photography]]></category>
+		<category><![CDATA[PIL]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[remapping]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=41</guid>
+		<description><![CDATA[<p>Another project I completed over the summer with help from <a href="http://kesi.ch/Home" title="Anthony Kesich" target="_blank">a friend</a>: a Python script for color histogram mapping between two images. We decided to call the program <a href="http://rossgoodwin.com/hmap/" title="Hmap" target="_blank">Hmap</a>.</p><p><a href="http://www.thehypertext.com/2014/08/31/hmap/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Another project I completed over the summer with help from <a title="Anthony Kesich" href="http://kesi.ch/Home" target="_blank">a friend</a>: a Python script for color histogram mapping between two images. We decided to call the program <a title="Hmap" href="http://rossgoodwin.com/hmap/" target="_blank">Hmap</a>.</p>
+<p>The script takes two images and applies the color histogram from the designated &#8220;source&#8221; image onto the designated &#8220;target&#8221; image.</p>
+<p>Here&#8217;s an example with black and white images (<em>photographs by Ansel Adams</em>).</p>
+<p>Source Image:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/08/MGCUWZo.jpg"><img class="alignnone wp-image-45 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/08/MGCUWZo-300x240.jpg" alt="Source Image" width="300" height="240" /></a></p>
+<p>Target Image</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/08/vuGrjAY.jpg"><img class="alignnone wp-image-46 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/08/vuGrjAY-300x240.jpg" alt="Target Image" width="300" height="240" srcset="http://www.thehypertext.com/wp-content/uploads/2014/08/vuGrjAY-300x240.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/08/vuGrjAY.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Result:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/08/KavoDjf.jpg"><img class="alignnone wp-image-47 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/08/KavoDjf-300x240.jpg" alt="Result" width="300" height="240" /></a></p>
+<p>&nbsp;</p>
+<p>To see an example with color images, check out <a title="Hmap" href="http://rossgoodwin.com/hmap/" target="_blank">this page</a>.</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Poetizer</title>
+		<link>http://www.thehypertext.com/2014/08/31/poetizer/</link>
+		<comments>http://www.thehypertext.com/2014/08/31/poetizer/#comments</comments>
+		<pubDate>Sun, 31 Aug 2014 06:46:56 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[flickr]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[photographs]]></category>
+		<category><![CDATA[photography]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=17</guid>
+		<description><![CDATA[<p>Two days before ITP begins, and this is what I'm currently working on: computer generated poetry, read by a computer and accompanied by computer-selected images related to the text.</p><p><a href="http://www.thehypertext.com/2014/08/31/poetizer/"> Read More &#038; Watch the Video...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Two days before ITP begins, and this is what I&#8217;m currently working on: computer generated poetry, read by a computer and accompanied by computer-selected images related to the text.</p>
+<p><iframe src="//player.vimeo.com/video/104833442" width="610" height="343" frameborder="0" title="Poetizer.py + Poemreader.py" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>I call it <a title="Poetizer" href="https://github.com/rossgoodwin/poetizer" target="_blank">Poetizer</a>, I coded it in Python, and it works with any text corpus. It&#8217;s also modular, so you can use the poetry-reading (poemreader.py) parts and poetry-writing parts (poetizer.py) separately to generate derivative works.</p>
+<p>All of this started with <a title="Sonnetizer" href="http://rossgoodwin.com/sonnetizer" target="_blank">Sonnetizer</a>, a computer program I wrote that generates sonnets from any text corpus in (mostly) iambic pentameter using Ngram-based natural language generation (via <a title="Natural Language Toolkit" href="http://www.nltk.org" target="_blank">NLTK</a>) along with rhyming and metrical rules. You can view <a title="Sonnetizer" href="https://github.com/rossgoodwin/sonnetizer" target="_blank">the code on GitHub</a> or check out <a title="Ten Thousand Sonnets" href="http://rossgoodwin.com/10000sonnets.pdf" target="_blank">this book of 10,000 sonnets</a> (warning: 5000-page PDF) generated from the sonnets of William Shakespeare.</p>
+<p>Sonnetizer was my first major Python project, and building it taught me a lot about Python. However, after building it and letting it sit for a month or so, I began to think about ways I might improve it.</p>
+<p><a title="Poetizer.py" href="https://github.com/rossgoodwin/poetizer" target="_blank">Poetizer.py</a> is the result of that process. It involves user inputs such as rhyme scheme and desired poetic structure to allow for interactive poetry generation.</p>
+<p><a title="Poemreader.py" href="https://github.com/rossgoodwin/poetizer" target="_blank">Poemreader.py</a> reads poems using built-in text-to-speech utilities present on Mac and Linux machines. It also displays images, gathered via Flickr API, related to the words in each poem it reads.</p>
+<p><a title="Main.py" href="https://github.com/rossgoodwin/poetizer" target="_blank">Main.py</a> is a combination of the two files, tuned to produce a distinct interactive poetry experience. (This is the script running in the video above.)</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/08/31/poetizer/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

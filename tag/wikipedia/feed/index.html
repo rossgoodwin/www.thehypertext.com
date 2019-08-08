@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>wikipedia &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/wikipedia/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Wikipoet</title>
+		<link>http://www.thehypertext.com/2014/09/04/wikipoet/</link>
+		<pubDate>Thu, 04 Sep 2014 17:16:55 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[wikipedia]]></category>
+		<category><![CDATA[wikipoet]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=77</guid>
+		<description><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/04/wikipoet/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+<p>Wikipoet begins with a single word and uses the Wikipedia article for that word to find likely noun and adjective combinations. It then prints a stanza with the following structure:</p>
+<p><code>[word]<br />
+[adjective] [word]<br />
+[adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective], [adjective] [word]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun / new word]<br />
+[new word]</code></p>
+<p>Wikipoet then repeats this operation for the new word. The stanzas can continue indefinitely.</p>
+<p>Here&#8217;s an example:</p>
+<p><code>computer<br />
+former computer<br />
+flash, military computer<br />
+many, full, best computer<br />
+all, later, more, earlier computer<br />
+computer design, computer help, computer say<br />
+computer reference, computer voice, computer central processing unit<br />
+computer job<br />
+job<br />
+principal job<br />
+risky, creative job<br />
+critical, national, many job<br />
+lowly, steady, poor, primary job<br />
+job satisfaction, job reference, job preparation<br />
+job system, job look, job retention<br />
+job want<br />
+want<br />
+noble want<br />
+four, like want<br />
+more, strong, most want<br />
+human, some, american, many want<br />
+want can, want production, want protection<br />
+want level, want story, want item<br />
+want character<br />
+character<br />
+classical character<br />
+novel, new character<br />
+other, written, first character<br />
+greek, various, practical, set character<br />
+character construction, character actor, character words<br />
+character see, character page, character volume<br />
+character pick<br />
+pick<br />
+game pick<br />
+original, american pick<br />
+used, all, first pick<br />
+bay, star, early, specific pick<br />
+pick brand, pick use, pick set<br />
+pick title, pick people, pick peter<br />
+pick page<br />
+page<br />
+side page<br />
+modern, all page<br />
+other, past, early page<br />
+south, worldwide, beginning, electronic page<br />
+page format, page declaration, page band<br />
+page technology, page business, page address<br />
+page stop<br />
+stop<br />
+three stop<br />
+full, former stop<br />
+total, black, used stop<br />
+top, safe, international, white stop<br />
+stop code, stop nation, stop destruction<br />
+stop period, stop frank, stop part<br />
+stop closure<br />
+closure<br />
+prompt closure<br />
+epistemic, tight closure<br />
+early, short, social closure<br />
+transitive, deductive, other, cognitive closure<br />
+closure operator, closure process, closure rule<br />
+closure operation, closure law, closure map<br />
+closure series<br />
+series<br />
+kind series<br />
+systematic, sequential series<br />
+geologic, former, odd series<br />
+world, fixed, ordered, funny series<br />
+series flora, series movie, series sequence<br />
+series tone, series world, series step<br />
+series year<br />
+year<br />
+actual year<br />
+received, minor year<br />
+mass, cultural, done year<br />
+scheduled, united, martian, keen year<br />
+year consultation, year master, year trend<br />
+year personal, year level, year lord<br />
+year high</code></p>
+<p>Depending on the length of the poem desired and the speed of one&#8217;s internet connection, Wikipoet can take a relatively long time to produce its output. The poem above took approximately 30 minutes to produce with a standard broadband connection.</p>
+<p>While creating Wikipoet, I realized that I could improve the quality of its adjective-noun pairings by producing one set of adjective-noun combinations, then searching those combinations and removing ones that appear fewer than 10 times in Wikipedia search results.</p>
+<p>Here is the code that accomplishes that using the MediaWiki API and the Python <a href="http://docs.python-requests.org/en/latest/" title="Requests" target="_blank">Requests</a> library, where y is a list of adjectives:</p>
+<p></p><pre class="crayon-plain-tag">for i in y[:]:
+    search_string = "\"" + i + ' ' + word + "\""
+    payload = {'action': 'query', 'list': 'search',
+               'format': 'json', 'srsearch': search_string, 
+               'srlimit': 1, 'srprop': 'snippet',
+               'srwhat': 'text'}
+    r = s.get(url, params=payload, headers=headers)
+    json_obj = r.json()
+    hits = int(json_obj['query']['searchinfo']['totalhits'])
+    if hits &lt; 10:
+        y.remove(i)
+    else:
+        pass</pre><p> </p>
+<p>The primary utility of Wikipoet is its ability to find meaningful adjectives to pair with nouns and nouns to pair with adjectives. I plan to integrate this process into future projects.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

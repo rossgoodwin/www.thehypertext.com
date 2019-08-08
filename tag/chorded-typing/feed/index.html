@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>chorded typing &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/chorded-typing/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Stenogloves, Part II</title>
+		<link>http://www.thehypertext.com/2014/11/20/stenogloves-part-ii/</link>
+		<comments>http://www.thehypertext.com/2014/11/20/stenogloves-part-ii/#comments</comments>
+		<pubDate>Thu, 20 Nov 2014 16:47:30 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Physical Computing]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[chorded keyboard]]></category>
+		<category><![CDATA[chorded typing]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[interaction]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[interactivity]]></category>
+		<category><![CDATA[keyboard]]></category>
+		<category><![CDATA[mouse]]></category>
+		<category><![CDATA[Ngram]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[qwerty]]></category>
+		<category><![CDATA[stenogloves]]></category>
+		<category><![CDATA[stenographer]]></category>
+		<category><![CDATA[typing]]></category>
+		<category><![CDATA[typing tutor]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=341</guid>
+		<description><![CDATA[<p>For my final project in Introduction to Physical Computing, I am making a set of chorded keyboard gloves for quick typing in any setting.</p>
+<p><a href="http://www.thehypertext.com/2014/11/20/stenogloves-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For my final project in Introduction to Physical Computing, <a title="Stenogloves, Part I" href="http://www.thehypertext.com/2014/10/29/stenographer-gloves-a-forest-of-files/" target="_blank">I had discussed creating</a> a navigation system for a 3D browser using a pair of gloves with force-sensitive resistors in the fingertips. After further consideration and several discussions with <a title="Tom Igoe" href="http://tigoe.net/" target="_blank">Tom Igoe</a>, I have altered my plan for this project.</p>
+<p>For me, the most interesting part was going to be the proposed &#8220;typing mode&#8221; for the gloves. So, I&#8217;m going to focus on that part alone—making a pair of general-purpose typing gloves, or &#8220;stenogloves&#8221; as I&#8217;ve begun calling them.</p>
+<p>My first step was to develop a <a title="Chorded Keyboard | Wikipedia" href="http://en.wikipedia.org/wiki/Chorded_keyboard" target="_blank">chorded</a>, 10-key typing system and a simple typing tutor game to learn the system. To accomplish this, I examined the <a title="Google Ngram Data" href="http://norvig.com/mayzner.html" target="_blank">Google Ngram data on English letter frequency</a>. With over 3.5 trillion letters in the data set, here are the frequency counts for each letter:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-20-at-10.17.50-AM.png"><img class="alignnone wp-image-345 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-20-at-10.17.50-AM-1024x771.png" alt="Screen Shot 2014-11-20 at 10.17.50 AM" width="610" height="459" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-20-at-10.17.50-AM-1024x771.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-20-at-10.17.50-AM-300x225.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/Screen-Shot-2014-11-20-at-10.17.50-AM.png 1086w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>[<a title="Google Ngram Intepretation" href="http://norvig.com/mayzner.html" target="_blank">Chart via Peter Norvig</a>]</p>
+<p>At first, I attempted to create the typing system using the simplest one and two-finger chords, and mapping the letters to chords in descending order of chord difficulty. (Single-finger chords for the most common letters, simple two-finger chords for less common letters, more complex two-finger and three-finger chords for even less common letters, etc.) After creating this initial draft of the typing system, I attempted to mime my way through the alphabet, only to discover that such a system would be incredibly difficult to learn.</p>
+<p>The system needed a common reference point—ideally, one that would allow for a mnemonic that could make learning the system easy—so I decided to try an alphabetical orientation. In this scheme, the eight most common letters in alphabetical order—&#8217;A&#8217;, &#8216;E&#8217;, &#8216;I&#8217;, &#8216;N&#8217;, &#8216;O&#8217;, &#8216;R&#8217;, &#8216;S&#8217;, &#8216;T&#8217;, which together account for 65% of all keystrokes—would be mapped to single-finger chords with each of the eight fingers on both hands (excluding thumbs), in sequential order from left pinky to right pinky with palms facing down. Until the letter &#8216;T&#8217;, letters in between these eight key letters would be typed by adding an appropriate number of fingers after the single-finger chord. (For example, &#8216;A&#8217; would be left pinky, &#8216;B&#8217; would be left pinky + left ring fingers, &#8216;C&#8217; would be left pinky + left ring + left middle, and so on.) After the &#8216;T&#8217; chord, the system continues in the opposite direction, with right pinky + right ring = &#8216;U&#8217;, and so on. &#8216;X&#8217;, &#8216;Y&#8217;, and &#8216;Z&#8217; have special chords (left index + right index, left middle + right index, left ring + right index) because of where they fall in the alphabet. Left thumb is reserved for shift, and right thumb is reserved for space / number / punctuation.</p>
+<p>After creating this system, I found I could mime my way through the alphabet very quickly and easily, which should provide some indicator of the difficulty with which such a system could be learned. I also added chords for numbers 0-9 and every punctuation mark, turned all the chords into 10-digit binary numbers, and converted these numbers to integers to allow them to be read easily into any computer program as a JSON file.</p>
+<p>Here is the Python script I used to generate that JSON file:</p><pre class="crayon-plain-tag">import json
+
+aToZ = {'A': ['LP'],
+		'B': ['LP','LR'],
+		'C': ['LP','LR','LM'],
+		'D': ['LP','LR','LM','LI'],
+		'E': ['LR'],
+		'F': ['LR','LM'],
+		'G': ['LR','LM','LI'],
+		'H': ['LR','LM','LI','RI'],
+		'I': ['LM'],
+		'J': ['LM','LI'],
+		'K': ['LM','LI','RI'],
+		'L': ['LM','LI','RI','RM'],
+		'M': ['LM','LI','RI','RM','RR'],
+		'N': ['LI'],
+		'O': ['RI'],
+		'P': ['RI','RM'],
+		'Q': ['RI','RM','RR'],
+		'R': ['RM'],
+		'S': ['RR'],
+		'T': ['RP'],
+		'U': ['RR','RP'],
+		'V': ['RM','RR','RP'],
+		'W': ['RI','RM','RR','RP'],
+		'X': ['LI','RI'],
+		'Y': ['LM','RI'],
+		'Z': ['LR','RI']}
+
+aToZbin = {'a':[],'b':[],'c':[],'d':[],'e':[],'f':[],'g':[],'h':[],'i':[],'j':[],'k':[],'l':[],'m':[],'n':[],'o':[],'p':[],'q':[],'r':[],'s':[],'t':[],'u':[],'v':[],'w':[],'x':[],'y':[],'z':[]}
+
+fingers = ['LP', 'LR', 'LM', 'LI', 'LT', 'RT', 'RI', 'RM', 'RR', 'RP']
+
+# lower case letters
+for key, value in aToZ.iteritems():
+	for finger in fingers:
+		if finger in value:
+			aToZbin[key.lower()].append(1)
+		else:
+			aToZbin[key.lower()].append(0)
+
+# capital letters
+for key in aToZbin.keys():
+	l = aToZbin[key]
+	m = l[:]
+	m[4] = 1
+	aToZbin[key.upper()] = m
+
+# numbers 0-9
+aToZbin[0] = [1,0,1,0,0,1,0,0,0,0]
+aToZbin[1] = [0,0,0,1,0,1,0,0,0,0]
+aToZbin[2] = [0,0,1,0,0,1,0,0,0,0]
+aToZbin[3] = [0,0,1,1,0,1,0,0,0,0]
+aToZbin[4] = [0,1,0,0,0,1,0,0,0,0]
+aToZbin[5] = [0,1,0,1,0,1,0,0,0,0]
+aToZbin[6] = [0,1,1,0,0,1,0,0,0,0]
+aToZbin[7] = [0,1,1,1,0,1,0,0,0,0]
+aToZbin[8] = [1,0,0,0,0,1,0,0,0,0]
+aToZbin[9] = [1,0,0,1,0,1,0,0,0,0]
+
+
+
+# symbols !-)
+num_symbols = ['!', '@', '#', '$', '%', '^', '&amp;', '*', '(', ')']
+for key in aToZbin.keys():
+	if key in range(10):
+		l = aToZbin[key]
+		m = l[:]
+		m[4] = 1
+		aToZbin[num_symbols[key]] = m
+
+# space and return
+aToZbin[' '] = [0,0,0,0,0,1,0,0,0,0]
+aToZbin['\n'] = [0,0,0,0,1,1,0,0,0,0]
+
+# / ?
+aToZbin['/'] = [0,0,0,0,1,1,1,0,0,1]
+aToZbin['?'] = [0,0,0,0,1,1,1,0,0,0]
+
+# = +
+aToZbin['='] = [0,0,0,1,1,1,1,0,0,0]
+aToZbin['+'] = [0,0,0,1,0,1,1,0,0,0]
+
+# &lt; &gt;
+aToZbin['&lt;'] = [0,1,0,1,0,0,0,0,0,0]
+aToZbin['&gt;'] = [0,0,0,0,0,0,1,0,1,0]
+
+# [ ]
+aToZbin['['] = [0,0,0,0,0,1,1,1,0,0]
+aToZbin[']'] = [0,0,0,0,0,1,0,0,1,1]
+
+# { }
+aToZbin['{'] = [0,0,0,0,0,1,1,1,1,0]
+aToZbin['}'] = [0,0,0,0,0,1,0,1,1,1]
+
+# " '
+aToZbin['\"'] = [1,0,0,1,0,0,0,0,0,0]
+aToZbin['\''] = [0,0,0,0,0,0,1,0,0,1]
+
+# , ; : . (and +space)
+aToZbin[','] = [0,0,0,0,0,1,1,0,0,0]
+aToZbin[';'] = [0,0,0,0,0,1,0,1,0,0]
+aToZbin[':'] = [0,0,0,0,0,1,0,0,1,0]
+aToZbin['.'] = [0,0,0,0,0,1,0,0,0,1]
+aToZbin[', '] = [1,0,0,0,0,1,1,0,0,0]
+aToZbin['; '] = [1,0,0,0,0,1,0,1,0,0]
+aToZbin[': '] = [1,0,0,0,0,1,0,0,1,0]
+aToZbin['. '] = [1,0,0,0,0,1,0,0,0,1]
+
+# underscore, dash, ndash, mdash
+aToZbin['_'] = [1,1,1,1,0,1,0,0,0,0]
+aToZbin['-'] = [0,0,0,0,0,1,1,1,1,1]
+aToZbin[u"\u2013"] = [0,0,1,1,0,1,1,1,0,0]
+aToZbin[u"\u2014"] = [0,1,1,1,0,1,1,1,1,0]
+
+# \ |
+aToZbin['\\'] = [0,0,0,1,1,1,0,0,0,1]
+aToZbin['|'] = [0,0,1,1,1,1,1,1,0,0]
+
+# ~ `
+aToZbin['~'] = [1,0,0,1,0,0,1,0,0,1]
+aToZbin['`'] = [0,1,1,0,0,0,0,1,1,0]
+
+
+# print and test uniqueness
+
+print aToZbin
+
+jb = aToZbin.values()
+
+print len(jb)
+
+unique_jb = []
+duplicate = []
+
+for i in jb:
+	if i not in unique_jb:
+		unique_jb.append(i)
+	else:
+		duplicate.append(i)
+
+print len(unique_jb)
+
+print duplicate
+
+
+# Turn into binary
+
+chords = {}
+lookup = [[] for _ in range(1024)]
+
+for key, value in aToZbin.iteritems():
+	number = int(''.join([str(i) for i in value]), 2)
+	chords[unicode(key)] = number
+	lookup[number].append(key)
+
+print chords
+print lookup
+
+with open('data.txt', 'w') as outfile:
+	json.dump(chords, outfile)</pre><p>And here&#8217;s the JSON file:</p><pre class="crayon-plain-tag">{": ": 530, "\u2014": 478, " ": 16, "$": 240, "(": 560, ",": 24, "0": 656, "4": 272, "8": 528, "&lt;": 320, "@": 112, "D": 992, "H": 488, "L": 236, "P": 44, "T": 33, "X": 104, "\\": 113, "`": 390, "d": 960, "h": 456, "l": 204, "p": 12, "t": 1, "x": 72, "|": 252, "\u2013": 220, "#": 176, "'": 9, "+": 88, "/": 57, "3": 208, "7": 464, ";": 20, "?": 56, "C": 928, "G": 480, "K": 232, "O": 40, "S": 34, "; ": 532, "W": 47, "[": 28, "_": 976, "c": 896, "g": 448, "k": 200, "o": 8, "s": 2, "w": 15, "{": 30, "\n": 48, "\"": 576, "&amp;": 432, ". ": 529, "*": 496, ".": 17, "2": 144, "6": 400, ":": 18, "&gt;": 10, "B": 800, "F": 416, "J": 224, "N": 96, "R": 36, "V": 39, "Z": 296, "^": 368, "b": 768, "f": 384, "j": 192, "n": 64, "r": 4, "v": 7, "z": 264, "~": 585, "!": 688, "%": 304, ", ": 536, ")": 624, "-": 31, "1": 80, "5": 336, "9": 592, "=": 120, "A": 544, "E": 288, "I": 160, "M": 238, "Q": 46, "U": 35, "Y": 168, "]": 19, "a": 512, "e": 256, "i": 128, "m": 206, "q": 14, "u": 3, "y": 136, "}": 23}</pre><p>Using this data, I made a simple typing tutor game in Processing that pulls the text from any news article on the web for users to type out. The code is <a title="Typing Tutor | Github" href="https://github.com/rossgoodwin/typingtutor" target="_blank">available on Github</a>.</p>
+<p><iframe src="//player.vimeo.com/video/112401652" width="400" height="300" frameborder="0" title="Stenogloves Typing Tutor" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>The next step was to begin tinkering with actual gloves, and so I purchased a pair of inexpensive motorcycle gloves to experiment with.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/oneal-gloves.jpg"><img class="aligncenter size-medium wp-image-353" src="http://www.thehypertext.com/wp-content/uploads/2014/11/oneal-gloves-300x300.jpg" alt="oneal gloves" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/oneal-gloves.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/oneal-gloves-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/oneal-gloves-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>I also needed to make a decision about the actuation method for each fingertip. I settled on using mechanical keyboard switches instead of force-sensitive resistors because I knew the switches would be easier to work with and would provide better tactile feedback for users. After doing <a title="Cherry MX Mechanical Keyboard Switches" href="http://www.keyboardco.com/blog/index.php/2012/12/an-introduction-to-cherry-mx-mechanical-switches/" target="_blank">a significant amount of research on mechanical keyboard components</a>, I settled on Cherry MX Blue switches, due to their tactile feel and clicky responsiveness.</p>
+<p>Here is a cross sectional gif of a Cherry MX Blue switch:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/Blue.gif"><img class="aligncenter size-full wp-image-352" src="http://www.thehypertext.com/wp-content/uploads/2014/11/Blue.gif" alt="Blue" width="200" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/Blue.gif 200w, http://www.thehypertext.com/wp-content/uploads/2014/11/Blue-50x50.gif 50w" sizes="(max-width: 200px) 100vw, 200px" /></a></p>
+<p>Tom Igoe suggested I build a simple keyboard before attaching keys to the gloves. However, I was eager to begin working with the gloves, so I turned the right one into a mouse glove using parts from a wireless mouse I purchased. Next, I plan to mount an accelerometer on the left glove, then mount keyboard switches to the fingertips on both gloves.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632.jpeg"><img class="aligncenter size-medium wp-image-356" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632-300x300.jpeg" alt="image_3" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_3-e1416501541632.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_1.jpeg"><img class="aligncenter size-medium wp-image-355" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_1-300x300.jpeg" alt="image_1" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_1-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_1-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_1-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_1-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_1.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847.jpeg"><img class="aligncenter size-medium wp-image-357" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847-300x300.jpeg" alt="image_8" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_8-e1416501561847.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_17.jpeg"><img class="aligncenter size-medium wp-image-358" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_17-300x300.jpeg" alt="image_17" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_17-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_17-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_17-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_17-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_17.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>After playtesting the mouse glove, I built a 10-key keyboard by mounting Cherry MX Blue switches to a wooden board. I still need to connect the switches to an Arduino in order to test this keyboard, which I hope to do very soon.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610.jpeg"><img class="aligncenter size-medium wp-image-359" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610-300x300.jpeg" alt="image_26" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_26-e1416501877610.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_27.jpeg"><img class="aligncenter size-medium wp-image-360" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_27-300x224.jpeg" alt="image_27" width="300" height="224" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_27-300x224.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_27-1024x764.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_27.jpeg 1296w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_30.jpeg"><img class="aligncenter size-medium wp-image-361" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_30-300x224.jpeg" alt="image_30" width="300" height="224" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_30-300x224.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_30-1024x764.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_30.jpeg 1296w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/11/image_35-e1416501896858.jpeg"><img class="aligncenter size-medium wp-image-362" src="http://www.thehypertext.com/wp-content/uploads/2014/11/image_35-e1416501896858-224x300.jpeg" alt="image_35" width="224" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/image_35-e1416501896858-224x300.jpeg 224w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_35-e1416501896858-764x1024.jpeg 764w, http://www.thehypertext.com/wp-content/uploads/2014/11/image_35-e1416501896858.jpeg 968w" sizes="(max-width: 224px) 100vw, 224px" /></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/11/20/stenogloves-part-ii/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+	</channel>
+</rss>

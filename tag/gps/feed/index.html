@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gps &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/gps/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Sound Camera, Part II</title>
+		<link>http://www.thehypertext.com/2015/10/06/sound-camera-part-ii/</link>
+		<pubDate>Tue, 06 Oct 2015 02:20:44 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[gps]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=733</guid>
+		<description><![CDATA[<p>Using JavaScript and Python Flask, I created a functional software prototype of the Sound Camera.</p>
+<p><a href="http://www.thehypertext.com/2015/10/06/sound-camera-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Using JavaScript and Python Flask, I created a functional software prototype of the Sound Camera: <a href="http://rossgoodwin.com/soundcamera" target="_blank">rossgoodwin.com/soundcamera</a></p>
+<p>The front-end JavaScript code is available <a href="https://github.com/rossgoodwin/soundcamera" target="_blank">on GitHub</a>. Here is the primary back-end Python code:</p><pre class="crayon-plain-tag">import os
+import json
+import uuid
+from base64 import decodestring
+import time
+from random import choice as rc
+from random import sample as rs
+import re
+
+import PIL
+from PIL import Image
+import requests
+import exifread
+
+from flask import Flask, request, abort, jsonify
+from flask.ext.cors import CORS
+from werkzeug import secure_filename
+
+from clarifai.client import ClarifaiApi
+
+app = Flask(__name__)
+CORS(app)
+
+app.config['UPLOAD_FOLDER'] = '/var/www/SoundCamera/SoundCamera/static/img'
+IMGPATH = '/var/www/SoundCamera/SoundCamera/static/img/'
+
+clarifai_api = ClarifaiApi()
+
+@app.route("/")
+def index():
+    return "These aren't the droids you're looking for."
+
+@app.route("/img", methods=["POST"])
+def img():
+	request.get_data()
+	if request.method == "POST":
+		f = request.files['file']
+		if f:
+			filename = secure_filename(f.filename)
+			f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			new_filename = resize_image(filename)
+			return jsonify(uri=main(new_filename))
+		else:
+			abort(501)
+
+@app.route("/b64", methods=["POST"])
+def base64():
+	if request.method == "POST":
+		fstring = request.form['base64str']
+		filename = str(uuid.uuid4())+'.jpg'
+		file_obj = open(IMGPATH+filename, 'w')
+		file_obj.write(fstring.decode('base64'))
+		file_obj.close()
+		return jsonify(uri=main(filename))
+
+@app.route("/url")
+def url():
+	img_url = request.args.get('url')
+	response = requests.get(img_url, stream=True)
+	orig_filename = img_url.split('/')[-1]
+	if response.status_code == 200:
+		with open(IMGPATH+orig_filename, 'wb') as f:
+			for chunk in response.iter_content(1024):
+				f.write(chunk)
+		new_filename = resize_image(orig_filename)
+		return jsonify(uri=main(new_filename))
+	else:
+		abort(500)
+
+
+# def allowed_img_file(filename):
+#     return '.' in filename and \
+# 		filename.rsplit('.', 1)[1].lower() in set(['.jpg', '.jpeg', '.png'])
+
+def resize_image(fn):
+    longedge = 640
+    orientDict = {
+        1: (0, 1),
+        2: (0, PIL.Image.FLIP_LEFT_RIGHT),
+        3: (-180, 1),
+        4: (0, PIL.Image.FLIP_TOP_BOTTOM),
+        5: (-90, PIL.Image.FLIP_LEFT_RIGHT),
+        6: (-90, 1),
+        7: (90, PIL.Image.FLIP_LEFT_RIGHT),
+        8: (90, 1)
+    }
+
+    imgOriList = []
+    try:
+        f = open(IMGPATH+fn, "rb")
+        exifTags = exifread.process_file(f, details=False, stop_tag='Image Orientation')
+        if 'Image Orientation' in exifTags:
+            imgOriList.extend(exifTags['Image Orientation'].values)
+    except:
+        pass
+
+    img = Image.open(IMGPATH+fn)
+    w, h = img.size
+    newName = str(uuid.uuid4())+'.jpeg'
+    if w &gt;= h:
+        wpercent = (longedge/float(w))
+        hsize = int((float(h)*float(wpercent)))
+        img = img.resize((longedge,hsize), PIL.Image.ANTIALIAS)
+    else:
+        hpercent = (longedge/float(h))
+        wsize = int((float(w)*float(hpercent)))
+        img = img.resize((wsize,longedge), PIL.Image.ANTIALIAS)
+
+    for val in imgOriList:
+        if val in orientDict:
+            deg, flip = orientDict[val]
+            img = img.rotate(deg)
+            if flip != 1:
+                img = img.transpose(flip)
+
+    img.save(IMGPATH+newName, format='JPEG')
+    os.remove(IMGPATH+fn)
+    
+    return newName
+
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
+def get_tags(fp):
+    fileObj = open(fp)
+    result = clarifai_api.tag_images(fileObj)
+    resultObj = result['results'][0]
+    tags = resultObj['result']['tag']['classes']
+    return tags
+
+def genius_search(tags):
+    access_token = 'd2IuV9fGKzYEWVnzmLVtFnm-EYvBQKR8Uh3I1cfZOdr8j-BGVTPThDES532dym5a'
+    payload = {
+        'q': ' '.join(tags),
+        'access_token': access_token
+    }
+    endpt = 'http://api.genius.com/search'
+    response = requests.get(endpt, params=payload)
+    results = response.json()
+    hits = results['response']['hits']
+    
+    artists_titles = []
+    
+    for h in hits:
+        hit_result = h['result']
+        if hit_result['url'].endswith('lyrics'):
+            artists_titles.append(
+                (hit_result['primary_artist']['name'], hit_result['title'])
+            )
+    
+    return artists_titles
+
+def spotify_search(query):
+    endpt = "https://api.spotify.com/v1/search"
+    payload = {
+        'q': query,
+        'type': 'track'
+    }
+    response = requests.get(endpt, params=payload)
+    result = response.json()
+    result_zero = result['tracks']['items'][0]
+    
+    return result_zero['uri']
+
+def main(fn):
+    tags = get_tags(IMGPATH+fn)
+    for tag_chunk in chunks(tags,3):
+        artists_titles = genius_search(tag_chunk)
+        for artist, title in artists_titles:
+            try:
+                result_uri = spotify_search(artist+' '+title)
+            except IndexError:
+                pass
+            else:
+                return result_uri
+
+
+if __name__ == "__main__":
+    app.run()</pre><p>&nbsp;</p>
+<p>It uses the same algorithm discussed in <a href="http://www.thehypertext.com/2015/09/14/sound-camera/" target="_blank">my prior post</a>. Now that I have the opportunity to test it more, I am not quite satisfied with the results it is providing. First of all, they are not entirely deterministic (you can upload the same photo twice and end up with two different songs in some cases). Moreover, the results from a human face &#8212; which I expect to be a common use case &#8212; are not very personal. For the next steps in this project, I plan to integrate additional data including GPS, weather, time of day, and possibly even facial expressions in order to improve the output.</p>
+<p>The broken cameras I ordered from eBay have arrived, and I have been considering how to use them as cases for the new models. I also purchased a GPS module for my Raspberry Pi, so the next Sound Camera prototype, with new features integrated, will likely be a physical version. I&#8217;m planning to use this Kodak Brownie camera (c. 1916):</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1207-e1444097935523.jpg"><img class="aligncenter size-large wp-image-736" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1207-e1444097935523-1024x1024.jpg" alt="IMG_1207" width="610" height="610" /></a></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

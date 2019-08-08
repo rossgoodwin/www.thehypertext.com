@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>horror &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/horror/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>The Mechanical Turk&#8217;s Ghost</title>
+		<link>http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/</link>
+		<pubDate>Sat, 13 Sep 2014 08:02:24 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Automata]]></category>
+		<category><![CDATA[automata]]></category>
+		<category><![CDATA[chess]]></category>
+		<category><![CDATA[ghost]]></category>
+		<category><![CDATA[horror]]></category>
+		<category><![CDATA[mechanical turk]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=133</guid>
+		<description><![CDATA[<p>I began the first exercise of <a title="Automata" href="http://nysoundworks.org/teaching/automata/" target="_blank">Automata</a> with an exploration of two subjects that interest me: the game of <a title="lichess profile" href="http://en.lichess.org/@/themadstork" target="_blank">chess</a> and horror fiction. These subjects brought me to a simple question: how to make the game of chess terrifying?</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/">Read More...</a>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23.jpeg"><img class="aligncenter size-medium wp-image-139" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-300x185.jpeg" alt="image_23" width="300" height="185" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-300x185.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-1024x633.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_23.jpeg 1108w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>I began the first exercise of <a title="Automata" href="http://nysoundworks.org/teaching/automata/" target="_blank">Automata</a> with an exploration of two subjects that interest me: the game of <a title="lichess profile" href="http://en.lichess.org/@/themadstork" target="_blank">chess</a> and horror fiction. These subjects brought me to a simple question: how to make the game of chess terrifying?</p>
+<p>Here are the elements that I decided on, which could be implemented separately or all at once, presented in ascending order of difficulty (or my perception thereof):</p>
+<ul>
+<li>Pieces fly off the board when the game becomes &#8220;angry&#8221; at the players &#8212; this could be due to a variety of factors, including players taking too much time to make a move, overall game duration, or chess engine analytics.</li>
+<li>The game generates music and noises that become more terrifying when you start to lose (using a music template engine).</li>
+<li>The game generates visual elements on a screen.</li>
+<li>LEDs show that the move you should&#8217;ve made (using the Stockfish open source chess engine).</li>
+<li>The game generates a story (using natural language processing &amp; generation) that you can read afterwards.</li>
+</ul>
+<p>My first study involved using a square on the board as a switch in a circuit. I decided to focus on the most common opening move for white: pawn to e4.</p>
+<p>I began by gluing a conductive washer to the base of a white pawn, inserting wires into a vinyl chess board, and fashioning makeshift conductive pads with pools of solder.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_20.jpeg"><img class="aligncenter size-medium wp-image-140" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_20-300x300.jpeg" alt="image_20" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_20-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_20-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_20-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_20-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_20.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>I then connected each square to an LED.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_9.jpeg"><img class="aligncenter size-medium wp-image-137" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_9-300x300.jpeg" alt="image_9" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_9-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_9-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_9-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_9-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_9.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_13.jpeg"><img class="aligncenter size-medium wp-image-138" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_13-300x300.jpeg" alt="image_13" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_13-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_13-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_13-1024x1024.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_13-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_13.jpeg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>A few observations I made after conducting this initial study:</p>
+<ul>
+<li>Tracking the game will not require electronic IDs for individual pieces, so long as the game always begins in the standard starting position.</li>
+<li>64 inputs will (probably) be required (unless there&#8217;s a simple, elegant solution that I&#8217;m not seeing at the moment).</li>
+<li>I need to order a lot of parts.</li>
+</ul>
+<p>I started by ordering some parts. At present, I have ordered:</p>
+<ul>
+<li>4 12V DC Solenoids with Spring-Return Clappers</li>
+<li>100 Super Bright Blue LEDs</li>
+<li>140 1/4&#8243; Crimp Terminals (to use as conductive pads)</li>
+<li>16 MCP23S17-E/SP Input/Output Expander Chips</li>
+<li>40 CD4021BE Parallel-to-Serial Shift Register Chips</li>
+<li>1 Giant Breadboard</li>
+<li>1 Raspberry Pi Model B+ (see software investigation below).</li>
+</ul>
+<p><a title="Sam Levign" href="http://www.saaaam.com/" target="_blank">Sam Levign</a> wisely pointed out that I could use a video camera + <a title="OpenCV" href="http://opencv.org/" target="_blank">OpenCV</a> to accomplish the piece tracking, but in the spirit of investigating automata, I am pursuing the mechanical route for now. In theory, the hardware listed above should give me far more than enough General Purpose I/O pins.</p>
+<p>In my second study, I investigated the software component of the device. Stockfish, the world&#8217;s most powerful chess engine, is open source. and provides an ideal solution to the problems of gathering and interpreting game analysis data. I also concluded that the Raspberry Pi would likely provide the best scripting platform for Stockfish.</p>
+<p>The terminal interface for Stockfish:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.16.33-AM.png"><img class="aligncenter wp-image-147 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.16.33-AM-1024x717.png" alt="Screen Shot 2014-09-13 at 3.16.33 AM" width="610" height="427" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.16.33-AM-1024x717.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.16.33-AM-300x210.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.16.33-AM.png 1368w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>I was relieved to find that the interface does not rely on chess notation. Instead, it uses a much more straightforward [originSquare][destinationSquare] notation. The relevant commands to manipulate the interface are:</p><pre class="crayon-plain-tag">position startpos moves e2e4 d7d5 ...
+go movetime 5000</pre><p>The first line sets the board position. The second line specifies how long the computer should spend analyzing the position. (In this case, 5000 = 5 seconds.)</p>
+<p>In the console, the program prints its output in real time. It is fun to watch, especially if you type &#8220;go infinite&#8221;, in which case the computer will analyze indefinitely until you enter &#8220;stop&#8221;. This is what the output looks like:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.44.28-AM.png"><img class="aligncenter wp-image-148 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.44.28-AM-1024x717.png" alt="Screen Shot 2014-09-13 at 3.44.28 AM" width="610" height="427" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.44.28-AM-1024x717.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.44.28-AM-300x210.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-13-at-3.44.28-AM.png 1368w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Using Python&#8217;s subprocess library, I was able to manipulate the engine and its output using Python scripts:</p><pre class="crayon-plain-tag">import subprocess
+from time import sleep
+
+engine = subprocess.Popen(
+	'stockfish',
+	stdin=subprocess.PIPE,
+	stdout=subprocess.PIPE,
+	)
+
+def put(command):
+	engine.stdin.write(command+'\n')
+
+def move(coords):
+	game.append(coords)
+	game_string = ' '.join(game)
+	put("position startpos moves " + game_string)
+
+def analyze(m):
+	last_line = ""
+	move(m)
+	put("go infinite")
+	nextmove = raw_input('&gt; ')
+	if bool(nextmove) == True:
+		put("stop")
+		while True:
+			text = engine.stdout.readline().strip()
+			split_text = text.split(' ')
+			if len(split_text) &gt; 6 and split_text[5] == 'score':
+				score = split_text[7]
+			if split_text[0] == 'bestmove':
+				return {'rightmove': split_text[1],
+						'ponder': split_text[3],
+						'info': last_line,
+						'score': int(score),
+						'movemade': nextmove}
+				break
+			last_line = text
+
+
+game = []
+first_move = raw_input('&gt; ')
+while True:
+	analysis = analyze(first_move)
+	print analysis
+	first_move = analysis['movemade']</pre><p>The script above analyzes each move the players make and stops analyzing once the next move has been made, at which point it prints out the best move the player could have made along with a &#8220;score&#8221; for the game so far. The best move will be mapped onto the board&#8217;s LEDs and the score will generate auditory/visual feedback. When the score dips below (or above) a certain threshold, one or more of the solenoids beneath the board will activate.</p>
+<p>I am very excited to be working on this project. I plan to experiment with various aspects of the overall design until I arrive at the best solutions for each part of it.</p>
+<p><strong>Edit:</strong> This <a title="SCP-1875" href="http://scp-wiki.net/scp-1875" target="_blank">fictional story</a> I wrote a while back may serve as fodder for the narrative aspect of the project, but I don&#8217;t want to give too much away w/r/t specifics at the moment.</p>
+<p><strong>Edit2:</strong> And <a title="Street Chess" href="http://streetchess.tumblr.com/" target="_blank">these photographs</a> may serve as visual fodder.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

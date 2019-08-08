@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>image tagging &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/image-tagging/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Candidate Image Explorer</title>
+		<link>http://www.thehypertext.com/2015/09/17/candidate-image-explorer/</link>
+		<pubDate>Thu, 17 Sep 2015 15:53:26 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Data Personalization]]></category>
+		<category><![CDATA[2016 election]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[deep learning]]></category>
+		<category><![CDATA[election scrape]]></category>
+		<category><![CDATA[fusion]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[image tagging]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[social media]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=700</guid>
+		<description><![CDATA[<p>For this week's homework in Designing for Data Personalization with Sam Slover, I made progress on a project that I'm working on for Fusion as part of their 2016 US Presidential Election coverage.</p>
+<p><a href="http://www.thehypertext.com/2015/09/17/candidate-image-explorer/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For this week&#8217;s homework in Designing for Data Personalization with Sam Slover, I made progress on a project that I&#8217;m working on for <a href="http://fusion.net/">Fusion</a> as part of their 2016 US Presidential Election coverage. I began this project by downloading all the images from each candidate&#8217;s Twitter, Facebook, and Instagram account &#8212; about 60,000 in total &#8212; then running those images through <a href="http://clarifai.com/">Clarifai</a>&#8216;s convolutional neural networks to generate descriptive tags.</p>
+<p>With all the images hosted on <a href="https://aws.amazon.com/s3/" target="_blank">Amazon s3</a>, and the tag data hosted on <a href="https://parse.com/">parse.com</a>, I created a simple page where users can explore the candidates&#8217; images by topic and by candidate. The default is all topics and all candidates, but users can narrow the selection of images displayed by making multiple selections from each field. Additionally, more images will load as you scroll down the page.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM.png"><img class="aligncenter size-large wp-image-703" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.24.47 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM.png"><img class="aligncenter size-large wp-image-710" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.30.30 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM.png"><img class="aligncenter size-large wp-image-707" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.20.50 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM.png"><img class="aligncenter size-large wp-image-701" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.28.45 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM.png"><img class="aligncenter size-large wp-image-702" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.25.42 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM.png"><img class="aligncenter size-large wp-image-709" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.19.53 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Unfortunately, the AI-enabled image tagging doesn&#8217;t always work as well as one might hope.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM.png"><img class="aligncenter size-large wp-image-705" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.23.49 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Here&#8217;s the page&#8217;s JavaScript code:</p><pre class="crayon-plain-tag">var name2slug = {};
+var slug2name = {};
+
+Array.prototype.remove = function() {
+    var what, a = arguments, L = a.length, ax;
+    while (L &amp;&amp; this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+}
+
+Array.prototype.chunk = function(chunkSize) {
+    var array=this;
+    return [].concat.apply([],
+        array.map(function(elem,i) {
+            return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
+        })
+    );
+}
+
+function dateFromString(str) {
+	var m = str.match(/(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z/);
+	var date = new Date(Date.UTC(+m[1], +m[2], +m[3], +m[4], +m[5], +m[6]));
+	var options = {
+	    weekday: "long", year: "numeric", month: "short",
+	    day: "numeric", hour: "2-digit", minute: "2-digit"
+	};
+	return date.toLocaleTimeString("en-us", options);
+}
+
+function updatePhotos(query) {
+	$.ajax({
+		url: 'https://api.parse.com/1/classes/all_photos?limit=1000&amp;where='+JSON.stringify(query),
+		type: 'GET',
+		dataType: 'json',
+		success: function(response) {
+			// console.log(response);
+			$('#img-container').empty();
+
+			var curChunk = 0;
+			var resultChunks = response['results'].chunk(30);
+
+			function appendPhotos(chunkNo) {
+
+				resultChunks[chunkNo].map(function(obj){
+					var date = dateFromString(obj['datetime'])
+					var imgUrl = "https://s3-us-west-2.amazonaws.com/electionscrape/" + obj['source'] + "/400px_" + obj['filename'];
+					var fullImgUrl = "https://s3-us-west-2.amazonaws.com/electionscrape/" + obj['source'] + "/" + obj['filename'];
+					$('#img-container').append(
+						$('&lt;div class=\"grid-item\"&gt;&lt;/div&gt;').append(
+							'&lt;a href=\"'+fullImgUrl+'\"&gt;&lt;img src=\"'+imgUrl+'\" width=\"280px\"&gt;&lt;/a&gt;&lt;p&gt;'+slug2name[obj['candidate']]+'&lt;/p&gt;&lt;p&gt;'+date+'&lt;/p&gt;&lt;p&gt;'+obj['source']+'&lt;/p&gt;'
+						) // not a missing semicolon
+					);
+					// console.log(obj['candidate']);
+					// console.log(obj['datetime']);
+					// console.log(obj['source']);
+					// console.log(obj['filename']);
+				});
+
+			}
+
+			appendPhotos(curChunk);
+
+			window.onscroll = function(ev) {
+			    if ((window.innerHeight + window.scrollY) &gt;= document.body.offsetHeight) {
+			        curChunk++;
+			        appendPhotos(curChunk);
+			    }
+			};
+
+
+		},
+		error: function(response) { "error" },
+		beforeSend: setHeader
+	});
+}
+
+function setHeader(xhr) {
+	xhr.setRequestHeader("X-Parse-Application-Id", "ID-GOES-HERE");
+	xhr.setRequestHeader("X-Parse-REST-API-Key", "KEY-GOES-HERE");
+}
+
+function makeQuery(candArr, tagArr) {
+
+	orArr = tagArr.map(function(tag){
+		return { "tags": tag };
+	})
+
+	if (tagArr.length === 0 &amp;&amp; candArr.length &gt; 0) {
+		var query = {
+			'candidate': {"$in": candArr}
+		};
+	}
+	else if (tagArr.length &gt; 0 &amp;&amp; candArr.length === 0) {
+		var query = {
+			'$or': orArr
+		};
+	}
+	else if (tagArr.length === 0 &amp;&amp; candArr.length === 0) {
+		var query = {};
+	}
+	else {
+		var query = {
+			'candidate': {"$in": candArr},
+			'$or': orArr
+		};
+	}
+
+	updatePhotos(query);
+
+}
+
+(function(){
+
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 300
+});
+
+var selectedCandidates = [];
+var selectedTags = [];
+
+$.getJSON("data/candidates.json", function(data){
+	var candNames = Object.keys(data).map(function(slug){
+		var name = data[slug]['name'];
+		name2slug[name] = slug;
+		slug2name[slug] = name;
+		return name;
+	}).sort();
+
+	candNames.map(function(name){
+		$('#candidate-dropdown').append(
+			'&lt;li class=\"candidate-item\"&gt;&lt;a href=\"#\"&gt;'+name+'&lt;/a&gt;&lt;/li&gt;'
+		);
+	});
+
+	$('.candidate-item').click(function(){
+		var name = $(this).text();
+		var slug = name2slug[name];
+		if ($.inArray(slug, selectedCandidates) === -1) {
+			selectedCandidates.push(slug);
+			makeQuery(selectedCandidates, selectedTags);
+			console.log(selectedCandidates);
+			$('#selected-candidates').append(
+				$('&lt;button class=\"btn btn-danger btn-xs cand-select-btn\"&gt;&lt;span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"&gt;&lt;/span&gt;'+name+'&lt;/button&gt;')
+					.click(function(){
+						$(this).fadeOut("fast", function(){
+							selectedCandidates.remove(name2slug[$(this).text()]);
+							makeQuery(selectedCandidates, selectedTags);
+							console.log(selectedCandidates);
+						});
+					}) // THIS IS NOT A MISSING SEMI-COLON
+			);
+		}
+	});
+});
+
+
+$.getJSON("data/tags.json", function(data){
+	var tags = data["tags"].sort();
+	tags.map(function(tag){
+		$('#tag-dropdown').append(
+			'&lt;li class=\"tag-item\"&gt;&lt;a href=\"#\"&gt;'+tag+'&lt;/a&gt;&lt;/li&gt;'
+		);
+	});
+
+	$('.tag-item').click(function(){
+		var tag = $(this).text();
+		if ($.inArray(tag, selectedTags) === -1) {
+			selectedTags.push(tag);
+			makeQuery(selectedCandidates, selectedTags);
+			console.log(selectedTags);
+			$('#selected-tags').append(
+				$('&lt;button class=\"btn btn-primary btn-xs tag-select-btn\"&gt;&lt;span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"&gt;&lt;/span&gt;'+tag+'&lt;/button&gt;')
+					.click(function(){
+						$(this).fadeOut("fast", function(){
+							selectedTags.remove($(this).text());
+							makeQuery(selectedCandidates, selectedTags);
+							console.log(selectedTags);
+						});
+					})
+			);
+		}
+	});
+});
+
+makeQuery(selectedCandidates, selectedTags);
+
+})();</pre><p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

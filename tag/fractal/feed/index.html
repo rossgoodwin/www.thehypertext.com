@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>fractal &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/fractal/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Primitive Fractal, Part II</title>
+		<link>http://www.thehypertext.com/2014/09/14/primitive-fractal-part-ii/</link>
+		<pubDate>Sun, 14 Sep 2014 04:44:00 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[fractal]]></category>
+		<category><![CDATA[icm]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=158</guid>
+		<description><![CDATA[<p>For this week's ICM homework, Dan Shiffman asked us to experiment with rule-based animation, motion, and interaction. I decided to expand on <a title="Primitive Fractal" href="http://www.thehypertext.com/2014/09/07/primitive-fractal/">the primitive fractal pattern I developed last week</a> and recorded the results in a video. All the code is available <a title="Primitive Fractal &#124; Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">on Github</a>.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/14/primitive-fractal-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><iframe src="//player.vimeo.com/video/106135507" width="400" height="300" frameborder="0" title="Primitive Fractal v3" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p><span style="color: #ff6600;"><strong>SEIZURE WARNING FOR VIDEOS</strong></span></p>
+<p><strong>UPDATE: </strong>I was able to solve the lag problem with a combination of two solutions: stopping further recursion when the origin square falls outside a certain window and stopping the creation of new levels when the pattern zooms in. On <a title="Abhishek Singh" href="http://shek.it/" target="_blank">Abhishek Singh</a>&#8216;s suggestion, I also added comments to my code. <a title="Primitive Fractal | Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">The Github repository</a> has been updated (see the &#8220;main&#8221; folder).</p>
+<p>Above is a new video of the processing script in action. My original post is below&#8230;</p>
+<p><iframe src="//player.vimeo.com/video/106084469" width="400" height="300" frameborder="0" title="Primitive Fractal" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>For this week&#8217;s ICM homework, Dan Shiffman asked us to experiment with rule-based animation, motion, and interaction. I decided to expand on <a title="Primitive Fractal" href="http://www.thehypertext.com/2014/09/07/primitive-fractal/">the primitive fractal pattern I developed last week</a> and recorded the results in the video above. All the code is available <a title="Primitive Fractal | Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">on Github</a>.</p>
+<p>The first goal I tried to accomplish was zooming in on the pattern. The only feasible way I found to accomplish this was to regenerate the shape over and over again with different parameters inside a draw loop. By increasing the origin square&#8217;s width, I could make the entire pattern grow.</p><pre class="crayon-plain-tag">origin = 256
+
+def draw():
+  background(0,0,100)
+  noStroke()
+  fill(7, 30, 100, 100)
+  rect(256, 256, origin, origin)
+  drawFourSquares(256, 256, origin)
+  origin *= 1.01</pre><p>Using *= rather than += allowed for smooth growth of the entire pattern due to its mathematical properties.</p>
+<p>Next, I made the colors in the pattern shift. I accomplished this by using the frameCount variable with a modulo operation to make another variable (count) increment from 1 to the number of levels in the fractal.</p><pre class="crayon-plain-tag">def draw():
+  count = frameCount % (log(origin)/log(2))
+  background(0, 0, 100)
+  noStroke()
+  fill(100-(abs(log(origin)/log(2) - count - 1)/(log(origin)/log(2)))*93,
+       100-((log(origin)/log(2))/(log(origin)/log(2)))*70,
+       100,
+       30+((log(origin)/log(2))/(log(origin)/log(2)))*70)
+  rect(origin, origin, origin, origin)
+  drawFourSquares(origin, origin, origin, count)</pre><p>Finally, I combined the two effects to create one visualization:</p><pre class="crayon-plain-tag">def draw():
+  count = frameCount % (log(origin)/log(2))
+  background(0, 0, 100)
+  noStroke()
+  fill(100-(abs(log(origin)/log(2) - count - 1)/(log(origin)/log(2)))*93,
+       100-((log(origin)/log(2))/(log(origin)/log(2)))*70,
+       100,
+       30+((log(origin)/log(2))/(log(origin)/log(2)))*70)
+  rect(256, 256, origin, origin)
+  drawFourSquares(256, 256, origin, count)
+  origin *= 1.01</pre><p>The main issue I encountered was frame rate lag. The more detailed the fractal, the more the program would lag. I experimented with adding an acceleration factor to overcome the lag, but that seemed to make the lag accelerate along with the animation.  I hope to learn more about potential solutions to overcome this issue. Perhaps there is a way to get Processing to &#8220;ignore&#8221; the shapes outside a specific field of reference. (This has since been solved. See UPDATE at the top of the post.)</p>
+<p>To get an idea of how much processing power I&#8217;m using when I run this sketch, I used the &#8220;top&#8221; command in the terminal. These were the results:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-14-at-8.31.03-PM.png"><img class="aligncenter size-large wp-image-174" src="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-14-at-8.31.03-PM-1024x676.png" alt="Screen Shot 2014-09-14 at 8.31.03 PM" width="610" height="402" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-14-at-8.31.03-PM-1024x676.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-14-at-8.31.03-PM-300x198.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-14-at-8.31.03-PM.png 1196w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>As I observed, Java (via Processing) is using over 100% of my CPU. I would like to run this sketch on a more powerful computer at some point to see what happens.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Primitive Fractal</title>
+		<link>http://www.thehypertext.com/2014/09/07/primitive-fractal/</link>
+		<pubDate>Sun, 07 Sep 2014 09:22:50 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[fractal]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[Helge von Koch]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[snowflake]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=87</guid>
+		<description><![CDATA[<p>For my ICM homework, I created a primitive fractal pattern. The source code for the image on the left is <a title="Primitive Fractal &#124; Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">available on Github</a>.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/07/primitive-fractal/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/final.png"><img class="aligncenter wp-image-89 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/final-300x300.png" alt="Snowflake Fractal" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/final-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/final.png 1536w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Our first homework assignment for <a title="Introduction to Computational Media" href="https://github.com/ITPNYU/ICM-2014" target="_blank">Introduction to Computational Media</a> with <a title="Daniel Shiffman" href="http://shiffman.net/" target="_blank">Dan Shiffman</a> was somewhat open ended. Dan asked to us make a static image using the basic shape and line tools in <a title="Processing" href="http://www.processing.org" target="_blank">Processing</a>, and to write a blog post about it. I decided to create a primitive fractal pattern. The source code for the image above is <a title="Primitive Fractal | Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">available on Github</a>.</p>
+<p>I constructed a variation on the fractal curve known as a <a title="Koch snowflake" href="http://en.wikipedia.org/wiki/Koch_snowflake" target="_blank">Koch snowflake</a>. First specified by Swedish mathematician <a title="Helge von Koch" href="http://en.wikipedia.org/wiki/Helge_von_Koch" target="_blank">Helge von Koch</a> in 1904, the Koch snowflake is one of the first fractal curves to have been described.</p>
+<p>Rather than using equilateral triangles, I used squares. This was my first sketch:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/notebook-e1410078392667.jpg"><img class="aligncenter wp-image-93 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/notebook-e1410078392667-225x300.jpg" alt="fractal notebook drawing" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/notebook-e1410078392667-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/09/notebook-e1410078392667.jpg 720w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p>&nbsp;</p>
+<p>I then mapped out the base pattern, starting with an 8 x 8 unit &#8220;origin square&#8221;, and derived the relevant equations to transpose coordinates beginning with that square:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image-e1410078604166.jpeg"><img class="aligncenter wp-image-102 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image-e1410078604166-225x300.jpeg" alt="whiteboard 1" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image-e1410078604166-225x300.jpeg 225w, http://www.thehypertext.com/wp-content/uploads/2014/09/image-e1410078604166.jpeg 720w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905.jpeg"><img class="aligncenter wp-image-96 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905-300x300.jpeg" alt="whiteboard 2" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_1-e1410078815905.jpeg 720w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425.jpeg"><img class="aligncenter wp-image-100 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425-300x300.jpeg" alt="whiteboard 3" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_5-e1410078897425.jpeg 720w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855.jpeg"><img class="aligncenter wp-image-101 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855-300x300.jpeg" alt="whiteboard 4" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_6-e1410079093855.jpeg 720w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Using these equations as a guide, I then wrote some pseudocode for a recursive function to draw the fractal:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591.jpeg"><img class="aligncenter size-medium wp-image-98" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591-300x300.jpeg" alt="whiteboard 6" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591-300x300.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591-290x290.jpeg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591-50x50.jpeg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_3-e1410079260591.jpeg 720w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Which turned into&#8230;</p>
+<p>&nbsp;</p><pre class="crayon-plain-tag">def drawFourSquares(x, y, l):
+	l = l / 2
+	sTop = drawSquareTop(x, y, l)
+	sBottom = drawSquareBottom(x, y, l)
+	sRight = drawSquareRight(x, y, l)
+	sLeft = drawSquareLeft(x, y, l)
+	if l &gt;= 1:
+		drawFourSquares(sTop[0], sTop[1], l)
+		drawFourSquares(sBottom[0], sBottom[1], l)
+		drawFourSquares(sRight[0], sRight[1], l)
+		drawFourSquares(sLeft[0], sLeft[1], l)</pre><p>&nbsp;</p>
+<p>The rest of the code is <a title="Primitive Fractal | Github" href="https://github.com/rossgoodwin/primitivefractal" target="_blank">available on GitHub</a>.</p>
+<p>First, I generated the shape with default fills and strokes, just to test my algorithm:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/first_result.png"><img class="aligncenter size-medium wp-image-95" src="http://www.thehypertext.com/wp-content/uploads/2014/09/first_result-300x300.png" alt="first_result" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/first_result-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/first_result-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/first_result-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/first_result-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/first_result.png 1540w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>I then removed the strokes, changed the color mode to HSB, and mapped the saturation and opacity of the fills to the length of each square. The result was significantly more attractive:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/blue.png"><img class="aligncenter size-medium wp-image-94" src="http://www.thehypertext.com/wp-content/uploads/2014/09/blue-300x300.png" alt="blue" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/blue-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/blue-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/blue-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/blue-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/blue.png 1532w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Finally, I mapped the hue to the length of each square and used logarithm functions to smooth the transition between different hues, opacities, and saturation levels. (The length decreases by a factor of two at each level of the fractal pattern. By using binary logarithms (base = 2), I was able to make the hue, opacity, and saturation transitions linear in order to include a more diverse spectrum of values for each property.) This was the final result, also pictured above:</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/final.png"><img class="aligncenter size-medium wp-image-89" src="http://www.thehypertext.com/wp-content/uploads/2014/09/final-300x300.png" alt="Snowflake Fractal" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/final-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/final-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/final.png 1536w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>The constraint for this project was to create a static image. However, in the future I would like to explore animating this pattern, perhaps by shifting the color values to create the illusion of depth and motion. Another option would be to program a continuous &#8220;zoom in&#8221; or &#8220;zoom out&#8221; effect to emphasize the potentially endless resolution and repetition of the pattern.</p>
+<p><strong>EDIT:</strong> <a title="Primitive Fractal, Part II" href="http://www.thehypertext.com/2014/09/14/primitive-fractal-part-ii/" target="_blank">See the new dynamic version.</a></p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

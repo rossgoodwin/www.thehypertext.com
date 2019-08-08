@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>gui &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/gui/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Fiction Generator, Part IV</title>
+		<link>http://www.thehypertext.com/2014/12/21/fiction-generator-part-iv/</link>
+		<pubDate>Sun, 21 Dec 2014 03:04:53 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Networked Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[interaction]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[interactivity]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel generator]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=406</guid>
+		<description><![CDATA[<p>For my final project in Networked Media with Daniel Shiffman, I put the Fiction Generator online at fictiongenerator.com. I also exhibited this project at the ITP Winter Show.</p>
+
+<p><a href="http://www.thehypertext.com/2014/12/21/fiction-generator-part-iv/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><strong>Prior Installments:<br />
+<a href="http://www.thehypertext.com/2014/11/11/fiction-generator/" target="_blank">Part I</a><br />
+<a href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/" target="_blank">Part II</a><br />
+<a href="http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/" target="_blank">Part III</a></strong></p>
+<p>For my final project in Comm Lab: Networked Media with <a href="http://shiffman.net/" target="_blank">Daniel Shiffman</a>, I put the Fiction Generator online at <a title="Fiction Generator" href="http://fictiongenerator.com" target="_blank">fictiongenerator.com</a>. <a href="http://motherboard.vice.com/read/the-first-novel-based-on-the-cia-torture-report-was-written-by-an-algorithm" target="_blank">VICE/Motherboard ran an article</a> about my website, and I exhibited the project at the ITP Winter Show.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/composite.jpg"><img class="aligncenter size-large wp-image-407" src="http://www.thehypertext.com/wp-content/uploads/2014/12/composite-682x1024.jpg" alt="composite" width="610" height="915" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/composite-682x1024.jpg 682w, http://www.thehypertext.com/wp-content/uploads/2014/12/composite-200x300.jpg 200w, http://www.thehypertext.com/wp-content/uploads/2014/12/composite.jpg 1000w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>After reading <a href="http://www.writing.upenn.edu/~afilreis/88v/burroughs-cutup.html" target="_blank">William S. Burroughs&#8217; essay about the cut-up technique</a>, I decided to implement <a href="https://github.com/rossgoodwin/cutup" target="_blank">an algorithmic version of it</a> into the generator. I also refactored my existing code and added a load screen, with this animation:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif"><img class="aligncenter size-full wp-image-409" src="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif" alt="robotholdingbook" width="250" height="250" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif 250w, http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook-50x50.gif 50w" sizes="(max-width: 250px) 100vw, 250px" /></a></p>
+<p>I am running a <a href="http://www.ubuntu.com/" target="_blank">Linux</a>&#8211;<a href="http://httpd.apache.org/" target="_blank">Apache</a>&#8211;<a href="http://flask.pocoo.org/" target="_blank">Flask</a> stack at the moment. Here&#8217;s a screen shot of the website in its current state:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot.png"><img class="aligncenter size-large wp-image-410" src="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-1024x956.png" alt="screenshot" width="610" height="569" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-1024x956.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-300x280.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Fiction Generator, Part III</title>
+		<link>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/</link>
+		<comments>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/#comments</comments>
+		<pubDate>Tue, 09 Dec 2014 19:00:04 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[Networked Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational creative writing]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[ficgen]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel]]></category>
+		<category><![CDATA[novel generator]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=392</guid>
+		<description><![CDATA[<p>For my final project in Introduction to Computational Media with Daniel Shiffman, I presented my fiction generator (working title: "FicGen"). Since my previous post about this project, I have added a graphical user interface and significantly refactored my code.</p>
+<p><a href="http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><strong>Prior Installments:<br />
+<a href="http://www.thehypertext.com/2014/11/11/fiction-generator/" target="_blank">Part I</a><br />
+<a href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/" target="_blank">Part II</a></strong></p>
+<p>For my final project in Introduction to Computational Media with <a href="http://shiffman.net/" target="_blank">Daniel Shiffman</a>, I presented my fiction generator (working title: &#8220;FicGen&#8221;). Since my previous post about this project, I have added a graphical user interface and significantly expanded/refactored my code, which I moved to a <a title="FicGen on GitHub" href="https://github.com/rossgoodwin/ficgen" target="_blank">new repository on GitHub</a>. I have also submitted this project as my entry in the <a title="ITP Winter Show" href="http://itp.nyu.edu/shows/winter2014/" target="_blank">ITP Winter Show</a>. For my Networked Media final project, which is due Friday, I plan to put FicGen online.</p>
+<p>Here is a screenshot of the GUI, which I implemented in Processing:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM.png"><img class="aligncenter size-large wp-image-394" src="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-1024x640.png" alt="Screen Shot 2014-12-02 at 1.19.28 PM" width="610" height="381" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-1024x640.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-300x187.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>When I presented this project in our final ICM class on Tuesday, November 25, the only working elements in the GUI were the text fields and the big red button. Now, most of the buttons and sliders have functionality as well. After pushing the red button, a Python script emails the completed novel to the user in PDF format.</p>
+<p>After creating the GUI above, I expanded the material I am using to generate the novels by scraping content from two additional sources: over 2,000 sci-fi/horror stories from <a href="http://www.scp-wiki.net" target="_blank">scp-wiki.net</a>, and over 47,000 books from <a href="http://www.gutenberg.org/" target="_blank">Project Gutenberg</a>. I then significantly refactored my code to accommodate these additions. My new Python program, <a href="https://github.com/rossgoodwin/ficgen/blob/master/ficgen.py" target="_blank">ficgen.py</a>, is far more object oriented and organized than my previous <a href="https://github.com/rossgoodwin/plotgen/blob/master/novelizer_icm.py" target="_blank">plotgen script</a>, which had become somewhat of a mess by the time I presented my project in class two weeks ago.</p>
+<p>Here&#8217;s the current code:</p><pre class="crayon-plain-tag">import math
+import argparse
+import random
+from random import choice as rc
+from random import sample as rs
+from random import randint as ri
+import string
+import math
+from zipfile import ZipFile
+
+import nltk
+import en
+
+from g_paths import gPaths
+from erowid_experience_paths import erowidExpPaths
+from tropes_character import characterTropeFiles
+from tropes_setting import settingTropeFiles
+from scp_paths import scpPaths
+from firstnames_f import fFirstNames
+from firstnames_m import mFirstNames
+from surnames import surnames
+
+
+# TODO:
+# [X] CLEAN UP TROPE FILE PATHS LIST
+# [ ] Fix "I'm" and "I'll" problem
+# [ ] Add Plot Points / Narrative Points / Phlebotinum
+# [ ] subtrope / sub-trope
+# [ ] add yelp reviews
+# [ ] add livejournal
+# [X] add SCP
+
+# System Path
+
+sysPath = "/Users/rg/Projects/plotgen/ficgen/"
+
+
+# Argument Values
+
+genre_list = ['literary', 'sci-fi', 'fantasy', 'history', 'romance', 'thriller', 
+			  'mystery', 'crime', 'pulp', 'horror', 'beat', 'fan', 'western', 
+			  'action', 'war', 'family', 'humor', 'sport', 'speculative']
+conflict_list = ['nature', 'man', 'god', 'society', 'self', 'fate', 'tech', 'no god', 'reality', 'author']
+narr_list = ['first', '1st', '1', 'third', '3rd', '3', 'alt', 'alternating', 'subjective', 
+			 'objective', 'sub', 'obj', 'omniscient', 'omn', 'limited', 'lim']
+
+parser = argparse.ArgumentParser(description='Story Parameters')
+parser.add_argument('--charnames', nargs='*', help="Character Names")
+parser.add_argument('--title', help="Story Title")
+parser.add_argument('--length', help="Story Length (0-999)")
+parser.add_argument('--charcount', help="Character Count (0-999)")
+parser.add_argument('--genre', nargs='*', help="Genre", choices=genre_list)
+parser.add_argument('--conflict', nargs='*', help="Conflict", choices=conflict_list)
+parser.add_argument('--passion', help="Passion (0-999)")
+parser.add_argument('--verbosity', help="Verbosity (0-999)")
+parser.add_argument('--realism', help="Realism (0-999)")
+parser.add_argument('--density', help="Density (0-999)")
+parser.add_argument('--accessibility', help="Accessibility (0-999)")
+parser.add_argument('--depravity', help="Depravity (0-999)")
+parser.add_argument('--linearity', help="Linearity (0-999)")
+parser.add_argument('--narrator', nargs='*', help="Narrative PoV", choices=narr_list)
+args = parser.parse_args()
+
+
+# ESTABLISH SYSTEM-WIDE COEFFICIENTS/CONSTANTS
+
+# tsv = trope setting volume
+TSV = (int(args.length)/2.0 + int(args.realism)/6.0 + int(args.passion)/3.0)/1000.0
+if 'fan' in args.genre:
+	TSV += 1.0
+TSV = int(math.ceil(2.0*TSV))
+
+# cc = actual number of extra characters / MAKE EXPONENTIAL
+CC = int(math.exp(math.ceil(int(args.charcount)/160.0))/2.0)+10
+
+# chc = chapter count
+CHC = int(math.exp(math.ceil(int(args.length)/160.0))/2.0)+10
+
+# dtv = drug trip volume
+DTV = (int(args.length)/4.0 + int(args.realism)/12.0 + int(args.passion)/6.0 + int(args.depravity)*1.5)/1000.0
+if 'beat' in args.genre:
+	DTV += 1.0
+if 'society' in args.conflict:
+	DTV += 1.0
+DTV = int(math.ceil(5.0*DTV))
+
+# scp = scp article volume
+SCP = int(args.length)/1000.0
+if bool(set(['sci-fi', 'horror']) &amp; set(args.genre)):
+	SCP += 1.0
+if bool(set(['tech', 'no god', 'reality', 'nature', 'god']) &amp; set(args.conflict)):
+	SCP += 1.0
+SCP = int(math.ceil(2.0*SCP))
+
+# den = length (in chars) of project gutenerg excerpts
+DEN = int(args.density)*10
+
+# ggv = gutenberg excerpt volume
+GGV = (int(args.length) + int(args.density))/500.0
+if 'literary' in args.genre:
+	GGV += 2.0
+GGV = int(math.ceil(5.0*GGV))
+
+# chl = chapter length as percent of potential chapter length
+CHL = int(args.length)/1000.0
+
+
+# file text fetchers
+def get_file(fp):
+
+	f = open(sysPath+fp, 'r')
+	t = f.read()
+	f.close()
+
+	return t
+
+def get_zip(fp):
+
+	fileName = fp.split('/')[-1]
+	noExtName = fileName.split('.')[0]
+	txtName = noExtName + ".txt"
+
+	ff = ZipFile(fp, 'r')
+	fileNames = ff.namelist()
+	oo = ff.open(fileNames[0], 'r')
+	tt = oo.read()
+	oo.close()
+	ff.close()
+
+	return tt
+
+
+
+# CLASSES
+
+class Character(object):
+
+	def __init__(self, firstName, lastName):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.introDesc = ""
+		self.scenes = []
+		self.drugTrips = []
+		self.scpReports = [] 
+		self.gbergExcerpts = []
+		self.friends = [] # list of objects
+
+
+class Chapter(object):
+
+	def __init__(self, charObj):
+		self.charObj = charObj
+		self.title = ""
+		self.blocks = []
+
+
+	def title_maker(self):
+		charTitle = ri(0, 2)
+
+		if not bool(charTitle):
+
+			ttl = self.charObj.firstName + " " + self.charObj.lastName
+
+		else:
+			
+			titleSource = ri(0, 3)
+
+			if titleSource == 0:
+				textSource = rc(self.charObj.scenes)
+			elif titleSource == 1:
+				textSource = rc(self.charObj.drugTrips)
+			elif titleSource == 2:
+				textSource = rc(self.charObj.scpReports)
+			elif titleSource == 3:
+				textSource = rc(self.charObj.gbergExcerpts)
+
+			tokens = nltk.word_tokenize(textSource)
+
+			if len(tokens) &gt; 20:
+				index = ri(0, len(tokens)-10)
+				titleLen = ri(2, 6)
+				ttl = ' '.join(tokens[index:index+titleLen])
+			else:
+				ttl = self.charObj.firstName + " " + self.charObj.lastName
+
+		self.title = ttl
+
+
+	def chapter_builder(self):
+		blockList = [self.charObj.introDesc] + self.charObj.scenes + self.charObj.drugTrips + self.charObj.scpReports + self.charObj.gbergExcerpts
+		
+		random.shuffle(blockList)
+
+		stopAt = int(math.ceil(CHL*len(blockList)))
+
+		blockList = blockList[:stopAt]
+
+		self.blocks = blockList
+
+		# self.blocks.append("stuff")
+
+
+
+class Novel(object):
+
+	def __init__(self):
+		self.title = args.title
+		self.characters = [] # list of characters
+		self.chapters = [] # list of chapters
+
+	def generate(self):
+		self.make_chars()
+		self.assemble_chapters()
+		self.make_tex_file()
+
+
+	def make_tex_file(self):
+		# Look at PlotGen for this part
+		outputFileName = self.title
+
+		latex_special_char_1 = ['&amp;', '%', '$', '#', '_', '{', '}']
+		latex_special_char_2 = ['~', '^', '\\']
+
+		outputFile = open(sysPath+"output/"+outputFileName+".tex", 'w')
+
+		openingTexLines = ["\\documentclass[12pt]{book}",
+						   "\\usepackage{ucs}",
+						   "\\usepackage[utf8x]{inputenc}",
+						   "\\usepackage{hyperref}",
+						   "\\title{"+outputFileName+"}",
+						   "\\author{collective consciousness fiction generator\\\\http://rossgoodwin.com/ficgen}",
+						   "\\date{\\today}",
+						   "\\begin{document}",
+						   "\\maketitle"]
+
+		closingTexLine = "\\end{document}"
+
+		for line in openingTexLines:
+			outputFile.write(line+"\n\r")
+		outputFile.write("\n\r\n\r")
+
+		for ch in self.chapters:
+
+			outputFile.write("\\chapter{"+ch.title+"}\n\r")
+			outputFile.write("\n\r\n\r")
+
+			rawText = '\n\r\n\r\n\r'.join(ch.blocks)
+
+			try:
+				rawText = rawText.decode('utf8')
+			except:
+				pass
+			try:
+				rawText = rawText.encode('ascii', 'ignore')
+			except:
+				pass
+
+			i = 0
+			for char in rawText:
+
+				if char == "\b":
+					outputFile.seek(-1, 1)
+				elif char in latex_special_char_1 and rawText[i-1] != "\\":
+					outputFile.write("\\"+char)
+				elif char in latex_special_char_2 and not rawText[i+1] in latex_special_char_1:
+					outputFile.write("-")
+				else:
+					outputFile.write(char)
+
+				i += 1
+
+			outputFile.write("\n\r\n\r")
+
+		outputFile.write("\n\r\n\r")
+		outputFile.write(closingTexLine)
+
+		outputFile.close()
+
+		print '\"'+sysPath+'output/'+outputFileName+'.tex\"'
+
+
+	def assemble_chapters(self):
+		novel = []
+
+		for c in self.characters:
+			novel.append(Chapter(c))
+
+		for ch in novel:
+			ch.title_maker()
+			ch.chapter_builder()
+
+		random.shuffle(novel) # MAYBE RETHINK THIS LATER
+
+		self.chapters = novel
+
+
+	def make_chars(self):
+		# establish gender ratio
+		charGenders = [ri(0,1) for _ in range(CC)]
+		
+		# initialize list of characters
+		chars = []
+
+		# add user defined characters
+		for firstlast in args.charnames:
+			fl_list = firstlast.split('_')  # Note that split is an underscore!
+			chars.append(Character(fl_list[0], fl_list[1]))
+
+		# add generated characters
+		for b in charGenders:
+			if b:
+				chars.append(Character(rc(fFirstNames), rc(surnames)))
+			else:
+				chars.append(Character(rc(mFirstNames), rc(surnames)))
+
+		# establish list of intro scenes
+		introScenePaths = rs(characterTropeFiles, len(chars))
+
+		# establish list of settings
+		settings = rs(settingTropeFiles, len(chars)*TSV)
+
+		# establish list of drug trips
+		trips = rs(erowidExpPaths, len(chars)*DTV)
+
+		# establish list of scp articles
+		scps = rs(scpPaths, len(chars)*SCP)
+
+		# establish list of gberg excerpts
+		gbergs = rs(gPaths.values(), len(chars)*GGV)
+
+		i = 0
+		j = 0
+		m = 0
+		p = 0
+		s = 0
+		for c in chars:
+
+			# make friends
+			c.friends += rs(chars, ri(1,len(chars)-1))
+			if c in c.friends:
+				c.friends.remove(c)
+
+			# add introduction description
+			c.introDesc = self.personal_trope([c], introScenePaths[i])
+
+			# add setting scenes
+			for k in range(TSV):
+				c.scenes.append(self.personal_trope([c]+c.friends, settings[j+k]))
+
+			# add drug trip scenes
+			for n in range(DTV):
+				c.drugTrips.append(self.personal_trip([c]+c.friends, trips[m+n]))
+
+			# add scp articles
+			for q in range(SCP):
+				c.scpReports.append(self.personal_scp([c]+c.friends, scps[p+q]))
+
+			# add gberg excerpts
+			for t in range(GGV):
+				c.gbergExcerpts.append(self.personal_gberg([c]+c.friends, gbergs[s+t]))
+
+			i += 1
+			j += TSV
+			m += DTV
+			p += SCP
+			s += GGV
+
+		self.characters = chars
+
+
+	def personal_trope(self, charList, filePath):
+		text = get_file(filePath)
+		# text = text.decode('utf8')
+		# text = text.encode('ascii', 'ignore')
+
+		if len(charList) == 1:
+			characterTrope = True
+		else:
+			characterTrope = False
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+				charRef = rc([rc(charList), charList[0]])
+				if words[i].lower() == "character" and i &gt; 0:
+					words[i-1] = charRef.firstName
+					words[i] = charRef.lastName
+
+				elif tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+
+				if characterTrope:
+
+					if words[i] == "have":
+						words[i] = "has"
+					elif words[i] == "are":
+						words[i] = "is"
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+			if characterTrope:
+
+				mainCharRef = rc(charList)
+
+				index = string.find(final_text, mainCharRef.firstName)
+
+				if final_text[index+len(mainCharRef.firstName)+1:index+len(mainCharRef.firstName)+1+len(mainCharRef.lastName)] == mainCharRef.lastName:
+					final_text = final_text[index:]
+				else:
+					final_text = mainCharRef.firstName+" "+mainCharRef.lastName+final_text[index+len(mainCharRef.firstName):]
+
+			replacements = {"trope": "clue", "Trope": "clue", "TROPE": "CLUE"}
+
+			for x, y in replacements.iteritems():
+				final_text = string.replace(final_text, x, y)
+
+		except:
+			
+			final_text = ""
+
+
+		return final_text
+
+
+	def personal_trip(self, charList, tripPath):
+
+		fileText = get_file(tripPath)
+		splitText = fileText.split('\\vspace{2mm}')
+		endOfText = splitText[-1]
+		text = endOfText[:len(endOfText)-15]
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc([rc(charList), charList[0]])
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+			final_text = string.replace(final_text, "\\end{itemize}", "")
+			final_text = string.replace(final_text, "\\begin{itemize}", "")
+			final_text = string.replace(final_text, "\\end{center}", "")
+			final_text = string.replace(final_text, "\\begin{center}", "")
+			final_text = string.replace(final_text, "\\ldots", " . . . ")
+			final_text = string.replace(final_text, "\\egroup", "")
+			final_text = string.replace(final_text, "EROWID", "GOVERNMENT")
+			final_text = string.replace(final_text, "erowid", "government")
+			final_text = string.replace(final_text, "Erowid", "Government")
+
+		except:
+
+			final_text = ""
+
+		return final_text
+
+
+	def personal_scp(self, charList, scpPath):
+
+		text = get_file(scpPath)
+
+		text = string.replace(text, "SCP", charList[0].lastName)
+		text = string.replace(text, "Foundation", charList[0].lastName)
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc(charList)
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+		except:
+
+			final_text = ""
+
+		return final_text
+
+
+
+	def personal_gberg(self, charList, gPath):
+
+		full_text = ""
+		while full_text == "":
+			try:
+				full_text = get_zip(gPath)
+			except:
+				full_text = ""
+				gPath = rc(gPaths.values())
+
+		endPart = full_text.split("*** START OF THIS PROJECT GUTENBERG EBOOK ")[-1]
+		theMeat = endPart.split("*** END OF THIS PROJECT GUTENBERG EBOOK")[0]
+
+		theMeat = string.replace(theMeat, "\r\n", " ")
+
+		
+		if len(theMeat) &lt; DEN+5:
+			text = theMeat
+		else:
+			startLoc = int(len(theMeat)/2.0 - DEN/2.0)
+			text = theMeat[startLoc:startLoc+DEN]
+
+		spLoc = text.find(" ")
+		text = text[spLoc+1:]
+
+		try:
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc([rc(charList), charList[0]])
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+		except:
+			final_text = ""
+
+
+		return final_text
+
+
+	def print_chars(self):
+
+		c = self.make_chars()
+		for character in c:
+			print 'INTRO DESC'
+			print '\n\n'
+			print character.introDesc
+			print '\n\n'
+			print 'SCENES'
+			print '\n\n'
+			for s in character.scenes:
+				print s
+			print '\n\n'
+			print 'DRUG TRIPS'
+			print '\n\n'
+			for t in character.drugTrips:
+				print t
+			print '\n\n'
+			print 'SCP REPORTS'
+			print '\n\n'
+			for p in character.scpReports:
+				print p
+			print '\n\n'
+			print 'GBERG EXCERPTS'
+			print '\n\n'
+			for q in character.gbergExcerpts:
+				print q
+			print '\n\n'
+
+
+
+
+foobar = Novel()
+foobar.generate()</pre><p>The program&#8217;s argument values, which I&#8217;m using the Python argparse library to deal with, are designed to be inserted by the GUI. However, they can be inserted manually as well in the terminal.</p>
+<p>Typing <code>python ficgen.py -h</code> in the terminal will yield the following help text:</p><pre class="crayon-plain-tag">usage: ficgen.py [-h] [--charnames [CHARNAMES [CHARNAMES ...]]]
+                 [--title TITLE] [--length LENGTH] [--charcount CHARCOUNT]
+                 [--genre [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} ...]]]
+                 [--conflict [{nature,man,god,society,self,fate,tech,no god,reality,author} [{nature,man,god,society,self,fate,tech,no god,reality,author} ...]]]
+                 [--passion PASSION] [--verbosity VERBOSITY]
+                 [--realism REALISM] [--density DENSITY]
+                 [--accessibility ACCESSIBILITY] [--depravity DEPRAVITY]
+                 [--linearity LINEARITY]
+                 [--narrator [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} ...]]]
+
+Story Parameters
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --charnames [CHARNAMES [CHARNAMES ...]]
+                        Character Names
+  --title TITLE         Story Title
+  --length LENGTH       Story Length (0-999)
+  --charcount CHARCOUNT
+                        Character Count (0-999)
+  --genre [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} ...]]
+                        Genre
+  --conflict [{nature,man,god,society,self,fate,tech,no god,reality,author} [{nature,man,god,society,self,fate,tech,no god,reality,author} ...]]
+                        Conflict
+  --passion PASSION     Passion (0-999)
+  --verbosity VERBOSITY
+                        Verbosity (0-999)
+  --realism REALISM     Realism (0-999)
+  --density DENSITY     Density (0-999)
+  --accessibility ACCESSIBILITY
+                        Accessibility (0-999)
+  --depravity DEPRAVITY
+                        Depravity (0-999)
+  --linearity LINEARITY
+                        Linearity (0-999)
+  --narrator [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} ...]]
+                        Narrative PoV</pre><p>Finally, here are some sample novels generated by the new code (titles chosen by volunteers):</p>
+<ul>
+<li><a href="http://rossgoodwin.com/Alfonzo_Donatello_and_the_Data_Gonzo_Manifesto.pdf" target="_blank">Alfonzo Donatello and the Data Gonzo Manifesto</a></li>
+<li><a href="http://rossgoodwin.com/Quick_Jest.pdf" target="_blank">Quick Jest</a></li>
+<li><a href="http://rossgoodwin.com/Generation_generate_in_general.pdf" target="_blank">Generation generate, in general</a></li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Stenographer Gloves &#038; A Forest of Files</title>
+		<link>http://www.thehypertext.com/2014/10/29/stenographer-gloves-a-forest-of-files/</link>
+		<comments>http://www.thehypertext.com/2014/10/29/stenographer-gloves-a-forest-of-files/#comments</comments>
+		<pubDate>Wed, 29 Oct 2014 03:28:53 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[Physical Computing]]></category>
+		<category><![CDATA[3d]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[browser]]></category>
+		<category><![CDATA[forest]]></category>
+		<category><![CDATA[fsr]]></category>
+		<category><![CDATA[glove]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[interface]]></category>
+		<category><![CDATA[internet]]></category>
+		<category><![CDATA[keyboard]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[stenographer]]></category>
+		<category><![CDATA[typing]]></category>
+		<category><![CDATA[wearable]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=255</guid>
+		<description><![CDATA[<p>In this post, I will outline a project that I plan to pursue (in full or in part) for my final project in this semester's Physical Computing class with Tom Igoe, and possibly for Introduction to Computational Media with Daniel Shiffman.</p>
+
+<p><a href="http://www.thehypertext.com/2014/10/29/stenographer-gloves-a-forest-of-files/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>In this post, I will outline a project that I plan to pursue (in full or in part) for my final project in this semester&#8217;s Physical Computing class with <a title="Tom Igoe" href="http://tigoe.net/" target="_blank">Tom Igoe</a>, and possibly for Introduction to Computational Media / Comm Lab: Networked Media with <a title="Daniel Shiffman" href="http://shiffman.net/" target="_blank">Daniel Shiffman</a>. The idea involves two principal components: a glove-mounted input system and an immersive file/internet browsing experience.</p>
+<p>It all began with an observation I made while riding the subway in the SF Bay Area. I saw a young woman using a stenographer&#8217;s keyboard on the subway, typing very quickly. I did not want to eavesdrop, so I could not determine what she was doing on the keyboard, but she was clearly producing a lot of output. Since then, I&#8217;ve been interested in the question of whether certain individuals who perform large amounts of typing on QWERTY keyboards could benefit from the use of <a title="Chorded Keyboard | Wikipedia" href="http://en.wikipedia.org/wiki/Chorded_keyboard" target="_blank">stenographer&#8217;s (chorded) keyboards.</a></p>
+<p>More recently, I had a long discussion with my classmate, Tigran Paravyan, about graphical user interfaces, and particularly the possibility of a three-dimensional interface. The interface, as we discussed it, would be for browsing the internet, but could work for browsing files on a personal computer as well. It would exist as a forest of trees, with each tree representing a browsing session that could be returned to at a later time.</p>
+<p>Beneath each tree, on the ground, the current browsing session would be projected. The branches of the tree could contain ornaments with files or pages linked to from the current page, with progressively more remote files or pages on higher branches of the trees. The user&#8217;s browsing history would be displayed in similar structures in the roots of the trees. A user would be able to walk, climb, dig, or fly through the environment as necessary to view the desired files or pages.</p>
+<p>The input device we discussed would be a glove with force-sensitive resistors (FSRs) in the finger tips. A user could touch her thumb to her index finger (or press her index finger on her leg, or on a table) to perform one of the four actions (walk, climb, dig, or fly), and her three other fingers (thumbs excluded) would be mapped to the three other actions. Speed of movement would be determined be the pressure a user applies to each pad. Turning could be accomplished by pressing the left hand&#8217;s pad(s) or right hand&#8217;s pad(s) independently, pressing both at the same time to move forward. Tilt sensors or accelerometers in the gloves could be mapped to other actions, such as zooming in on a particular file or page.</p>
+<p>Alternatively, &#8220;walking&#8221; with one&#8217;s hands could translate to walking (like in <a href="http://thecreatorsproject.vice.com/blog/meet-the-real-world-designers-behind-the-fictional-video-games-of-her" target="_blank">the speculative video game</a> in the movie <a title="Her | IMDB" href="http://www.imdb.com/title/tt1798709/" target="_blank">Her</a>—except with more tapping—see clip below), and one of the finger pads could be mapped to an auxiliary action.</p>
+<p><span style="color: #ff0000;"><strong>NSFW LANGUAGE WARNING</strong></span></p>
+<p><iframe width="610" height="343" src="http://www.youtube.com/embed/Qhk70sRV35U?start=15&#038;feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>Below are various notes and sketches I made in my notepad to outline this project. I plan to discuss it with Tom Igoe on Thursday and with Daniel Shiffman shortly thereafter.</p>
+<p><strong>Edit: </strong>Adding (low torque) servos and stiff metal plates would result in gloves that could &#8220;feel&#8221; virtual objects. Also, I purchased <a title="Motorcycle Gloves" href="http://www.motorcycle-superstore.com/40554/i/oneal-racing-jump-ultra-lite-le-83-gloves" target="_blank">this pair of motorcycle gloves</a> to begin working with.</p>
+<p>Here are some drawings from my notebook:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7204-e1415931155534.jpg"><img class="aligncenter size-large wp-image-308" src="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7204-e1415931155534-768x1024.jpg" alt="IMG_7204" width="610" height="813" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7204-e1415931155534-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7204-e1415931155534-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7204-e1415931155534.jpg 1224w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7205.jpg"><img class="aligncenter size-large wp-image-309" src="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7205-768x1024.jpg" alt="IMG_7205" width="610" height="813" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7205-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7205-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7205.jpg 1224w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7206.jpg"><img class="aligncenter size-large wp-image-310" src="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7206-768x1024.jpg" alt="IMG_7206" width="610" height="813" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7206-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7206-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7206.jpg 1224w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7207.jpg"><img class="aligncenter size-large wp-image-311" src="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7207-768x1024.jpg" alt="IMG_7207" width="610" height="813" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7207-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7207-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7207.jpg 1224w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7208.jpg"><img class="aligncenter size-large wp-image-312" src="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7208-768x1024.jpg" alt="IMG_7208" width="610" height="813" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7208-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7208-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2014/10/IMG_7208.jpg 1224w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/10/29/stenographer-gloves-a-forest-of-files/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>General Update</title>
+		<link>http://www.thehypertext.com/2014/09/29/general-update/</link>
+		<comments>http://www.thehypertext.com/2014/09/29/general-update/#comments</comments>
+		<pubDate>Mon, 29 Sep 2014 06:24:41 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Applications]]></category>
+		<category><![CDATA[Automata]]></category>
+		<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[Physical Computing]]></category>
+		<category><![CDATA[applications]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[automata]]></category>
+		<category><![CDATA[beethoven]]></category>
+		<category><![CDATA[che55]]></category>
+		<category><![CDATA[chess]]></category>
+		<category><![CDATA[classical music]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[code poetry slam]]></category>
+		<category><![CDATA[code shakespeare]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[mechanical turk]]></category>
+		<category><![CDATA[mechanical turk's ghost]]></category>
+		<category><![CDATA[music]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[poetizer]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[proce55ing]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[rachmaninoff]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=177</guid>
+		<description><![CDATA[<p>I've been so busy the past two weeks that I failed to update this blog. But documentation is important, and that's why I'm going to take a moment to fill you in on all my recent activities. This post will cover all the projects I've been working on.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/29/general-update/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;ve been so busy the past two weeks that I failed to update this blog. But documentation is important, and that&#8217;s why I&#8217;m going to take a moment to fill you in on all my recent activities. This post will cover all the projects I&#8217;ve been working on, primarily:</p>
+<ul>
+<li>Applications Presentation on September 16</li>
+<li>ITP Code Poetry Slam on November 14</li>
+<li>The Mechanical Turk&#8217;s Ghost</li>
+<li>Che55</li>
+</ul>
+<p>On Tuesday, September 16, I helped deliver a presentation to our class in Applications. Yingjie Bei, Rebecca Lieberman, and Supreet Mahanti were in my group, and we utilized <a title="Poetizer" href="http://www.thehypertext.com/2014/08/31/poetizer/" target="_blank">my Poetizer software</a> to create an interactive storytelling exercise for the entire audience. Sarah Rothberg was kind enough to record the presentation, and Rebecca posted it on Vimeo:</p>
+<p>&nbsp;</p>
+<p><iframe src="//player.vimeo.com/video/106678494" width="610" height="343" frameborder="0" title="Group 3: Applications Presentation // Part 1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p><iframe src="//player.vimeo.com/video/106679005" width="610" height="343" frameborder="0" title="Group 3: Applications Presentation // Part 2" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>I&#8217;ve also been organizing an <a title="2014 ITP Code Poetry Slam" href="http://www.codeshakespeare.com" target="_blank">ITP Code Poetry Slam</a>, which will take place at 6:30pm on November 14. Submissions are now open, and I&#8217;m hoping the event will serve as a conduit for productive dialogue between the fields of poetry and computer science. Announcements regarding judges, special guests, and other details to come.</p>
+<p><a href="http://imgur.com/egvgAG4"><img class="aligncenter" title="Code Shakespeare" src="http://i.imgur.com/egvgAG4.jpg" alt="" width="400" height="400" /></a></p>
+<p>Various explorations related to <a title="The Mechanical Turk's Ghost" href="http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/" target="_blank">the Mechanical Turk&#8217;s Ghost</a> [working title] have consumed the rest of my time. While I wait for all the electronic components I need to arrive, I have been focusing on the software aspects of the project, along with some general aspects of the hardware.</p>
+<p>The first revision to the preliminary design I sketched out in <a title="The Mechanical Turk's Ghost" href="http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/" target="_blank">my prior post</a> resulted from <a title="Tony Kesich" href="http://kesi.ch" target="_blank">a friend</a>&#8216;s suggestion. Rather than using conductive pads on the board, I now plan to use Hall effect sensors mounted beneath the board that will react to tiny neodymium magnets embedded in each chess piece. If everything works properly, this design should be far less visible, and thus less intrusive to the overall experience. I ordered 100 sensors and 500 magnets, and I look forward to experimenting with them when they arrive.</p>
+<p>In the meantime, the parts I listed in my prior post arrived, and I was especially excited to begin working with the Raspberry Pi. I formatted an 8GB SD card and put <a title="NOOBS" href="http://www.raspberrypi.org/help/noobs-setup/" target="_blank">NOOBS</a> on it, then booted up the Raspberry Pi and installed <a title="Raspbian" href="http://www.raspbian.org/" target="_blank">Raspbian</a>, a free operating system based on Debian Linux that is optimized for the Pi&#8217;s hardware.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi.jpg"><img class="aligncenter size-medium wp-image-185" src="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-300x199.jpg" alt="r_pi" width="300" height="199" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-300x199.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-1024x682.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>The <a title="Stockfish" href="http://stockfishchess.org/" target="_blank">Stockfish chess engine</a> will be a major component of this project, and I was concerned that its binaries would not compile on the Raspberry Pi. The makefile documentation listed a number of options for system architecture, none of which exactly matched the ARM v6 chip on the Raspberry Pi.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM.png"><img class="aligncenter wp-image-182 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-906x1024.png" alt="Screen Shot 2014-09-28 at 10.46.18 PM" width="610" height="689" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-906x1024.png 906w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-265x300.png 265w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM.png 1368w" sizes="(max-width: 610px) 100vw, 610px" /></a>First, I tried the &#8220;ARMv7&#8221; option. The compiler ran for about 10 minutes before experiencing errors and failing. I then tried several other options, none of which worked. I was about to give up completely and resign myself to running the chess engine on my laptop, when I noticed the &#8220;profile-build&#8221; option. I had never heard of <a title="PGO" href="http://en.wikipedia.org/wiki/Profile-guided_optimization" target="_blank">profile-guided optimization</a> (PGO), but I tried using the command &#8220;make profile-build&#8221; rather than &#8220;make build&#8221; along with the option for unspecified 32-bit architecture. This combination allowed Stockfish to compile without any issues. Here is the command that I used (from the /Stockfish/src folder):</p><pre class="crayon-plain-tag">$ make profile-build ARCH=general-32</pre><p>With Stockfish successfully compiled on the Raspberry Pi, I copied the binary executable to the system path (so that I could script the engine using the <a title="Python Subprocess Library" href="https://docs.python.org/2/library/subprocess.html" target="_blank">Python subprocess library</a>), then tried running <a title="ghost.py" href="https://github.com/rossgoodwin/mtg/blob/master/ghost.py" target="_blank">the Python script I wrote to control Stockfish</a>. It worked without any issues:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost.jpg"><img class="aligncenter wp-image-184 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-1024x341.jpg" alt="ghost" width="610" height="203" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-1024x341.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-300x99.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/ghost.jpg 1111w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>My next set of explorations revolved around the music component of the project. As I specified in my prior post, I want the device to generate music. I took some time to consider what type of music would be most appropriate, and settled on classical music as a starting point. Classical music is ideal because so many great works are in the public domain, and because so many serious chess players enjoy listening to it during play. (As anecdotal evidence, <a title="The Chess Forum" href="http://www.chessforum.com/" target="_blank">the Chess Forum</a> in Greenwich Village, a venue where chess players congregate to play at all hours of the day and night, plays nothing but classical music all the time. I have been speaking to one of the owners of the Chess Forum about demonstrating my prototype device there once it is constructed.)</p>
+<p>Generating a classical music <a title="Mashup | Wikipedia" href="http://en.wikipedia.org/wiki/Mashup_(music)" target="_blank">mashup</a> using data from the game in progress was the first idea I pursued. For this approach, I imagined that two classical music themes (one for black, one for white) could be combined in a way that reflected the relative strength of each side at any given point in the game. (A more complex approach might involve algorithmic music generation, but I am not ready to pursue that option just yet.) Before pursuing any prototyping or experimentation, I knew that the two themes would need to be suitably different (so as to distinguish one from the other) but also somewhat complementary in order to create a pleasant listening experience. A friend of mine who studies music suggested pairing one song (or symphony or concerto) in a major key with another song in the relative minor key.</p>
+<p>Using <a title="YouTube Mixer" href="http://www.youtubemixer.net/" target="_blank">YouTube Mixer</a>, I was able to prototype the overall experience by fading back and forth between two songs. I started by pairing Beethoven&#8217;s Symphony No. 9 and Rachmaninoff&#8217;s Piano Concerto No. 3, and I was very satisfied with the results (play both these videos at once to hear the mashup):</p>
+<p><iframe width="610" height="343" src="http://www.youtube.com/embed/aFkAwFDZGHk?feature=oembed&#038;start=28" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="610" height="458" src="http://www.youtube.com/embed/t3217H8JppI?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>I then worked on creating a music mashup script to pair with my chess engine script. My requirements seemed very simple: I would need a script that could play two sound files at once and control their respective volume levels independently, based on the fluctuations in the score calculated by the chess engine. The script would also need to be able to run on the Raspberry Pi.</p>
+<p>These requirements ended up being more difficult to fulfill than I anticipated. I explored many <a title="Python Audio Libraries" href="https://wiki.python.org/moin/PythonInMusic" target="_blank">Python audio libraries</a>, including <a title="pyo" href="http://code.google.com/p/pyo/" target="_blank">pyo</a>, <a title="pyfluidsynth" href="http://code.google.com/p/pyfluidsynth/" target="_blank">PyFluidSynth</a>, <a title="mingus" href="https://code.google.com/p/mingus/" target="_blank">mingus</a>, and <a title="pygame.mixer" href="http://www.pygame.org/docs/ref/mixer.html" target="_blank">pygame&#8217;s mixer module</a>. I also looked into using <a title="SoX" href="http://sox.sourceforge.net/" target="_blank">SoX</a>, a command line audio utility, through the python subprocess library. Unfortunately, all of these options were either too complex or too simple to perform the required tasks.</p>
+<p>Finally, on Gabe Weintraub&#8217;s suggestion, I looked into using Processing for my audio requirements and discovered a library called <a title="Minim" href="http://code.compartmental.net/tools/minim/" target="_blank">Minim</a> that could do everything I needed. I then wrote the following Processing sketch:</p><pre class="crayon-plain-tag">import ddf.minim.*;
+
+Minim minim1;
+Minim minim2;
+AudioPlayer player1;
+AudioPlayer player2;
+
+float gain1 = 0.0;
+float gain2 = 0.0;
+float tgtGain1 = 0.0;
+float tgtGain2 = 0.0;
+float level1 = 0.0;
+float level2 = 0.0;
+float lvlAdjust = 0.0;
+
+BufferedReader reader;
+String line;
+float score = 0;
+
+void setup() {
+  minim1 = new Minim(this);
+  minim2 = new Minim(this);
+  player1 = minim1.loadFile("valkyries.mp3");
+  player2 = minim2.loadFile("Rc3_1.mp3");
+  player1.play();
+  player1.setGain(-80.0);
+  player2.play();
+  player2.setGain(6.0);
+}
+
+void draw() {
+  reader = createReader("score.txt");
+  try {
+    line = reader.readLine();
+  } catch (IOException e) {
+    e.printStackTrace();
+    line = null;
+  }
+  print(line); 
+  score = float(line);
+  
+  level1 = (player1.left.level() + player1.right.level()) / 2;
+  level2 = (player2.left.level() + player2.right.level()) / 2;  
+
+  lvlAdjust = map(level1 - level2, -0.2, 0.2, -1, 1);
+  tgtGain1 = map(score, -1000, 1000, -30, 6);
+  tgtGain2 = map(score, 1000, -1000, -30, 6);
+  tgtGain1 = tgtGain1 * (lvlAdjust + 1);
+  tgtGain2 = tgtGain2 / (lvlAdjust + 1);
+  
+  gain1 = player1.getGain();
+  gain2 = player2.getGain();
+  
+  print(' ');
+  print(gain1);
+  print(' ');
+  print(gain2);
+  print(' ');
+  print(level1);
+  print(' ');
+  println(level2);
+  
+  if (level2 &gt; level1) {
+    tgtGain2 -= 0.1;
+  } else if (level1 &lt; level2) {
+    tgtGain1 -= 0.1;
+  }
+  
+  player1.setGain(tgtGain1);
+  player2.setGain(tgtGain2);
+}</pre><p>The script above reads score values from a file created by the Python script that controls the chess engine. The score values are then mapped to gain levels for each of the two tracks that are playing. I input a chess game move by move into the terminal, and the combination of scripts worked as intended by fading between the two songs based on the relative positions of white and black in the chess game.</p>
+<p>Unfortunately, a broader issue with my overall approach became highly apparent: the dynamic qualities of each song overshadowed most of the volume changes that occurred as a result of the game. In other words, each song got louder and quieter at various points by itself, and that was more noticeable than the volume adjustments the script was making. I attempted to compensate for these natural volume changes by normalizing the volume of each song based on its relative level compared to the other song (see lines 42-45, 48-49, and 63-67 in the code above). This did not work as effectively as I hoped, and resulted in some very unpleasant sound distortions.</p>
+<p>After conferring with my Automata instructor, <a title="Nick Yulman" href="http://nysoundworks.org/" target="_blank">Nick Yulman</a>,  I have decided to take an alternate approach. Rather than playing two complete tracks and fading between them, I plan to record stems (individual instrument recordings) using the relevant midi files, and then create loop tracks that will be triggered at various score thresholds. I am still in the process of exploring this approach and will provide a comprehensive update sometime in the near future.</p>
+<p>In the meantime, I have been learning about using combinations of digital and analog inputs and outputs with the Arduino, and using various input sensors to control motors, servos, solenoids, and RGB LEDs:</p>
+<p><iframe src="//player.vimeo.com/video/107441722" width="400" height="300" frameborder="0" title="Walking Servo" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827.jpg"><img class="aligncenter wp-image-196 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-300x300.jpg" alt="photo 3" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>In Introduction to Computational Media, we are learning about object oriented programming, and Dan Shiffman asked us to create a Processing sketch using classes and objects this week. As I prepare to create a physical chessboard, I thought it would be appropriate to make a software version to perform tests. <a title="Che55" href="https://github.com/rossgoodwin/che55" target="_blank">Che55</a> (which I named with 5&#8217;s as an homage to Processing&#8217;s original name, &#8220;<a title="Proce55ing" href="https://github.com/processing/processing/wiki/FAQ#why-is-it-called-processing" target="_blank">Proce55ing</a>&#8220;) was the result.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png"><img class="aligncenter wp-image-195 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-1024x1024.png" alt="che55" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png 1600w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Che55 is a fully functional chess GUI, written in Processing. Only legal moves can be made, and special moves such as en passant, castling, and pawns reaching the end of the board have been accounted for. I plan to link Che55 with Stockfish in order to create chess visualizations and provide game analysis, and to prototype various elements of the Mechanical Turk&#8217;s Ghost, including the musical component. I left plenty of space around the board for additional GUI elements, which I&#8217;m currently working on implementing. All of the code is available <a title="Che55 | Github" href="https://github.com/rossgoodwin/che55" target="_blank">on Github</a>.</p>
+<p>Unfortunately, I cannot claim credit for the chess piece designs. Rather, I was inspired by an installation I saw at the New York MoMA two weeks ago called <a title="Thinking Machine 4" href="http://www.turbulence.org/spotlight/thinking/" target="_blank">Thinking Machine 4</a> by Martin Wattenberg and Marek Walczak (also written in Processing).</p>
+<p>That&#8217;s all for now. Stay tuned for new posts about each of these projects. I will try to keep this blog more regularly updated so there (hopefully) will be no need for future multi-project megaposts like this one. Thanks for reading.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/09/29/general-update/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,1581 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Fall 2015 &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/category/fall-2015/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Netflix for Robots</title>
+		<link>http://www.thehypertext.com/2015/12/10/netflix-for-robots/</link>
+		<pubDate>Thu, 10 Dec 2015 06:08:24 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Learning Machines]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[deep learning]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[learning machines]]></category>
+		<category><![CDATA[lua]]></category>
+		<category><![CDATA[machine learning]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[neuraltalk]]></category>
+		<category><![CDATA[neuraltalk2]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[the x-files]]></category>
+		<category><![CDATA[torch]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=800</guid>
+		<description><![CDATA[<p>For my final project in Learning Machines, I forced a deep learning machine to watch every episode of The X-Files.</p>
+<p><a href="http://www.thehypertext.com/2015/12/10/netflix-for-robots/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For my final project in Learning Machines, I forced a deep learning machine to watch every episode of <em>The X-Files</em>.</p>
+<p>Watching every episode of <em>The X-Files</em> in high school on Netflix DVDs that came in the mail (remember those?) seemed like the thing to do. It was a great show, with 9 seasons of 20+ episodes a piece. So, it only seemed fair to provide a robot friend with the same experience.</p>
+<p>I&#8217;m currently running <a href="https://github.com/karpathy/neuraltalk2">NeuralTalk2</a>, which is truly wonderful open source image captioning code consisting of convolutional and recurrent neural networks. The software requires a GPU to train models, so I&#8217;m running it on an Amazon Web Services GPU server instance. At ~50 cents per hour, it&#8217;s a lot more expensive than Netflix.</p>
+<p><a href="https://twitter.com/karpathy" target="_blank">Andrej Karpathy</a> wrote NeuralTalk2 in Torch, which is based in Lua, and it requires a lot of dependencies. However, it was a lot easier to set up than the <a href="https://github.com/google/deepdream" target="_blank">Deep Dream</a> code I experimented with over the summer.</p>
+<p>The training process has involved a lot of trial and error. The learning process seems to just halt sometimes, and the machine often wants to issue the same caption for every image.</p>
+<p>Rather than training the machine with an image caption set, I trained it with dialogue from subtitles and matching frames extracted at 10 second intervals from every episode of <em>The X-Files</em>. This is just an experiment, and I&#8217;m not expecting stellar results.</p>
+<p>That said, the robot is already spitting out some pretty weird and genuinely creepy lines. I can&#8217;t wait until I have a version that&#8217;s trained well enough to feed in new images and get varied results.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM.png"><img class="aligncenter wp-image-802 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.18.48 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM.png"><img class="aligncenter wp-image-803 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.20.22 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM.png"><img class="aligncenter wp-image-804 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.21.53 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM.png"><img class="aligncenter wp-image-805 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.26.45 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM.png"><img class="aligncenter wp-image-806 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.33.11 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM.png"><img class="aligncenter wp-image-807 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.34.41 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM.png"><img class="aligncenter wp-image-808 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.35.27 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM.png"><img class="aligncenter wp-image-809 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.36.01 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM.png"><img class="aligncenter wp-image-810 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.42.05 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>novel camera</title>
+		<link>http://www.thehypertext.com/2015/12/01/novel-camera/</link>
+		<pubDate>Tue, 01 Dec 2015 17:10:37 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Data Personalization]]></category>
+		<category><![CDATA[Programming A to Z]]></category>
+		<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[Temporary Expert]]></category>
+		<category><![CDATA[ai]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artificial intelligence]]></category>
+		<category><![CDATA[camera]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=790</guid>
+		<description><![CDATA[<p>I have spent the last few months completing a novel I started a long time ago and turning it into a non-linear interactive experience. For my final project in several classes, I have transferred this novel into a printer-equipped camera to make a new and different type of photographic experience.</p>
+<p><a href="http://www.thehypertext.com/2015/12/01/novel-camera/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I have spent the last few months completing a novel I started a long time ago and turning it into a non-linear interactive experience. For my final project in several classes, I have transferred this novel into a printer-equipped camera to make a new and different type of photographic experience.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy.jpg"><img class="aligncenter size-medium wp-image-774" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg" alt="IMG_1321_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1439-copy2.jpg"><img class="aligncenter wp-image-796 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1439-copy2-488x1024.jpg" alt="IMG_1439 copy" width="488" height="1024" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1439-copy2-488x1024.jpg 488w, http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1439-copy2-143x300.jpg 143w, http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1439-copy2.jpg 954w" sizes="(max-width: 488px) 100vw, 488px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy.jpg"><img class="aligncenter size-medium wp-image-794" src="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy-300x300.jpg" alt="IMG_1442 copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/IMG_1442-copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Inside the antique camera is a Raspberry Pi with a camera module behind the lens. The flow of passages is controlled by a single, handwritten JSON file. When there is overlap between the tags detected in an image by Clarifai and the tags assigned to a passage, and the candidate passage occurs next in a storyline that has already begun, that passage is printed out. If no passage can be found, the camera prints poetry enabled by a recursive context-free grammar and constructed from words detected in the image.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy.jpg"><img class="aligncenter size-medium wp-image-776" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg" alt="IMG_1317_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>This week, I am planning to add a back end component that will allow photos taken to be preserved as albums, and passages printed to be read later online. For now, here is the JSON file that controls the order of output:</p><pre class="crayon-plain-tag">{
+    "zero": {
+        "tags": ["moon", "swamp", "marble", "north america", "insect", "street"],
+        "order": 0,
+        "next": ["story"]
+    },
+    "guam_zero": {
+    	"tags": ["computer", "technology", "future", "keyboard", "politics"],
+    	"order": 0,
+    	"next": ["guam_one"]
+    },
+    "guam_one": {
+    	"tags": ["computer", "technology", "future", "keyboard", "politics"],
+    	"order": 1,
+    	"next": []
+    },
+    "dream_zero": {
+    	"tags": ["dream", "dark", "night", "sleep", "bed", "bedroom", "indoors"],
+    	"order": 0,
+    	"next": ["chess_board"]
+    },
+    "chess_board": {
+    	"tags": ["dream", "dark", "night", "sleep", "bed", "bedroom", "indoors"],
+    	"order": 2,
+    	"next": ["black_queen", "black_pawn", "black_king", "black_rook", "white_king", "white_knight"]
+    },
+    "black_queen": {
+    	"tags": ["dream", "dark", "black", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "queen"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "black_pawn": {
+    	"tags": ["dream", "dark", "black", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "pawn"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "black_king": {
+    	"tags": ["dream", "dark", "black", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "king"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "black_rook": {
+    	"tags": ["dream", "dark", "black", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "rook", "castle"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "white_king": {
+    	"tags": ["dream", "dark", "white", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "king"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "white_knight": {
+    	"tags": ["dream", "dark", "white", "night", "sleep", "bed", "bedroom", "indoors", "chess", "game", "knight"],
+    	"order": 3,
+    	"next": ["wake_up"]
+    },
+    "wake_up": {
+    	"tags": ["dream", "dark", "night", "sleep", "bed", "bedroom", "indoors"],
+    	"order": 4,
+    	"next": []
+    },
+    "forget": {
+    	"tags": ["man", "men", "boy"],
+    	"order": 0,
+    	"next": []
+    },    
+    "story": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "street", "woman", "women", "girl"],
+    	"order": 1,
+    	"next": ["miss_vest", "forget"]
+    },
+    "miss_vest": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "street", "woman", "women", "girl"],
+    	"order": 2,
+    	"next": ["envelope", "forget"]
+    },
+    "envelope": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "street", "woman", "women", "girl", "paper", "envelope", "mail"],
+    	"order": 3,
+    	"next": ["apartment", "forget"]
+    },
+    "apartment": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "street", "woman", "women", "girl", "paper", "envelope", "mail"],
+    	"order": 4,
+    	"next": ["email"]
+    },
+    "email": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "woman", "women", "girl", "paper", "envelope", "mail", "computer", "technology"],
+    	"order": 5,
+    	"next": ["match"]
+    },
+    "match": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "paper", "envelope", "mail", "computer", "technology"],
+    	"order": 5,
+    	"next": ["smithpoint", "morning"]
+    },
+    "morning": {
+    	"tags": ["day", "sun", "bedroom", "bed", "breakfast", "morning", "dream", "dark", "night"],
+    	"order": 6,
+    	"next": ["call"]
+    },
+    "call": {
+    	"tags": ["phone", "telephone", "technology", "computer"],
+    	"order": 7,
+    	"next": ["smithpoint"]
+    },
+    "smithpoint": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "bar", "drink", "alcohol", "wine", "beer"],
+    	"order": 8,
+    	"next": ["drive", "forget"]
+    },
+    "drive": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "bar", "drink", "alcohol", "wine", "beer"],
+    	"order": 9,
+    	"next": ["take_pill", "toss_pill"]
+    },
+    "take_pill": {
+    	"tags": ["drug", "pill", "man", "men", "boy", "bar", "night", "drink", "alcohol", "wine", "beer"],
+    	"order": 10,
+    	"next": ["meet_stranger_drugs", "john_home"]
+    },
+    "toss_pill": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "girl", "street", "woman", "women"],
+    	"order": 10,
+    	"next": ["meet_stranger_no_drugs"]
+    },
+    "meet_stranger_drugs": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "bar", "drink", "alcohol", "wine", "beer"],
+    	"order": 11,
+    	"next": ["john_home"]
+    },
+    "meet_stranger_no_drugs": {
+    	"tags": ["moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "bar", "drink", "alcohol", "wine", "beer"],
+    	"order": 11,
+    	"next": ["painting"]
+    },
+    "painting": {
+    	"tags": ["painting", "art", "moon", "swamp", "marble", "north america", "insect", "night", "man", "men", "boy", "bar", "drink", "alcohol", "wine", "beer"],
+    	"order": 12,
+    	"next": []
+    },
+    "john_home": {
+    	"tags": ["drug", "pill", "man", "men", "boy", "bar", "night", "drink", "alcohol", "wine", "beer"],
+    	"order": 13,
+    	"next": []
+    }
+
+}</pre><p>And here is the code that&#8217;s currently running on the Raspberry Pi:</p><pre class="crayon-plain-tag">import RPi.GPIO as GPIO
+from Adafruit_Thermal import *
+import time
+import os
+import sys
+import json
+import picamera
+from clarifai.client import ClarifaiApi
+from pattern.en import referenced
+
+import gen
+
+# Init Clarifai
+os.environ["CLARIFAI_APP_ID"] = "nAT8dW6B0Oc5qA6JQfFcdIEr-CajukVSOZ6u_IsN"
+os.environ["CLARIFAI_APP_SECRET"] = "BnETdY6wtp8DmXIWCBZf8nE4XNPtlHMdtK0ISNJQ"
+clarifai_api = ClarifaiApi() # Assumes Env Vars Set
+
+# Init System Paths
+APP_PATH = os.path.dirname(os.path.realpath(__file__))
+IMG_PATH = os.path.join(APP_PATH, 'img')
+TALE_PATH = os.path.join(APP_PATH, 'tales')
+
+# Init tale_dict
+with open(os.path.join(APP_PATH, 'tales_dict.json'), 'r') as infile:
+    tale_dict = json.load(infile)
+
+# Seen tales
+seen_tales = list()
+
+# Init Camera
+camera = picamera.PiCamera()
+
+# Init Printer
+printer = Adafruit_Thermal("/dev/ttyAMA0", 9600, timeout=5)
+printer.boldOn()
+
+# Init GPIO
+# With camera pointed forward...
+# LEFT:  11 (button), 15 (led)
+# RIGHT: 13 (button), 16 (led)
+GPIO.setmode(GPIO.BOARD)
+ledPins = (15,16)
+butPins = (11,13)
+
+for pinNo in ledPins:
+    GPIO.setup(pinNo, GPIO.OUT)
+
+for pinNo in butPins:
+    GPIO.setup(pinNo, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+# Open Grammar Dict
+with open(os.path.join(APP_PATH, 'weird_grammar.json'), 'r') as infile:
+    grammar_dict = json.load(infile)
+
+def blink_left_right(count):
+    ledLeft, ledRight = ledPins
+    for _ in range(count):
+        GPIO.output(ledRight, False)
+        GPIO.output(ledLeft, True)
+        time.sleep(0.2)
+        GPIO.output(ledRight, True)
+        GPIO.output(ledLeft, False)
+        time.sleep(0.2)
+    GPIO.output(ledRight, False)
+
+def to_lines(sentences):
+    def sentence_to_lines(text):
+        LL = 32
+        tokens = text.split(' ')
+        lines = list()
+        curLine = list()
+        charCount = 0
+        for t in tokens:
+            charCount += (len(t)+1)
+            if charCount &gt; LL:
+                lines.append(' '.join(curLine))
+                curLine = [t]
+                charCount = len(t)+1
+            else:
+                curLine.append(t)
+        lines.append(' '.join(curLine))
+        return '\n'.join(lines)
+    sentence_lines = map(sentence_to_lines, sentences)
+    return '\n\n'.join(sentence_lines)
+
+def open_tale(tale_name):
+    with open(os.path.join(TALE_PATH, tale_name), 'r') as infile:
+        tale_text = to_lines(
+            filter(lambda x: x.strip(), infile.read().strip().split('\n'))
+        )
+    return tale_text
+
+def pick_tale(tags, next_tales):
+    choice = str()
+    record = 0
+    for tale in tale_dict:
+        if tale in next_tales or tale_dict[tale]['order'] == 0:
+            score = len(set(tale_dict[tale]['tags']) &amp; set(tags))
+            if tale in next_tales and score &gt; 0 and not tale in seen_tales:
+                score += 100
+            if score &gt; record:
+                choice = tale
+                record = score
+    return choice
+
+
+blink_left_right(5)
+imgCount = 1
+cur_tale = str()
+
+
+while True:
+    inputLeft, inputRight = map(GPIO.input, butPins)
+    if inputLeft != inputRight:
+        try:
+            img_fn = str(int(time.time()*100))+'.jpg'
+            img_fp = os.path.join(IMG_PATH, img_fn)
+
+            camera.capture(img_fp)
+
+            blink_left_right(3)
+
+            result = clarifai_api.tag_images(open(img_fp))
+            tags = result['results'][0]['result']['tag']['classes']
+
+            if cur_tale:
+                next_tales = tale_dict[cur_tale]['next']
+            else:
+                next_tales = list()
+
+            tale_name = pick_tale(tags, next_tales)
+            cur_tale = tale_name
+
+            if tale_name:
+                lines_to_print = open_tale(tale_name)
+                seen_tales.append(tale_name)
+
+            else:
+                grammar_dict["N"].extend(tags)
+
+                if not inputLeft:
+                    sentences = [gen.make_polar(grammar_dict, 10, sent=0) for _ in range(10)]
+                elif not inputRight:
+                    sentences = [gen.make_polar(grammar_dict, 10) for _ in range(10)]
+                else:
+                    sentences = gen.main(grammar_dict, 10)
+
+                lines_to_print = to_lines(sentences)
+
+            prefix = '\n\n\nNo. %i\n\n'%imgCount
+
+            printer.println(prefix+lines_to_print+'\n\n\n')
+
+            grammar_dict["N"] = list()
+            imgCount += 1
+        except:
+            blink_left_right(15)
+            print sys.exc_info()
+
+    elif (not inputLeft) and (not inputRight):
+        offCounter = 0
+        for _ in range(100):
+            inputLeft, inputRight = map(GPIO.input, butPins)
+            if (not inputLeft) and (not inputRight):
+                time.sleep(0.1)
+                offCounter += 1
+                if offCounter &gt; 50:
+                    os.system('sudo shutdown -h now')
+            else:
+                break</pre><p>&nbsp;</p>
+<p><strong><a href="https://drive.google.com/folderview?id=0B4ahP1irmkVGWkI2YnlXa3ZjNEk&amp;usp=sharing" target="_blank">Click here for a Google Drive folder with all the passages from the novel.</a></strong></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>word.camera exhibition</title>
+		<link>http://www.thehypertext.com/2015/11/24/word-camera-exhibition/</link>
+		<pubDate>Tue, 24 Nov 2015 19:58:34 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[doclab]]></category>
+		<category><![CDATA[idfa]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[surveillance]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=772</guid>
+		<description><![CDATA[<p>This week, I've been exhibiting my ongoing project, word.camera, at IDFA DocLab in Amsterdam.</p><p><a href="http://www.thehypertext.com/2015/11/24/word-camera-exhibition/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338.jpg"><img class="aligncenter size-large wp-image-777" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-1024x1024.jpg" alt="IMG_1338" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>This week, I&#8217;ve been <a href="http://www.doclab.org/2015/word-camera/" target="_blank">exhibiting</a> my ongoing project, <a href="https://word.camera" target="_blank">word.camera</a>, at <a href="http://www.doclab.org/" target="_blank">IDFA DocLab</a> in Amsterdam. My installation consists of four cameras:</p>
+<ol>
+<li>The original word.camera physical prototype:<a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg"><img class="aligncenter wp-image-534 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg" alt="9503_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>The sound camera physical prototype:<a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264.jpg"><img class="aligncenter wp-image-751 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-300x300.jpg" alt="IMG_1264" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>A new word.camera model that uses a context-free grammar to generate poems based on the images it captures:<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy.jpg"><img class="aligncenter size-medium wp-image-774" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg" alt="IMG_1321_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy.jpg"><img class="aligncenter size-medium wp-image-776" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg" alt="IMG_1317_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>A talking, pan-tilt-zoom surveillance camera that looks for faces in the hallway and then describes them aloud. (See also: <a href="http://motherboard.vice.com/read/sentient-surveillance-camera" target="_blank">this Motherboard video</a>)<br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241.jpg"><img class="aligncenter size-medium wp-image-788" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-300x225.jpg" alt="IMG_2324" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322.jpg"><img class="aligncenter size-medium wp-image-787" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-300x225.jpg" alt="IMG_2322" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365.jpg"><img class="aligncenter size-medium wp-image-778" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-300x225.jpg" alt="IMG_1365" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+</ol>
+<p>&nbsp;</p>
+<p>During the exhibition, I was also invited to deliver two lectures. Here are my slides from the first lecture:</p>
+<div id="attachment_780" style="width: 310px" class="wp-caption aligncenter"><a href="https://docs.google.com/presentation/d/1pVOivvt65SuuBTD0em1-jlJvYIdU2nKyDAN2fxvMhf4/edit?usp=sharing"><img class="wp-image-780 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-300x168.png" alt="Screen Shot 2015-11-24 at 8.54.10 PM" width="300" height="168" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-300x168.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-1024x572.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM.png 1514w" sizes="(max-width: 300px) 100vw, 300px" /></a><p class="wp-caption-text"><a href="https://docs.google.com/presentation/d/1pVOivvt65SuuBTD0em1-jlJvYIdU2nKyDAN2fxvMhf4/edit?usp=sharing" target="_blank">Click here for my lecture slides</a></p></div>
+<p>And here&#8217;s a video of the second one:</p>
+<p><iframe src="https://player.vimeo.com/video/146838083" width="610" height="343" frameborder="0" title="word.camera talk at IDFA DocLab 2015" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>Visitors are able to reserve the portable cameras for half hour blocks by leaving their ID at the volunteer kiosk. I have really enjoyed watching people borrow and use my cameras.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy.jpg"><img class="aligncenter size-medium wp-image-785" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-300x300.jpg" alt="IMG_1333 copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Run-length encoding algorithm</title>
+		<link>http://www.thehypertext.com/2015/10/28/run-length-encoding-algorithm/</link>
+		<pubDate>Wed, 28 Oct 2015 01:06:58 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Learning Machines]]></category>
+		<category><![CDATA[algorithm]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[encoding]]></category>
+		<category><![CDATA[learning machines]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[run-time encoding]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=769</guid>
+		<description><![CDATA[<p>For our first assignment in Learning Machines, Patrick asked us to implement run-length encoding in Python.</p>
+<p><a href="http://www.thehypertext.com/2015/10/28/run-length-encoding-algorithm/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For our first assignment in Learning Machines, Patrick asked us to implement run-length encoding in Python.</p>
+<p>Below is my code, which includes encode and decode functions.</p><pre class="crayon-plain-tag">def encode(u):
+	# init tracking vars
+	enc = list()
+	cur = list(u[0])
+	# iterate through string
+	for i in range(1, len(u)):
+		if u[i] == u[i-1]:
+			cur.append(u[i])
+		else:
+			enc.append((len(cur), u[i-1]))
+			cur = list(u[i])
+	# handle last character
+	enc.append((len(cur), cur[0]))
+
+	def rep(tup):
+		# encode using backtick as delimeter
+		count, char = tup
+		if count == 1:
+			return char
+		else:
+			return "%s`%i`" % (char, count)
+
+	return ''.join(map(rep, enc))
+
+def decode(e):
+	# init tracking vars
+	result = list()
+	cur_num = list()
+	# switch var
+	on_num = False
+	# iterate through encoded string
+	for i, char in enumerate(e):
+		# if delimeter found...
+		if char == "`":
+			# switch on/off
+			on_num = not on_num
+			# if closing delimeter
+			if not on_num:
+				result.append(
+					rep_char*int(''.join(cur_num))
+				)
+				cur_num = list()
+			# if opening delimeter
+			elif on_num and i &gt; 0:
+				# repeated char is last
+				# added to result
+				rep_char = result.pop()
+		# if not delimeter and not on number
+		elif not on_num:
+			result.append(char)
+		# if not delimeter and on number
+		else:
+			cur_num.append(char)
+	return ''.join(result)
+
+
+
+if __name__ == '__main__':
+	import sys
+	to_encode = sys.argv[1]
+	encoded = encode(to_encode)
+	decoded = decode(encoded)
+	print encoded
+	print decoded
+	assert to_encode == decoded</pre><p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>artificial intelligence</title>
+		<link>http://www.thehypertext.com/2015/10/27/artificial-intelligence/</link>
+		<pubDate>Tue, 27 Oct 2015 19:06:42 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Temporary Expert]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artificial intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=758</guid>
+		<description><![CDATA[<p>For my current project in Temporary Expert, I have been experimenting with artificially intelligent voice interfaces in order to build an art piece with similar functionality to the Amazon Echo, but with unexpected properties.</p>
+<p><a href="http://www.thehypertext.com/2015/10/27/artificial-intelligence/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For my current project in Temporary Expert, I have been experimenting with artificially intelligent voice interfaces in order to build an art piece with similar functionality to the <a href="https://en.wikipedia.org/wiki/Amazon_Echo" target="_blank">Amazon Echo</a>, but with unexpected properties.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/feature-key-features.jpg"><img class="aligncenter size-full wp-image-764" src="http://www.thehypertext.com/wp-content/uploads/2015/10/feature-key-features.jpg" alt="feature-key-features" width="416" height="652" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/feature-key-features.jpg 416w, http://www.thehypertext.com/wp-content/uploads/2015/10/feature-key-features-191x300.jpg 191w" sizes="(max-width: 416px) 100vw, 416px" /></a></p>
+<p>My robot will take the form of a benevolent computer virus. Using tools like <a href="https://github.com/asweigart/pyautogui" target="_blank">pyautogui</a> and the python <a href="https://docs.python.org/2/library/webbrowser.html" target="_blank">webbrowser</a> library, it will respond to user inquiries by opening documents, typing, and displaying web pages. It will also talk back to users using Apple&#8217;s text-to-speech utility.</p>
+<p>I am building this robot using <a href="https://wit.ai/" target="_blank">Wit.ai</a>, a deep learning tool for making voice interfaces. Using the tool&#8217;s dashboard, I have been training my robot to respond to various user intents.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-2.56.56-PM1.png"><img class="aligncenter size-large wp-image-763" src="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-2.56.56-PM1-1024x554.png" alt="Screen Shot 2015-10-27 at 2.56.56 PM" width="610" height="330" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-2.56.56-PM1-1024x554.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-2.56.56-PM1-300x162.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-27-at-2.56.56-PM1.png 1238w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>The core of the functionality will be a therapy bot similar to <a href="https://en.wikipedia.org/wiki/ELIZA">ELIZA</a>, but with some additional functionality. When this project is complete, I believe it will provide an interesting take on artificial intelligence. Using AI tools for different purposes than they were designed, I hope to make users question whether the tool they are using is in fact sentient and aware of their presence.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Sound Camera, Part III</title>
+		<link>http://www.thehypertext.com/2015/10/21/sound-camera-part-iii/</link>
+		<pubDate>Wed, 21 Oct 2015 22:10:27 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[deep learning]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[photography]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=741</guid>
+		<description><![CDATA[<p>I completed the physical prototype of the sound camera inside the enclosure I specified in my prior post, the Kodak Brownie Model 2.</p>
+<p><a href="http://www.thehypertext.com/2015/10/21/sound-camera-part-iii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I completed the physical prototype of the sound camera inside the enclosure I specified in <a href="http://www.thehypertext.com/2015/10/06/sound-camera-part-ii/">my prior post</a>, the Kodak Brownie Model 2.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263.jpg"><br />
+</a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264.jpg"><img class="aligncenter size-large wp-image-751" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-1024x1024.jpg" alt="IMG_1264" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>I started by adding a shutter button to the top of the enclosure. I used a Cherry MX Blue mechanical keyboard switch that I had leftover from <a href="http://www.thehypertext.com/tag/stenogloves/">a project last year</a>.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268.jpg"><img class="aligncenter size-large wp-image-754" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268-1024x1024.jpg" alt="IMG_1268" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1268-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>The battery and Raspberry Pi just barely fit into the enclosure:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267.jpg"><img class="aligncenter size-large wp-image-753" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267-1024x1024.jpg" alt="IMG_1267" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1267-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265.jpg"><img class="aligncenter size-large wp-image-752" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265-1024x1024.jpg" alt="IMG_1265" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1265-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>The Raspberry Pi camera module is wedged snugly beneath the camera&#8217;s front plate:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263.jpg"><img class="aligncenter size-large wp-image-750" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263-1024x1024.jpg" alt="IMG_1263" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1263-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>In additional to playing the song, I added some functionality that provides a bit of context to the user. Using the <a href="http://manpages.ubuntu.com/manpages/oneiric/man1/pico2wave.1.html">pico2wave</a> text-to-speech utility, the camera speaks the tags aloud before playing the song. Additionally, using <a href="http://sox.sourceforge.net/">SoX</a>, the camera plays an initialization tone generated from the color histogram of the image before reading the tags.</p>
+<p>Here&#8217;s the code that&#8217;s currently running on the Raspberry Pi:</p><pre class="crayon-plain-tag">from __future__ import unicode_literals
+
+import os
+import json
+import uuid
+import time
+from random import choice as rc
+from random import sample as rs
+import re
+import subprocess
+
+import RPi.GPIO as GPIO
+import picamera
+from clarifai.client import ClarifaiApi
+import requests
+from PIL import Image
+
+import sys
+import threading
+
+import spotify
+
+import genius_token
+
+# SPOTIFY STUFF
+
+# Assuming a spotify_appkey.key in the current dir
+session = spotify.Session()
+
+# Process events in the background
+loop = spotify.EventLoop(session)
+loop.start()
+
+# Connect an audio sink
+audio = spotify.AlsaSink(session)
+
+# Events for coordination
+logged_in = threading.Event()
+logged_out = threading.Event()
+end_of_track = threading.Event()
+
+logged_out.set()
+
+
+def on_connection_state_updated(session):
+    if session.connection.state is spotify.ConnectionState.LOGGED_IN:
+        logged_in.set()
+        logged_out.clear()
+    elif session.connection.state is spotify.ConnectionState.LOGGED_OUT:
+        logged_in.clear()
+        logged_out.set()
+
+
+def on_end_of_track(self):
+    end_of_track.set()
+
+# Register event listeners
+session.on(
+    spotify.SessionEvent.CONNECTION_STATE_UPDATED, on_connection_state_updated)
+session.on(spotify.SessionEvent.END_OF_TRACK, on_end_of_track)
+
+# Assuming a previous login with remember_me=True and a proper logout
+# session.relogin()
+# session.login(genius_token.spotify_un, genius_token.spotify_pwd, remember_me=True)
+
+# logged_in.wait()
+
+# CAMERA STUFF
+
+# Init Camera
+camera = picamera.PiCamera()
+
+# Init GPIO
+GPIO.setmode(GPIO.BCM)
+
+# Button Pin
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+IMGPATH = '/home/pi/soundcamera/img/'
+
+clarifai_api = ClarifaiApi()
+
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
+def take_photo():
+    fn = str(int(time.time()))+'.jpg' # TODO: Change to timestamp hash
+    fp = IMGPATH+fn
+    camera.capture(fp)
+    return fp
+
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
+def get_tags(fp):
+    fileObj = open(fp)
+    result = clarifai_api.tag_images(fileObj)
+    resultObj = result['results'][0]
+    tags = resultObj['result']['tag']['classes']
+    return tags
+
+def genius_search(tags):
+    access_token = genius_token.token
+    payload = {
+        'q': ' '.join(tags),
+        'access_token': access_token
+    }
+    endpt = 'http://api.genius.com/search'
+    response = requests.get(endpt, params=payload)
+    results = response.json()
+    hits = results['response']['hits']
+    
+    artists_titles = []
+    
+    for h in hits:
+        hit_result = h['result']
+        if hit_result['url'].endswith('lyrics'):
+            artists_titles.append(
+                (hit_result['primary_artist']['name'], hit_result['title'])
+            )
+    
+    return artists_titles
+
+def spotify_search(query):
+    endpt = "https://api.spotify.com/v1/search"
+    payload = {
+        'q': query,
+        'type': 'track'
+    }
+    response = requests.get(endpt, params=payload)
+    result = response.json()
+    result_zero = result['tracks']['items'][0]
+    
+    return result_zero['uri']
+
+def main(fn):
+    tags = get_tags(fn)
+    for tag_chunk in chunks(tags,3):
+        artists_titles = genius_search(tag_chunk)
+        for artist, title in artists_titles:
+            try:
+                result_uri = spotify_search(artist+' '+title)
+            except IndexError:
+                pass
+            else:
+                print tag_chunk
+                byline = "%s by %s" % (title, artist)
+                print byline
+                to_read = ', '.join(tag_chunk) + ". " + byline
+                return to_read, result_uri
+
+def play_uri(track_uri):
+    # Play a track
+    # audio = spotify.AlsaSink(session)
+    session.login(genius_token.spotify_un, genius_token.spotify_pwd, remember_me=True)
+    logged_in.wait()
+    track = session.get_track(track_uri).load()
+    session.player.load(track)
+    session.player.play()
+
+
+def stop_track():
+    session.player.play(False)
+    session.player.unload()
+    session.logout()
+    logged_out.wait()
+    audio._close()
+
+def talk(msg):
+    proc = subprocess.Popen(
+        ['bash', '/home/pi/soundcamera/play_text.sh', msg]
+    )
+    proc.communicate()
+
+def play_tone(freqs):
+    freq1, freq2 = freqs
+    proc = subprocess.Popen(
+        ['play', '-n', 'synth', '0.25', 'saw', "%i-%i" % (freq1, freq2)]
+    )
+    proc.communicate()
+
+def histo_tone(fp):
+    im = Image.open(fp)
+    hist = im.histogram()
+    vals = map(sum, chunks(hist, 64)) # list of 12 values
+    print vals
+    map(play_tone, chunks(vals,2))
+
+if __name__ == "__main__":
+    input_state = True
+    new_state = True
+    hold_counter = 0
+    while 1:
+        input_state = GPIO.input(18)
+        if not (input_state and new_state):
+            talk("capturing")
+
+            # Hold for 15 seconds to turn off
+            while not GPIO.input(18):
+                time.sleep(0.1)
+                hold_counter += 1
+                if hold_counter &gt; 150:
+                    os.system('shutdown now -h')
+                    sys.exit()
+
+            # Reset hold counter
+            hold_counter = 0
+
+            # Else take photo
+            try:
+                img_fp = take_photo()
+                msg, uri = main(img_fp)
+                histo_tone(img_fp)
+                talk(msg)
+                play_uri(uri)
+            except:
+                print sys.exc_info()
+
+            # Wait for playback to complete or Ctrl+C
+            try:
+                while not end_of_track.wait(0.1):
+                    # If new photo, play new song
+                    new_state = GPIO.input(18)
+                    if not new_state:
+                        stop_track()
+                        # time.sleep(2)
+                        break
+            except KeyboardInterrupt:
+                pass</pre><p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Sound Camera, Part II</title>
+		<link>http://www.thehypertext.com/2015/10/06/sound-camera-part-ii/</link>
+		<pubDate>Tue, 06 Oct 2015 02:20:44 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[gps]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=733</guid>
+		<description><![CDATA[<p>Using JavaScript and Python Flask, I created a functional software prototype of the Sound Camera.</p>
+<p><a href="http://www.thehypertext.com/2015/10/06/sound-camera-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Using JavaScript and Python Flask, I created a functional software prototype of the Sound Camera: <a href="http://rossgoodwin.com/soundcamera" target="_blank">rossgoodwin.com/soundcamera</a></p>
+<p>The front-end JavaScript code is available <a href="https://github.com/rossgoodwin/soundcamera" target="_blank">on GitHub</a>. Here is the primary back-end Python code:</p><pre class="crayon-plain-tag">import os
+import json
+import uuid
+from base64 import decodestring
+import time
+from random import choice as rc
+from random import sample as rs
+import re
+
+import PIL
+from PIL import Image
+import requests
+import exifread
+
+from flask import Flask, request, abort, jsonify
+from flask.ext.cors import CORS
+from werkzeug import secure_filename
+
+from clarifai.client import ClarifaiApi
+
+app = Flask(__name__)
+CORS(app)
+
+app.config['UPLOAD_FOLDER'] = '/var/www/SoundCamera/SoundCamera/static/img'
+IMGPATH = '/var/www/SoundCamera/SoundCamera/static/img/'
+
+clarifai_api = ClarifaiApi()
+
+@app.route("/")
+def index():
+    return "These aren't the droids you're looking for."
+
+@app.route("/img", methods=["POST"])
+def img():
+	request.get_data()
+	if request.method == "POST":
+		f = request.files['file']
+		if f:
+			filename = secure_filename(f.filename)
+			f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			new_filename = resize_image(filename)
+			return jsonify(uri=main(new_filename))
+		else:
+			abort(501)
+
+@app.route("/b64", methods=["POST"])
+def base64():
+	if request.method == "POST":
+		fstring = request.form['base64str']
+		filename = str(uuid.uuid4())+'.jpg'
+		file_obj = open(IMGPATH+filename, 'w')
+		file_obj.write(fstring.decode('base64'))
+		file_obj.close()
+		return jsonify(uri=main(filename))
+
+@app.route("/url")
+def url():
+	img_url = request.args.get('url')
+	response = requests.get(img_url, stream=True)
+	orig_filename = img_url.split('/')[-1]
+	if response.status_code == 200:
+		with open(IMGPATH+orig_filename, 'wb') as f:
+			for chunk in response.iter_content(1024):
+				f.write(chunk)
+		new_filename = resize_image(orig_filename)
+		return jsonify(uri=main(new_filename))
+	else:
+		abort(500)
+
+
+# def allowed_img_file(filename):
+#     return '.' in filename and \
+# 		filename.rsplit('.', 1)[1].lower() in set(['.jpg', '.jpeg', '.png'])
+
+def resize_image(fn):
+    longedge = 640
+    orientDict = {
+        1: (0, 1),
+        2: (0, PIL.Image.FLIP_LEFT_RIGHT),
+        3: (-180, 1),
+        4: (0, PIL.Image.FLIP_TOP_BOTTOM),
+        5: (-90, PIL.Image.FLIP_LEFT_RIGHT),
+        6: (-90, 1),
+        7: (90, PIL.Image.FLIP_LEFT_RIGHT),
+        8: (90, 1)
+    }
+
+    imgOriList = []
+    try:
+        f = open(IMGPATH+fn, "rb")
+        exifTags = exifread.process_file(f, details=False, stop_tag='Image Orientation')
+        if 'Image Orientation' in exifTags:
+            imgOriList.extend(exifTags['Image Orientation'].values)
+    except:
+        pass
+
+    img = Image.open(IMGPATH+fn)
+    w, h = img.size
+    newName = str(uuid.uuid4())+'.jpeg'
+    if w &gt;= h:
+        wpercent = (longedge/float(w))
+        hsize = int((float(h)*float(wpercent)))
+        img = img.resize((longedge,hsize), PIL.Image.ANTIALIAS)
+    else:
+        hpercent = (longedge/float(h))
+        wsize = int((float(w)*float(hpercent)))
+        img = img.resize((wsize,longedge), PIL.Image.ANTIALIAS)
+
+    for val in imgOriList:
+        if val in orientDict:
+            deg, flip = orientDict[val]
+            img = img.rotate(deg)
+            if flip != 1:
+                img = img.transpose(flip)
+
+    img.save(IMGPATH+newName, format='JPEG')
+    os.remove(IMGPATH+fn)
+    
+    return newName
+
+def chunks(l, n):
+    """Yield successive n-sized chunks from l."""
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
+
+def get_tags(fp):
+    fileObj = open(fp)
+    result = clarifai_api.tag_images(fileObj)
+    resultObj = result['results'][0]
+    tags = resultObj['result']['tag']['classes']
+    return tags
+
+def genius_search(tags):
+    access_token = 'd2IuV9fGKzYEWVnzmLVtFnm-EYvBQKR8Uh3I1cfZOdr8j-BGVTPThDES532dym5a'
+    payload = {
+        'q': ' '.join(tags),
+        'access_token': access_token
+    }
+    endpt = 'http://api.genius.com/search'
+    response = requests.get(endpt, params=payload)
+    results = response.json()
+    hits = results['response']['hits']
+    
+    artists_titles = []
+    
+    for h in hits:
+        hit_result = h['result']
+        if hit_result['url'].endswith('lyrics'):
+            artists_titles.append(
+                (hit_result['primary_artist']['name'], hit_result['title'])
+            )
+    
+    return artists_titles
+
+def spotify_search(query):
+    endpt = "https://api.spotify.com/v1/search"
+    payload = {
+        'q': query,
+        'type': 'track'
+    }
+    response = requests.get(endpt, params=payload)
+    result = response.json()
+    result_zero = result['tracks']['items'][0]
+    
+    return result_zero['uri']
+
+def main(fn):
+    tags = get_tags(IMGPATH+fn)
+    for tag_chunk in chunks(tags,3):
+        artists_titles = genius_search(tag_chunk)
+        for artist, title in artists_titles:
+            try:
+                result_uri = spotify_search(artist+' '+title)
+            except IndexError:
+                pass
+            else:
+                return result_uri
+
+
+if __name__ == "__main__":
+    app.run()</pre><p>&nbsp;</p>
+<p>It uses the same algorithm discussed in <a href="http://www.thehypertext.com/2015/09/14/sound-camera/" target="_blank">my prior post</a>. Now that I have the opportunity to test it more, I am not quite satisfied with the results it is providing. First of all, they are not entirely deterministic (you can upload the same photo twice and end up with two different songs in some cases). Moreover, the results from a human face &#8212; which I expect to be a common use case &#8212; are not very personal. For the next steps in this project, I plan to integrate additional data including GPS, weather, time of day, and possibly even facial expressions in order to improve the output.</p>
+<p>The broken cameras I ordered from eBay have arrived, and I have been considering how to use them as cases for the new models. I also purchased a GPS module for my Raspberry Pi, so the next Sound Camera prototype, with new features integrated, will likely be a physical version. I&#8217;m planning to use this Kodak Brownie camera (c. 1916):</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1207-e1444097935523.jpg"><img class="aligncenter size-large wp-image-736" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1207-e1444097935523-1024x1024.jpg" alt="IMG_1207" width="610" height="610" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>So it goes.</title>
+		<link>http://www.thehypertext.com/2015/10/06/so-it-goes/</link>
+		<pubDate>Tue, 06 Oct 2015 01:02:23 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Data Personalization]]></category>
+		<category><![CDATA[Programming A to Z]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[Chart.js]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[d3]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[data visualization]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[kurt vonnegut]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[pattern]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[visualization]]></category>
+		<category><![CDATA[word cloud]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=717</guid>
+		<description><![CDATA[<p>Kurt Vonnegut's complete works, analyzed for sentiment, visualized as interactive TF-IDF word clouds</p>
+<p><a href="http://www.thehypertext.com/2015/10/06/so-it-goes/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>Kurt Vonnegut once gave a brief, delightful lecture on the shapes of stories:</p>
+<p><iframe width="610" height="458" src="https://www.youtube.com/embed/oP3c1h8v2ZQ?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>This was the primary inspiration for my latest project, which features Kurt Vonnegut&#8217;s complete works, analyzed for sentiment, and visualized as interactive word clouds. I developed it entirely in front-end JavaScript, and it&#8217;s currently hosted on GitHub pages: <a href="http://rossgoodwin.com/vonnegut" target="_blank">rossgoodwin.com/vonnegut</a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.38-PM.png"><img class="aligncenter size-large wp-image-720" src="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.38-PM-1024x640.png" alt="Screen Shot 2015-10-05 at 8.26.38 PM" width="610" height="381" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.38-PM-1024x640.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.38-PM-300x188.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.03-PM.png"><img class="aligncenter size-large wp-image-721" src="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.03-PM-1024x640.png" alt="Screen Shot 2015-10-05 at 8.26.03 PM" width="610" height="381" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.03-PM-1024x640.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.26.03-PM-300x188.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.24.51-PM.png"><img class="aligncenter size-large wp-image-722" src="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.24.51-PM-1024x640.png" alt="Screen Shot 2015-10-05 at 8.24.51 PM" width="610" height="381" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.24.51-PM-1024x640.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-8.24.51-PM-300x188.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>Users can scrub through the sentiment graph of each book from start to finish and see a word cloud displayed for each position on the slider. Each word cloud represents 10 paragraphs of the book. Along with the rises and dips in the graph, sentiment values are indicated by the color of the word cloud text, which ranges from dark green (highly positive) to bright red (highly negative).</p>
+<p>Rather than simply using word count or frequency for the size of the words, I used <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf" target="_blank">TF-IDF</a> scores. (Each 10 paragraph block was treated as one document, and each book was treated as an independent set of documents.) As a result, the largest words in each word cloud are those that make their respective section unique in the context of the entire book.</p>
+<p>The first steps in creating this project were to parse Vonnegut&#8217;s books, perform TF-IDF calculations for each word and sentiment analysis for each 10-paragraph segment, then store the resulting data in a set of JSON files. Here are the iPython Notebooks where I completed these steps:</p>
+<ul>
+<li><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/tfidf.html" target="_blank">TF-IDF Calculations</a></li>
+<li><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/sentiment.html" target="_blank">Sentiment Analysis</a> – Performed with the <a href="http://www.clips.ua.ac.be/pages/pattern" target="_blank">Pattern</a> library</li>
+<li><a href="http://www.thehypertext.com/wp-content/uploads/2015/10/clean.html" target="_blank">Data Cleaning / Output to JSON Files</a> – Splitting the data into over 400 JSON files was required to ensure the browser would not have to load too much information all at once.</li>
+</ul>
+<p>Once I had the JSON files, I used <a href="http://d3js.org/" target="_blank">D3</a> to create the word clouds and <a href="http://www.chartjs.org/" target="_blank">Chart.js</a> to create the line graphs. The sliders are HTML range inputs, modified with custom CSS. I wanted to create the appearance of long, semi-transparent planchettes sliding over the graphs. Getting the sliders to line up with the graphs precisely was particularly challenging, as was providing the option to click on the graphs in any location and automatically move the sliders to that location.</p>
+<p>Here is my JavaScript code, in its current state:</p><pre class="crayon-plain-tag">(function() {
+
+Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+  return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+function titleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
+// Charts.js global config
+Chart.defaults.global.animation = false;
+Chart.defaults.global.tooltipEvents = [];
+Chart.defaults.global.scaleFontFamily = "'Cousine', monospace";
+Chart.defaults.global.showScale = false;
+
+// var spectrum = ['#F22613', '#E74C3C', '#D35400', '#F2784B', '#95A5A6', '#68C3A3', '#4DAF7C', '#3FC380', '#2ECC71'];
+var spectrum = ["#f22613", "#f25749", "#f28379", "#f2b0aa", "#95a5a6", "#add9c2", "#74b391", "#45996c", "#1e824c"];
+
+
+$("#key-block").append(
+  '&lt;div id=\"key-text-box\"&gt;&lt;p class=\"text-center lead small\" style=\"margin-left: 7px;\"&gt;&amp;lt;&amp;lt;&amp;lt; negative | positive &amp;gt;&amp;gt;&amp;gt;&lt;/p&gt;&lt;/div&gt;'
+);
+
+spectrum.map(function(hex){
+  $("#key-block").append(
+    '&lt;div class=\"key-color\" style=\"background-color:'+hex+';\"&gt;&lt;/div&gt;'
+  );
+});
+
+function updateCloud(bookslug, section) {
+
+  $.getJSON("data/vonnegut-"+section+".json", function(data){
+
+    // var factor = Math.pow(data[bookslug]['tfidf'].length, 2);
+
+    var layout = d3.layout.cloud()
+        .size([800, 500])
+        .words(data[bookslug]['tfidf'].map(function(d) {
+          return {text: d[0], size: d[1] * 500};
+        }))
+        .padding(3)
+        .rotate(function() { return 0; }) // return ~~(Math.random() * 2) * 90
+        .font("Cousine")
+        .fontSize(function(d) { return d.size; })
+        .on("end", draw);
+    layout.start();
+
+    function draw(words) {
+
+      var overallContainer = d3.select("#"+bookslug);
+
+      overallContainer.select("svg").remove();
+      overallContainer.select("a").remove();
+
+      var svgContainer = overallContainer.append("svg")
+          .attr("width", layout.size()[0])
+          .attr("height", layout.size()[1])
+          .attr("class", "svg-cont");
+
+      var wordCloud = svgContainer.append("g")
+          .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+        .selectAll("text")
+          .data(words)
+        .enter().append("text")
+          .transition().duration(500)
+          .style("font-size", function(d) { return d.size + "px"; })
+          .style("font-family", "Cousine")
+          .style("fill", function(d, i) {
+              var sentiment = data[bookslug]['sentiment'];
+              var ix = Math.floor(((sentiment + 1)/2)*spectrum.length);
+              return spectrum[ix];
+          })
+          .attr("text-anchor", "middle")
+          .attr("transform", function(d) {
+            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+          })
+          .text(function(d) { return d.text; });
+
+      var title = titleCase(data[bookslug]['title']);
+
+      var labelText = overallContainer
+                      .append("a")
+                      .attr("href", "http://www.amazon.com/exec/obidos/external-search/?field-keywords=%s"+title+"&amp;mode=blended")
+                      .attr("class", "twitter-link")
+                      .attr("target", "_blank")
+                      .text(title);
+
+      overallContainer.transition()
+          .style("opacity", 1.0)
+          .delay(1000)
+          .duration(3000);
+    }
+
+  });
+
+}
+
+$.getJSON("data/sentiment.json", function(sent){
+$.getJSON("data/vonnegut-0.json", function(data){
+  $("#loadinggif").fadeOut("slow");
+  Object.keys(data).sort().map(function(slug){
+    $("#vis").append(
+      '&lt;div id=\"'+slug+'\" class=\"col-md-12 transparent text-center\"&gt;&lt;/div&gt;'
+    );
+
+    $("#"+slug).append(
+      '&lt;canvas class="chart-canvas" id=\"'+slug+'-chart\" width=\"800\" height=\"150\"&gt;&lt;/canvas&gt;'
+    );
+
+    var ctx = document.getElementById(slug+"-chart").getContext("2d");
+
+    var xLabels = [];
+
+    for (var i=0;i&lt;data[slug]['length'];i++) {
+      xLabels.push('');
+    }
+
+    var chartData = {
+        labels: xLabels,
+        datasets: [
+            {
+                label: titleCase(data[slug]['title']),
+                fillColor: "rgba(210, 215, 211, 0.7)",
+                strokeColor: "rgba(189, 195, 199, 1)",
+                pointColor: "rgba(210, 215, 211, 1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: sent[slug]
+            }
+        ]
+    };
+
+    var chartOptions = {
+      pointDot : false,
+      pointHitDetectionRadius : 5,
+      scaleShowVerticalLines: false,
+      bezierCurve: false
+    };
+
+    var myNewChart = new Chart(ctx).Line(chartData, chartOptions);
+
+    var stepCount = data[slug]['length'] - 1;
+
+    $("#"+slug).append(
+      '&lt;div class=\"scrubber\"&gt;&lt;input id=\"'+slug+'-scrub\" type=\"range\" min=\"0\" max=\"'+stepCount+'\" value=\"0\" step=\"1\"&gt;&lt;/div&gt;'
+    );
+
+    $("#"+slug+"-chart").on("click", function(evt){
+      var activePoints = myNewChart.getPointsAtEvent(evt);
+      var xPos = activePoints[Math.floor(activePoints.length/2)].x;
+      var ix = Math.floor(xPos.map(0, 800, 0, data[slug]['length']));
+      console.log(xPos);
+      console.log(ix);
+      $('#'+slug+'-scrub').val(ix);
+      updateCloud(slug, ix);
+    });
+
+    // Play Button
+    $('#'+slug).append(
+      '&lt;button type=\"button\" id=\"'+slug+'-btn\" class=\"btn btn-default btn-xs play-btn\" aria-label=\"Play\"&gt;&lt;span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"&gt;&lt;/span&gt;&lt;/button&gt;'
+    );
+
+    $('#'+slug).append(
+      '&lt;button type=\"button\" id=\"'+slug+'-btn-pause\" class=\"btn btn-default btn-xs play-btn\" aria-label=\"Pause\"&gt;&lt;span class=\"glyphicon glyphicon-pause\" aria-hidden=\"true\"&gt;&lt;/span&gt;&lt;/button&gt;'
+    );
+
+    // Load First Clouds
+    updateCloud(slug, 0);
+
+    var play;
+
+    $('#'+slug+'-btn').click(function(){
+
+      console.log('clicked ' + slug);
+      autoAdvance();
+      play = setInterval(function(){
+        autoAdvance();
+      }, 5000);
+
+      function autoAdvance(){
+          var scrubVal = $('#'+slug+'-scrub').val();
+          console.log(data[slug]['length']);
+          if (scrubVal &gt;= data[slug]['length']-1) {
+            console.log("EOR");
+            clearInterval(play);
+          }
+          console.log(scrubVal);
+          var newVal = parseInt(scrubVal, 10) + 1;
+          $('#'+slug+'-scrub').val(newVal);
+          updateCloud(slug, newVal);
+      }
+
+    });
+
+
+
+    $('#'+slug+'-btn-pause').click(function(){
+      clearInterval(play);
+    });
+
+
+    $("#"+slug+"-scrub").on("input", function(){
+      var sectNo = $(this).val();
+      console.log(sectNo);
+      updateCloud(slug, sectNo);
+    });
+  });
+});
+});
+
+
+
+})();</pre><p>&nbsp;</p>
+<p>The rest of my front-end code can be found <a href="https://github.com/rossgoodwin/vonnegut" target="_blank">on GitHub</a>.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Candidate Image Explorer</title>
+		<link>http://www.thehypertext.com/2015/09/17/candidate-image-explorer/</link>
+		<pubDate>Thu, 17 Sep 2015 15:53:26 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Data Personalization]]></category>
+		<category><![CDATA[2016 election]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[deep learning]]></category>
+		<category><![CDATA[election scrape]]></category>
+		<category><![CDATA[fusion]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[image tagging]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[social media]]></category>
+		<category><![CDATA[visualization]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=700</guid>
+		<description><![CDATA[<p>For this week's homework in Designing for Data Personalization with Sam Slover, I made progress on a project that I'm working on for Fusion as part of their 2016 US Presidential Election coverage.</p>
+<p><a href="http://www.thehypertext.com/2015/09/17/candidate-image-explorer/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For this week&#8217;s homework in Designing for Data Personalization with Sam Slover, I made progress on a project that I&#8217;m working on for <a href="http://fusion.net/">Fusion</a> as part of their 2016 US Presidential Election coverage. I began this project by downloading all the images from each candidate&#8217;s Twitter, Facebook, and Instagram account &#8212; about 60,000 in total &#8212; then running those images through <a href="http://clarifai.com/">Clarifai</a>&#8216;s convolutional neural networks to generate descriptive tags.</p>
+<p>With all the images hosted on <a href="https://aws.amazon.com/s3/" target="_blank">Amazon s3</a>, and the tag data hosted on <a href="https://parse.com/">parse.com</a>, I created a simple page where users can explore the candidates&#8217; images by topic and by candidate. The default is all topics and all candidates, but users can narrow the selection of images displayed by making multiple selections from each field. Additionally, more images will load as you scroll down the page.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM.png"><img class="aligncenter size-large wp-image-703" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.24.47 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.24.47-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM.png"><img class="aligncenter size-large wp-image-710" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.30.30 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.30.30-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM.png"><img class="aligncenter size-large wp-image-707" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.20.50 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.20.50-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM.png"><img class="aligncenter size-large wp-image-701" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.28.45 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.28.45-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM.png"><img class="aligncenter size-large wp-image-702" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.25.42 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.25.42-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM.png"><img class="aligncenter size-large wp-image-709" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.19.53 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.19.53-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Unfortunately, the AI-enabled image tagging doesn&#8217;t always work as well as one might hope.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM.png"><img class="aligncenter size-large wp-image-705" src="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-1024x617.png" alt="Screen Shot 2015-09-17 at 11.23.49 AM" width="610" height="368" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-1024x617.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-17-at-11.23.49-AM-300x181.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Here&#8217;s the page&#8217;s JavaScript code:</p><pre class="crayon-plain-tag">var name2slug = {};
+var slug2name = {};
+
+Array.prototype.remove = function() {
+    var what, a = arguments, L = a.length, ax;
+    while (L &amp;&amp; this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+}
+
+Array.prototype.chunk = function(chunkSize) {
+    var array=this;
+    return [].concat.apply([],
+        array.map(function(elem,i) {
+            return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
+        })
+    );
+}
+
+function dateFromString(str) {
+	var m = str.match(/(\d+)-(\d+)-(\d+)T(\d+):(\d+):(\d+)Z/);
+	var date = new Date(Date.UTC(+m[1], +m[2], +m[3], +m[4], +m[5], +m[6]));
+	var options = {
+	    weekday: "long", year: "numeric", month: "short",
+	    day: "numeric", hour: "2-digit", minute: "2-digit"
+	};
+	return date.toLocaleTimeString("en-us", options);
+}
+
+function updatePhotos(query) {
+	$.ajax({
+		url: 'https://api.parse.com/1/classes/all_photos?limit=1000&amp;where='+JSON.stringify(query),
+		type: 'GET',
+		dataType: 'json',
+		success: function(response) {
+			// console.log(response);
+			$('#img-container').empty();
+
+			var curChunk = 0;
+			var resultChunks = response['results'].chunk(30);
+
+			function appendPhotos(chunkNo) {
+
+				resultChunks[chunkNo].map(function(obj){
+					var date = dateFromString(obj['datetime'])
+					var imgUrl = "https://s3-us-west-2.amazonaws.com/electionscrape/" + obj['source'] + "/400px_" + obj['filename'];
+					var fullImgUrl = "https://s3-us-west-2.amazonaws.com/electionscrape/" + obj['source'] + "/" + obj['filename'];
+					$('#img-container').append(
+						$('&lt;div class=\"grid-item\"&gt;&lt;/div&gt;').append(
+							'&lt;a href=\"'+fullImgUrl+'\"&gt;&lt;img src=\"'+imgUrl+'\" width=\"280px\"&gt;&lt;/a&gt;&lt;p&gt;'+slug2name[obj['candidate']]+'&lt;/p&gt;&lt;p&gt;'+date+'&lt;/p&gt;&lt;p&gt;'+obj['source']+'&lt;/p&gt;'
+						) // not a missing semicolon
+					);
+					// console.log(obj['candidate']);
+					// console.log(obj['datetime']);
+					// console.log(obj['source']);
+					// console.log(obj['filename']);
+				});
+
+			}
+
+			appendPhotos(curChunk);
+
+			window.onscroll = function(ev) {
+			    if ((window.innerHeight + window.scrollY) &gt;= document.body.offsetHeight) {
+			        curChunk++;
+			        appendPhotos(curChunk);
+			    }
+			};
+
+
+		},
+		error: function(response) { "error" },
+		beforeSend: setHeader
+	});
+}
+
+function setHeader(xhr) {
+	xhr.setRequestHeader("X-Parse-Application-Id", "ID-GOES-HERE");
+	xhr.setRequestHeader("X-Parse-REST-API-Key", "KEY-GOES-HERE");
+}
+
+function makeQuery(candArr, tagArr) {
+
+	orArr = tagArr.map(function(tag){
+		return { "tags": tag };
+	})
+
+	if (tagArr.length === 0 &amp;&amp; candArr.length &gt; 0) {
+		var query = {
+			'candidate': {"$in": candArr}
+		};
+	}
+	else if (tagArr.length &gt; 0 &amp;&amp; candArr.length === 0) {
+		var query = {
+			'$or': orArr
+		};
+	}
+	else if (tagArr.length === 0 &amp;&amp; candArr.length === 0) {
+		var query = {};
+	}
+	else {
+		var query = {
+			'candidate': {"$in": candArr},
+			'$or': orArr
+		};
+	}
+
+	updatePhotos(query);
+
+}
+
+(function(){
+
+$('.grid').masonry({
+  // options
+  itemSelector: '.grid-item',
+  columnWidth: 300
+});
+
+var selectedCandidates = [];
+var selectedTags = [];
+
+$.getJSON("data/candidates.json", function(data){
+	var candNames = Object.keys(data).map(function(slug){
+		var name = data[slug]['name'];
+		name2slug[name] = slug;
+		slug2name[slug] = name;
+		return name;
+	}).sort();
+
+	candNames.map(function(name){
+		$('#candidate-dropdown').append(
+			'&lt;li class=\"candidate-item\"&gt;&lt;a href=\"#\"&gt;'+name+'&lt;/a&gt;&lt;/li&gt;'
+		);
+	});
+
+	$('.candidate-item').click(function(){
+		var name = $(this).text();
+		var slug = name2slug[name];
+		if ($.inArray(slug, selectedCandidates) === -1) {
+			selectedCandidates.push(slug);
+			makeQuery(selectedCandidates, selectedTags);
+			console.log(selectedCandidates);
+			$('#selected-candidates').append(
+				$('&lt;button class=\"btn btn-danger btn-xs cand-select-btn\"&gt;&lt;span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"&gt;&lt;/span&gt;'+name+'&lt;/button&gt;')
+					.click(function(){
+						$(this).fadeOut("fast", function(){
+							selectedCandidates.remove(name2slug[$(this).text()]);
+							makeQuery(selectedCandidates, selectedTags);
+							console.log(selectedCandidates);
+						});
+					}) // THIS IS NOT A MISSING SEMI-COLON
+			);
+		}
+	});
+});
+
+
+$.getJSON("data/tags.json", function(data){
+	var tags = data["tags"].sort();
+	tags.map(function(tag){
+		$('#tag-dropdown').append(
+			'&lt;li class=\"tag-item\"&gt;&lt;a href=\"#\"&gt;'+tag+'&lt;/a&gt;&lt;/li&gt;'
+		);
+	});
+
+	$('.tag-item').click(function(){
+		var tag = $(this).text();
+		if ($.inArray(tag, selectedTags) === -1) {
+			selectedTags.push(tag);
+			makeQuery(selectedCandidates, selectedTags);
+			console.log(selectedTags);
+			$('#selected-tags').append(
+				$('&lt;button class=\"btn btn-primary btn-xs tag-select-btn\"&gt;&lt;span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"&gt;&lt;/span&gt;'+tag+'&lt;/button&gt;')
+					.click(function(){
+						$(this).fadeOut("fast", function(){
+							selectedTags.remove($(this).text());
+							makeQuery(selectedCandidates, selectedTags);
+							console.log(selectedTags);
+						});
+					})
+			);
+		}
+	});
+});
+
+makeQuery(selectedCandidates, selectedTags);
+
+})();</pre><p>&nbsp;</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Sound Camera</title>
+		<link>http://www.thehypertext.com/2015/09/14/sound-camera/</link>
+		<comments>http://www.thehypertext.com/2015/09/14/sound-camera/#comments</comments>
+		<pubDate>Mon, 14 Sep 2015 04:06:42 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artificial intelligence]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[project development studio]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=687</guid>
+		<description><![CDATA[<p>This week, I have been prototyping a script that chooses music based on photographs. Ideally, the end result will be a wearable camera / music player that selects tracks for you based on your environment.</p>
+<p><a href="http://www.thehypertext.com/2015/09/14/sound-camera/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I have been looking for ways to push the conceptual framework behind word.camera to another domain. This week, I have been prototyping a script that chooses music based on photographs. Ideally, the end result will be a wearable camera / music player that selects tracks for you based on your environment. Unfortunately, the domain <a href="http://sound.camera">sound.camera</a> has been claimed, but I&#8217;m still planning to use the name &#8220;Sound Camera&#8221; for this project.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/09/ipod-shuffle-modified.jpg"><img class="aligncenter size-medium wp-image-694" src="http://www.thehypertext.com/wp-content/uploads/2015/09/ipod-shuffle-modified-300x196.jpg" alt="ipod shuffle - modified" width="300" height="196" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/ipod-shuffle-modified-300x196.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/09/ipod-shuffle-modified.jpg 600w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>My code:<br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/09/noisecamera_demo.html" target="_blank">iPython Notebook</a></p>
+<p>The script I wrote gets concept words from the image via <a href="http://clarifai.com/">Clarifai</a>, then searches song lyrics for those words on <a href="http://genius.com/">Genius</a>, then finds the song on <a href="https://www.spotify.com/" target="_blank">Spotify</a>. Below are some images I put through the algorithm. You can click on each one to hear the song that resulted, though you will need to login to Spotify to do so.</p>
+<p>&nbsp;</p>
+<p><a href="https://open.spotify.com/track/5KM6uHM7JuCDl2MltBOv1N"><img class="aligncenter size-medium wp-image-691" src="http://www.thehypertext.com/wp-content/uploads/2015/09/putin-300x300.jpg" alt="putin" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/putin-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/09/putin-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/09/putin-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/09/putin.jpg 416w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="https://open.spotify.com/track/1BoOOWrON7sXtt1PZCM1lb"><img class="aligncenter size-medium wp-image-692" src="http://www.thehypertext.com/wp-content/uploads/2015/09/street-300x188.jpg" alt="street" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/street-300x188.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/09/street.jpg 620w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="https://open.spotify.com/track/5kjsK3XrCToekWdqQedzxd"><img class="aligncenter size-medium wp-image-690" src="http://www.thehypertext.com/wp-content/uploads/2015/09/landscape-300x225.jpg" alt="landscape" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/landscape-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/09/landscape.jpg 800w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p><a href="https://open.spotify.com/track/1w1yQMcueBo7MWnhWgLsFC"><img class="aligncenter size-medium wp-image-689" src="http://www.thehypertext.com/wp-content/uploads/2015/09/cat-300x204.jpg" alt="cat" width="300" height="204" srcset="http://www.thehypertext.com/wp-content/uploads/2015/09/cat-300x204.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/09/cat.jpg 512w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The next step will be to get this code working on a Raspberry Pi inside one of the film camera bodies I just received via eBay.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2015/09/14/sound-camera/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

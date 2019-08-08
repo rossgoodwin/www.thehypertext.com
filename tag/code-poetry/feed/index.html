@@ -1,0 +1,1762 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>code poetry &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/code-poetry/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>Netflix for Robots</title>
+		<link>http://www.thehypertext.com/2015/12/10/netflix-for-robots/</link>
+		<pubDate>Thu, 10 Dec 2015 06:08:24 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Learning Machines]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[deep learning]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[learning machines]]></category>
+		<category><![CDATA[lua]]></category>
+		<category><![CDATA[machine learning]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[neural networks]]></category>
+		<category><![CDATA[neuraltalk]]></category>
+		<category><![CDATA[neuraltalk2]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[the x-files]]></category>
+		<category><![CDATA[torch]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=800</guid>
+		<description><![CDATA[<p>For my final project in Learning Machines, I forced a deep learning machine to watch every episode of The X-Files.</p>
+<p><a href="http://www.thehypertext.com/2015/12/10/netflix-for-robots/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>For my final project in Learning Machines, I forced a deep learning machine to watch every episode of <em>The X-Files</em>.</p>
+<p>Watching every episode of <em>The X-Files</em> in high school on Netflix DVDs that came in the mail (remember those?) seemed like the thing to do. It was a great show, with 9 seasons of 20+ episodes a piece. So, it only seemed fair to provide a robot friend with the same experience.</p>
+<p>I&#8217;m currently running <a href="https://github.com/karpathy/neuraltalk2">NeuralTalk2</a>, which is truly wonderful open source image captioning code consisting of convolutional and recurrent neural networks. The software requires a GPU to train models, so I&#8217;m running it on an Amazon Web Services GPU server instance. At ~50 cents per hour, it&#8217;s a lot more expensive than Netflix.</p>
+<p><a href="https://twitter.com/karpathy" target="_blank">Andrej Karpathy</a> wrote NeuralTalk2 in Torch, which is based in Lua, and it requires a lot of dependencies. However, it was a lot easier to set up than the <a href="https://github.com/google/deepdream" target="_blank">Deep Dream</a> code I experimented with over the summer.</p>
+<p>The training process has involved a lot of trial and error. The learning process seems to just halt sometimes, and the machine often wants to issue the same caption for every image.</p>
+<p>Rather than training the machine with an image caption set, I trained it with dialogue from subtitles and matching frames extracted at 10 second intervals from every episode of <em>The X-Files</em>. This is just an experiment, and I&#8217;m not expecting stellar results.</p>
+<p>That said, the robot is already spitting out some pretty weird and genuinely creepy lines. I can&#8217;t wait until I have a version that&#8217;s trained well enough to feed in new images and get varied results.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM.png"><img class="aligncenter wp-image-802 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.18.48 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.18.48-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM.png"><img class="aligncenter wp-image-803 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.20.22 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.20.22-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM.png"><img class="aligncenter wp-image-804 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.21.53 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.21.53-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM.png"><img class="aligncenter wp-image-805 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-1024x938.png" alt="Screen Shot 2015-12-09 at 2.26.45 PM" width="610" height="559" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-1024x938.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.26.45-PM-300x275.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM.png"><img class="aligncenter wp-image-806 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.33.11 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.33.11-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM.png"><img class="aligncenter wp-image-807 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.34.41 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.34.41-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM.png"><img class="aligncenter wp-image-808 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.35.27 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.35.27-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM.png"><img class="aligncenter wp-image-809 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.36.01 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.36.01-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a> <a href="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM.png"><img class="aligncenter wp-image-810 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-1024x872.png" alt="Screen Shot 2015-12-09 at 2.42.05 PM" width="610" height="519" srcset="http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-1024x872.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/12/Screen-Shot-2015-12-09-at-2.42.05-PM-300x256.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>word.camera exhibition</title>
+		<link>http://www.thehypertext.com/2015/11/24/word-camera-exhibition/</link>
+		<pubDate>Tue, 24 Nov 2015 19:58:34 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Project Development Studio]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[doclab]]></category>
+		<category><![CDATA[idfa]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[sound camera]]></category>
+		<category><![CDATA[surveillance]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=772</guid>
+		<description><![CDATA[<p>This week, I've been exhibiting my ongoing project, word.camera, at IDFA DocLab in Amsterdam.</p><p><a href="http://www.thehypertext.com/2015/11/24/word-camera-exhibition/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338.jpg"><img class="aligncenter size-large wp-image-777" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-1024x1024.jpg" alt="IMG_1338" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1338-50x50.jpg 50w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>This week, I&#8217;ve been <a href="http://www.doclab.org/2015/word-camera/" target="_blank">exhibiting</a> my ongoing project, <a href="https://word.camera" target="_blank">word.camera</a>, at <a href="http://www.doclab.org/" target="_blank">IDFA DocLab</a> in Amsterdam. My installation consists of four cameras:</p>
+<ol>
+<li>The original word.camera physical prototype:<a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg"><img class="aligncenter wp-image-534 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg" alt="9503_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>The sound camera physical prototype:<a href="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264.jpg"><img class="aligncenter wp-image-751 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-300x300.jpg" alt="IMG_1264" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/10/IMG_1264-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>A new word.camera model that uses a context-free grammar to generate poems based on the images it captures:<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy.jpg"><img class="aligncenter size-medium wp-image-774" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg" alt="IMG_1321_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1321_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy.jpg"><img class="aligncenter size-medium wp-image-776" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg" alt="IMG_1317_copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1317_copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+<li>A talking, pan-tilt-zoom surveillance camera that looks for faces in the hallway and then describes them aloud. (See also: <a href="http://motherboard.vice.com/read/sentient-surveillance-camera" target="_blank">this Motherboard video</a>)<br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241.jpg"><img class="aligncenter size-medium wp-image-788" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-300x225.jpg" alt="IMG_2324" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_23241-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322.jpg"><img class="aligncenter size-medium wp-image-787" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-300x225.jpg" alt="IMG_2322" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_2322-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a><br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365.jpg"><img class="aligncenter size-medium wp-image-778" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-300x225.jpg" alt="IMG_1365" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1365-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></li>
+</ol>
+<p>&nbsp;</p>
+<p>During the exhibition, I was also invited to deliver two lectures. Here are my slides from the first lecture:</p>
+<div id="attachment_780" style="width: 310px" class="wp-caption aligncenter"><a href="https://docs.google.com/presentation/d/1pVOivvt65SuuBTD0em1-jlJvYIdU2nKyDAN2fxvMhf4/edit?usp=sharing"><img class="wp-image-780 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-300x168.png" alt="Screen Shot 2015-11-24 at 8.54.10 PM" width="300" height="168" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-300x168.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM-1024x572.png 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-8.54.10-PM.png 1514w" sizes="(max-width: 300px) 100vw, 300px" /></a><p class="wp-caption-text"><a href="https://docs.google.com/presentation/d/1pVOivvt65SuuBTD0em1-jlJvYIdU2nKyDAN2fxvMhf4/edit?usp=sharing" target="_blank">Click here for my lecture slides</a></p></div>
+<p>And here&#8217;s a video of the second one:</p>
+<p><iframe src="https://player.vimeo.com/video/146838083" width="610" height="343" frameborder="0" title="word.camera talk at IDFA DocLab 2015" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>Visitors are able to reserve the portable cameras for half hour blocks by leaving their ID at the volunteer kiosk. I have really enjoyed watching people borrow and use my cameras.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy.jpg"><img class="aligncenter size-medium wp-image-785" src="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-300x300.jpg" alt="IMG_1333 copy" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/11/IMG_1333-copy-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>word.camera, Part II</title>
+		<link>http://www.thehypertext.com/2015/05/08/word-camera-part-ii/</link>
+		<pubDate>Fri, 08 May 2015 21:50:25 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Convo Comp]]></category>
+		<category><![CDATA[Remix]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[convo comp]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction camera]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[lexography]]></category>
+		<category><![CDATA[mamiya]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[photography]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[remix]]></category>
+		<category><![CDATA[word.camera]]></category>
+		<category><![CDATA[wordcamera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=505</guid>
+		<description><![CDATA[<p>For my final projects in Conversation and Computation with Lauren McCarthy and This Is The Remix with Roopa Vasudevan, I iterated on my word.camera project.</p><p><a href="http://www.thehypertext.com/2015/05/08/word-camera-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p style="text-align: center;"><a title="Part I" href="http://www.thehypertext.com/2015/04/11/word-camera/" target="_blank"><strong>Click Here for Part I</strong></a></p>
+<hr />
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/11161692_10100527204674408_7877879408640753455_o.jpg"><img class="aligncenter wp-image-524 size-large" src="http://www.thehypertext.com/wp-content/uploads/2015/05/11161692_10100527204674408_7877879408640753455_o-1024x685.jpg" alt="11161692_10100527204674408_7877879408640753455_o" width="610" height="408" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/11161692_10100527204674408_7877879408640753455_o-1024x685.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/05/11161692_10100527204674408_7877879408640753455_o-300x201.jpg 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<hr />
+<p>For my final projects in <em>Conversation and Computation</em> with <a title="Lauren McCarthy" href="http://lauren-mccarthy.com/" target="_blank">Lauren McCarthy</a> and <em>This Is The Remix</em> with <a href="http://rouxpz.com/" target="_blank">R<span id="site-title">oopa Vasudevan</span></a>, I iterated on my <a title="word.camera" href="https://word.camera" target="_blank">word.camera</a> project. I added a few new features to the web application, including a private API that I used to enable the creation of a physical version of word.camera inside a <a title="Mamiya C33" href="http://camerapedia.wikia.com/wiki/Mamiya_C33_Professional" target="_blank">Mamiya C33 TLR</a>.</p>
+<p>The current version of the code remains open source and <a href="https://github.com/rossgoodwin/photosynthesis" target="_blank">available on GitHub</a>, and the project continues to receive <a href="http://motherboard.vice.com/read/the-app-that-translates-your-pictures-into-words" target="_blank">positive mentions</a> <a href="http://www.theglobeandmail.com/arts/books-and-media/russell-smith-art-project-wordcamera-is-the-coolest-selfie-you-can-take/article24219761/" target="_blank">in the press</a>.</p>
+<p>On April 19, I announced two new features for word.camera via the <a title="Lexography Email Newsletter" href="https://tinyletter.com/lexography">TinyLetter email newsletter</a> I advertised on the site.</p>
+<blockquote><p>Hello,</p>
+<p>Thank you for subscribing to this newsletter, wherein I will provide occasional updates regarding my project, <a href="http://word.camera/">word.camera</a>.</p>
+<p>I wanted to let you know about two new features I added to the site in the past week:</p>
+<p><a href="https://word.camera/albums">word.camera/albums</a> You can now generate ebooks (DRM-free ePub format) from sets of lexographs.</p>
+<p><a href="https://word.camera/postcards">word.camera/postcards</a> You can support word.camera by sending a lexograph as a postcard, anywhere in the world for $5. I am currently a graduate student, and proceeds will help cover the cost of maintaining this web application as a free, open source project.</p>
+<p>Also:</p>
+<p><a href="https://word.camera/a/XwP59n1zR">word.camera/a/XwP59n1zR</a> A lexograph album containing some of the best results I&#8217;ve gotten so far with the camera on my phone.</p>
+<p><a href="https://word.camera/i/AWolrqy4E">1</a>, <a href="https://word.camera/i/zAQozoyOB">2</a>, <a href="https://word.camera/i/ypQO2XnNB">3</a> A few random lexographs I did not make that were popular on social media.</p>
+<p>Best,</p>
+<p>Ross Goodwin<br />
+<a href="http://rossgoodwin.com/">rossgoodwin.com</a><br />
+<a href="https://word.camera/">word.camera</a></p></blockquote>
+<p>Next, I set to work on the physical version. I decided to use a technique I developed <a title="Dr. Gonzo" href="http://www.thehypertext.com/2015/02/19/dr-gonzo/" target="_blank">on another project earlier in the semester</a> to create word.camera epitaphs composed of highly relevant paragraphs from novels. To ensure fair use of copyrighted materials, I determined that all of this additional data would be processed locally on the physical camera.</p>
+<p>I developed a collection of data from a combination of novels that are considered classics and those I personally enjoyed, and I included only paragraphs over 99 characters in length. In total, the collection contains 7,113,809 words from 48 books.</p>
+<p>Below is an infographic showing all the books used in my corpus, and their relative included word counts (click on it for the full-size image).</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/A79449E2CDA5D178.png"><img class="aligncenter wp-image-555 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2015/05/A79449E2CDA5D178-134x300.png" alt="A79449E2CDA5D178" width="134" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/A79449E2CDA5D178-134x300.png 134w, http://www.thehypertext.com/wp-content/uploads/2015/05/A79449E2CDA5D178-458x1024.png 458w" sizes="(max-width: 134px) 100vw, 134px" /></a></p>
+<div></div>
+<p>To build the physical version of word.camera, I purchased the following materials:</p>
+<ul>
+<li>Raspberry Pi 2 board</li>
+<li>Raspberry Pi camera module</li>
+<li>Two (2) 10,000 mAh batteries</li>
+<li>Thermal receipt printer</li>
+<li>40 female-to-male jumper wires</li>
+<li>Three (3) extra-small prototyping perf boards</li>
+<li>LED button</li>
+</ul>
+<p>After some tinkering, I was able to put together the arrangement pictured below, which could print raw word.camera output on the receipt printer.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354.jpg"><img class="aligncenter size-medium wp-image-525" src="http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354-300x300.jpg" alt="IMG_0354" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/IMG_0354.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>I thought for a long time about the type of case I wanted to put the camera in. My original idea was a photobooth, but I felt that a portable camera—along the lines of <a href="http://mattrichardson.com/Descriptive-Camera/" target="_blank">Matt Richardson&#8217;s Descriptive Camera</a>—might take better advantage of the Raspberry Pi&#8217;s small footprint.</p>
+<p>Rather than fabricating my own case, I determined that an antique film camera might provide a familiar exterior to draw in people not familiar with the project. (And I was creating it for a remix-themed class, after all.) So I purchased a lot of three broken TLR film cameras on eBay, and the Mamiya C33 was in the best condition of all of them, so I gutted it. (N.B. I&#8217;m an antique camera enthusiast—I own a working version of the C33&#8217;s predecessor, the C2—and, despite its broken condition, cutting open the bellows of the C33 felt sacrilegious.)</p>
+<p>I laser cut some clear acrylic I had left over from the traveler&#8217;s lamp project to fill the lens holes and mount the LED button on the back of the camera. Here are some photos of the finished product:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg"><img class="aligncenter size-medium wp-image-534" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg" alt="9503_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9503_20150507_tlr_1000px1.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px.jpg"><img class="aligncenter size-medium wp-image-533" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px-300x300.jpg" alt="9502_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9502_20150507_tlr_1000px.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px.jpg"><img class="aligncenter size-medium wp-image-535" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px-300x300.jpg" alt="9509_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9509_20150507_tlr_1000px.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px.jpg"><img class="aligncenter size-medium wp-image-532" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px-300x300.jpg" alt="9496_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9496_20150507_tlr_1000px.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px.jpg"><img class="aligncenter size-medium wp-image-531" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px-300x300.jpg" alt="9493_20150507_tlr_1000px" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2015/05/9493_20150507_tlr_1000px.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/9513_20150507_tlr_1000px.jpg"><img class="aligncenter size-medium wp-image-536" src="http://www.thehypertext.com/wp-content/uploads/2015/05/9513_20150507_tlr_1000px-300x200.jpg" alt="9513_20150507_tlr_1000px" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/9513_20150507_tlr_1000px-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/9513_20150507_tlr_1000px.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>And here is the code that&#8217;s running on the Raspberry Pi (the crux of the matching algorithm is on line 90):</p><pre class="crayon-plain-tag">import uuid
+import picamera
+import RPi.GPIO as GPIO
+import requests
+from time import sleep
+import os
+import json
+from Adafruit_Thermal import *
+from alchemykey import apikey
+import time
+
+# SHUTTER COUNT / startNo GLOBAL
+startNo = 0
+
+# Init Printer
+printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer.setSize('S')
+printer.justify('L')
+printer.setLineHeight(36)
+
+# Init Camera
+camera = picamera.PiCamera()
+
+# Init GPIO
+GPIO.setmode(GPIO.BCM)
+
+# Working Dir
+cwd = '/home/pi/tlr'
+
+# Init Button Pin
+GPIO.setup(21, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+# Init LED Pin
+GPIO.setup(20, GPIO.OUT)
+
+# Init Flash Pin
+GPIO.setup(16, GPIO.OUT)
+
+# LED and Flash Off
+GPIO.output(20, False)
+GPIO.output(16, False)
+
+# Load lit list
+lit = json.load( open(cwd+'/lit.json', 'r') )
+
+
+def blink(n):
+    for _ in range(n):
+        GPIO.output(20, True)
+        sleep(0.2)
+        GPIO.output(20, False)
+        sleep(0.2)
+
+def takePhoto():
+    fn = str(int(time.time()))+'.jpg' # TODO: Change to timestamp hash
+    fp = cwd+'/img/'+fn
+    GPIO.output(16, True)
+    camera.capture(fp)
+    GPIO.output(16, False)
+    return fp
+
+def getText(imgPath):
+    endPt = 'https://word.camera/img'
+    payload = {'Script': 'Yes'}
+    files = {'file': open(imgPath, 'rb')}
+    response = requests.post(endPt, data=payload, files=files)
+    return response.text
+
+def alchemy(text):
+    endpt = "http://access.alchemyapi.com/calls/text/TextGetRankedConcepts"
+    payload = {"apikey": apikey,
+               "text": text,
+               "outputMode": "json",
+               "showSourceText": 0,
+               "knowledgeGraph": 1,
+               "maxRetrieve": 500}
+    headers = {'content-type': 'application/x-www-form-urlencoded'}
+    r = requests.post(endpt, data=payload, headers=headers)
+    return r.json()
+
+def findIntersection(testDict):
+    returnText = ""
+    returnTitle = ""
+    returnAuthor = ""
+    recordInter = set(testDict.keys())
+    relRecord = 0.0
+    for doc in lit:
+        inter = set(doc['concepts'].keys()) &amp; set(testDict.keys())
+        if inter:
+            relSum = sum([doc['concepts'][tag]+testDict[tag] for tag in inter])
+            if relSum &gt; relRecord: 
+                relRecord = relSum
+                recordInter = inter
+                returnText = doc['text']
+                returnTitle = doc['title']
+                returnAuthor = doc['author']
+    doc = {
+        'text': returnText,
+        'title': returnTitle,
+        'author': returnAuthor,
+        'inter': recordInter,
+        'record': relRecord
+    }
+    return doc
+
+def puncReplace(text):
+    replaceDict = {
+        '&amp;#8212;': '---',
+        '&amp;#8211;': '--',
+        '&amp;#8216;': "\'",
+        '&amp;#8217;': "\'",
+        '&amp;#8220;': '\"',
+        '&amp;#8221;': '\"',
+        '&amp;#180;': "\'",
+        '&amp;#235;': 'e',
+        '&amp;#241;': 'n'
+    }
+
+    for key in replaceDict:
+        text = text.replace(key, replaceDict[key])
+
+    return text
+
+
+blink(5)
+while 1:
+    input_state = GPIO.input(21)
+    if not input_state:
+        GPIO.output(20, True)
+        try:
+            # Get Word.Camera Output
+            print "GETTING TEXT FROM WORD.CAMERA..."
+            wcText = getText(takePhoto())
+            blink(3)
+            GPIO.output(20, True)
+            print "...GOT TEXT"
+
+            # Print
+            # print "PRINTING PRIMARY"
+            # startNo += 1
+            # printer.println("No. %i\n\n\n%s" % (startNo, wcText))
+
+            # Get Alchemy Data
+            print "GETTING ALCHEMY DATA..."
+            data = alchemy(wcText)
+            tagRelDict = {concept['text']:float(concept['relevance']) for concept in data['concepts']}
+            blink(3)
+            GPIO.output(20, True)
+            print "...GOT DATA"
+
+            # Make Match
+            print "FINDING MATCH..."
+            interDoc = findIntersection(tagRelDict)
+            print interDoc
+            interText = puncReplace(interDoc['text'].encode('ascii', 'xmlcharrefreplace'))
+            interTitle = puncReplace(interDoc['title'].encode('ascii', 'xmlcharrefreplace'))
+            interAuthor = puncReplace(interDoc['author'].encode('ascii', 'xmlcharrefreplace'))
+            blink(3)
+            GPIO.output(20, True)
+            print "...FOUND"
+
+            grafList = [p for p in wcText.split('\n') if p]
+
+            # Choose primary paragraph
+            primaryText = min(grafList, key=lambda x: x.count('#'))
+            url = 'word.camera/i/' + grafList[-1].strip().replace('#', '')
+
+            # Print
+            print "PRINTING..."
+            startNo += 1
+            printStr = "No. %i\n\n\n%s\n\n%s\n\n\n\nEPITAPH\n\n%s\n\nFrom %s by %s" % (startNo, primaryText, url, interText, interTitle, interAuthor)
+            printer.println(printStr)
+
+        except:
+            print "SOMETHING BROKE"
+            blink(15)
+
+        GPIO.output(20, False)</pre><p>Thanks to <a href="http://www.dorkbotpdx.org/blog/paul/battery_pack_load" target="_blank">a transistor pulsing circuit that keeps the printer&#8217;s battery awake</a>, and <a href="http://www.daveconroy.com/how-to-tether-your-raspberry-pi-with-your-iphone-5/" target="_blank">some code that automatically tethers the Raspberry Pi to my iPhone</a>, the Fiction Camera is fully portable. I&#8217;ve been walking around Brooklyn and Manhattan over the past week making lexographs—the device is definitely a conversation starter. As a street photographer, I&#8217;ve noticed that people seem to be more comfortable having their photograph taken with it than with a standard camera, possibly because the visual image (and whether they look alright in it) is far less important.</p>
+<p>As a result of these wanderings, I&#8217;ve accrued quite a large number of lexograph receipts. Earlier iterations of the receipt design contained longer versions of the word.camera output. Eventually, I settled on a version that contains a number (indicating how many lexographs have been taken since the device was last turned on), one paragraph of word.camera output, a URL to the word.camera page containing the photo + complete output, and a single high-relevance paragraph from a novel.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2080_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-602" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2080_20150508_doc_1800px-300x225.jpg" alt="2080_20150508_doc_1800px" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2080_20150508_doc_1800px-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/2080_20150508_doc_1800px-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2095_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-607" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2095_20150508_doc_1800px-300x225.jpg" alt="2095_20150508_doc_1800px" width="300" height="225" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2095_20150508_doc_1800px-300x225.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/2095_20150508_doc_1800px-1024x768.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2082_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-603" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2082_20150508_doc_1800px-225x300.jpg" alt="2082_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2082_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2082_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2082_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2088_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-604" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2088_20150508_doc_1800px-225x300.jpg" alt="2088_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2088_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2088_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2088_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2091_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-605" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2091_20150508_doc_1800px-225x300.jpg" alt="2091_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2091_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2091_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2091_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2093_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-606" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2093_20150508_doc_1800px-225x300.jpg" alt="2093_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2093_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2093_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2093_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2097_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-608" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2097_20150508_doc_1800px-225x300.jpg" alt="2097_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2097_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2097_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2097_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2100_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-609" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2100_20150508_doc_1800px-225x300.jpg" alt="2100_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2100_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2100_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2100_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2102_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-610" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2102_20150508_doc_1800px-225x300.jpg" alt="2102_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2102_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2102_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2102_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2104_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-611" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2104_20150508_doc_1800px-225x300.jpg" alt="2104_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2104_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2104_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2104_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2106_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-612" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2106_20150508_doc_1800px-225x300.jpg" alt="2106_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2106_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2106_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2106_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2108_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-613" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2108_20150508_doc_1800px-225x300.jpg" alt="2108_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2108_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2108_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2108_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/2109_20150508_doc_1800px.jpg"><img class="aligncenter size-medium wp-image-614" src="http://www.thehypertext.com/wp-content/uploads/2015/05/2109_20150508_doc_1800px-225x300.jpg" alt="2109_20150508_doc_1800px" width="225" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/2109_20150508_doc_1800px-225x300.jpg 225w, http://www.thehypertext.com/wp-content/uploads/2015/05/2109_20150508_doc_1800px-768x1024.jpg 768w, http://www.thehypertext.com/wp-content/uploads/2015/05/2109_20150508_doc_1800px.jpg 1350w" sizes="(max-width: 225px) 100vw, 225px" /></a></p>
+<p>I also demonstrated the camera at ConvoHack, our final presentation event for Conversation and Computation, which took place at Babycastles gallery, and passed out over 50 lexograph receipts that evening alone.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1475.jpg"><img class="aligncenter size-medium wp-image-541" src="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1475-300x200.jpg" alt="6A0A1475" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1475-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1475-1024x683.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1416.jpg"><img class="aligncenter size-medium wp-image-542" src="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1416-300x200.jpg" alt="6A0A1416" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1416-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1416-1024x683.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1380.jpg"><img class="aligncenter size-medium wp-image-544" src="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1380-300x200.jpg" alt="6A0A1380" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1380-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1380-1024x683.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1352.jpg"><img class="aligncenter size-medium wp-image-545" src="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1352-300x200.jpg" alt="6A0A1352" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1352-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1352-1024x683.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1348.jpg"><img class="aligncenter size-medium wp-image-546" src="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1348-300x200.jpg" alt="6A0A1348" width="300" height="200" srcset="http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1348-300x200.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2015/05/6A0A1348-1024x683.jpg 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p style="text-align: center;"><em>Photographs by <a title="Karam Byun" href="http://www.byunnnn.com/" target="_blank">Karam Byun</a></em></p>
+<p>Often, when photographing a person, the camera will output a passage from a novel featuring a character description that subjects seem to relate to. Many people have told me the results have qualities that remind them of horoscopes.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>word.camera</title>
+		<link>http://www.thehypertext.com/2015/04/11/word-camera/</link>
+		<comments>http://www.thehypertext.com/2015/04/11/word-camera/#comments</comments>
+		<pubDate>Sat, 11 Apr 2015 05:12:58 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Convo Comp]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artificial intelligence]]></category>
+		<category><![CDATA[clarifai]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[conceptnet]]></category>
+		<category><![CDATA[convo comp]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[image]]></category>
+		<category><![CDATA[image to text]]></category>
+		<category><![CDATA[lexograph]]></category>
+		<category><![CDATA[lexography]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[photography]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[word.camera]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=481</guid>
+		<description><![CDATA[<p>Last week, I launched a web application and a concept for photographic text generation that I have been working on for a few months. The idea came to me while working on another project, a computer generated screenplay, and I will discuss the connection in this post.</p><p><a href="http://www.thehypertext.com/2015/04/11/word-camera/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<h1>lexograph /ˈleksəʊɡɹɑːf/ (n.)<br />
+A text document generated from digital image data</h1>
+<hr />
+<p>&nbsp;</p>
+<p>Last week, I launched a web application and a concept for photographic text generation that I have been working on for a few months. The idea came to me while working on another project, a computer generated screenplay, and I will discuss the connection in this post.</p>
+<p><a href="http://word.camera" target="_blank">word.camera</a> is responsive &#8212; it works on desktop, tablet, and mobile devices running recent versions of iOS or Android. The code behind it is open source and <a href="https://github.com/rossgoodwin/photosynthesis" target="_blank">available on GitHub</a>, because lexography is for everyone.</p>
+<p>&nbsp;</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-11-at-12.31.56-AM.png"><img class="aligncenter size-medium wp-image-483" src="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-11-at-12.31.56-AM-300x188.png" alt="Screen Shot 2015-04-11 at 12.31.56 AM" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-11-at-12.31.56-AM-300x188.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-11-at-12.31.56-AM-1024x640.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.01.42-AM.png"><img class="aligncenter size-medium wp-image-484" src="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.01.42-AM-300x188.png" alt="Screen Shot 2015-04-08 at 2.01.42 AM" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.01.42-AM-300x188.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.01.42-AM-1024x640.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.02.24-AM.png"><img class="aligncenter size-medium wp-image-485" src="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.02.24-AM-300x188.png" alt="Screen Shot 2015-04-08 at 2.02.24 AM" width="300" height="188" srcset="http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.02.24-AM-300x188.png 300w, http://www.thehypertext.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-08-at-2.02.24-AM-1024x640.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Users can share their lexographs using unique URLs. Of all this lexographs I&#8217;ve seen generated by users since the site launched (there are now almost 7,000), this one, shared on <a href="http://reddit.com/r/creativecoding" target="_blank">reddit&#8217;s /r/creativecoding</a>, stuck with me the most: <a href="http://word.camera/i/7KZPPaqdP" target="_blank">http://word.camera/i/7KZPPaqdP</a></p>
+<p>I was surprised when the software noticed and commented on the singer in the painting behind me: <a href="http://word.camera/i/ypQvqJr6L" target="_blank">http://word.camera/i/ypQvqJr6L</a></p>
+<p>I was inspired to create this project while working on another project. This semester, I received a grant from the Future of Storytelling Initiative at NYU to produce a computer generated screenplay, and I had been thinking about how to generate text that&#8217;s more cohesive and realistically descriptive, meaning that it would transition between related topics in a logical fashion and describe a scene that could realistically exist (no &#8220;colorless green ideas sleeping furiously&#8221;) in order to making filming the screenplay possible . After playing with the <a href="clarifai.com">Clarifai API</a>, which uses convolutional neural networks to tag images, it occurred to me that including photographs in my input corpus, rather than relying on text alone, could provide those qualities. word.camera is my first attempt at producing that type of generative text.</p>
+<p>At the moment, the results are not nearly as grammatical as I would like them to be, and I&#8217;m working on that. The algorithm extracts tags from images using Clarifai&#8217;s convolutional neural networks, then expands those tags into paragraphs using <a href="http://conceptnet5.media.mit.edu" target="_blank">ConceptNet</a> (a lexical relations database developed at MIT) and a flexible template system. The template system enables the code to build sentences that connect concepts together.</p>
+<p>This project is about augmenting our creativity and presenting images in a different format, but it&#8217;s also about creative applications of artificial intelligence technology. I think that when we think about the type of artificial intelligence we&#8217;ll have in the future, based on what we&#8217;ve read in science fiction novels, we think of a robot that can describe and interact with its environment with natural language. I think that creating the type of AI we imagine in our wildest sci-fi fantasies is not only an engineering problem, but also a design problem that requires a creative approach.</p>
+<p>I hope lexography eventually becomes accepted as a new form of photography. As a writer and a photographer, I love the idea that I could look at a scene and photograph it because it might generate an interesting poem or short story, rather than just an interesting image. And I&#8217;m not trying to suggest that word.camera is the final or the only possible implementation of that new art form. I made the code behind word.camera open source because I want others to help improve it and make their own versions &#8212; provided they also make their code available under the same terms, which is required under the GNU GPLv3 open source license I&#8217;m using. As the technology gets better, the results will get better, and lexography will make more sense to people as a worthy artistic pursuit.</p>
+<p>I&#8217;m thrilled that the project has received worldwide attention from photography blogs and a few media outlets, and I hope users around the world continue enjoying word.camera as I keep working to improve it. Along with improving the language, I plan to expand the project by offering a mobile app and generated downloadable ebooks so that users can enjoy their lexographs offline.</p>
+<hr />
+<p>&nbsp;</p>
+<p style="text-align: center;"><a href="http://www.thehypertext.com/2015/05/08/word-camera-part-ii/"><strong>Click Here for Part II</strong></a></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2015/04/11/word-camera/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Fiction Generator, Part IV</title>
+		<link>http://www.thehypertext.com/2014/12/21/fiction-generator-part-iv/</link>
+		<pubDate>Sun, 21 Dec 2014 03:04:53 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Networked Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[interaction]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[interactivity]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel generator]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=406</guid>
+		<description><![CDATA[<p>For my final project in Networked Media with Daniel Shiffman, I put the Fiction Generator online at fictiongenerator.com. I also exhibited this project at the ITP Winter Show.</p>
+
+<p><a href="http://www.thehypertext.com/2014/12/21/fiction-generator-part-iv/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><strong>Prior Installments:<br />
+<a href="http://www.thehypertext.com/2014/11/11/fiction-generator/" target="_blank">Part I</a><br />
+<a href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/" target="_blank">Part II</a><br />
+<a href="http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/" target="_blank">Part III</a></strong></p>
+<p>For my final project in Comm Lab: Networked Media with <a href="http://shiffman.net/" target="_blank">Daniel Shiffman</a>, I put the Fiction Generator online at <a title="Fiction Generator" href="http://fictiongenerator.com" target="_blank">fictiongenerator.com</a>. <a href="http://motherboard.vice.com/read/the-first-novel-based-on-the-cia-torture-report-was-written-by-an-algorithm" target="_blank">VICE/Motherboard ran an article</a> about my website, and I exhibited the project at the ITP Winter Show.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/composite.jpg"><img class="aligncenter size-large wp-image-407" src="http://www.thehypertext.com/wp-content/uploads/2014/12/composite-682x1024.jpg" alt="composite" width="610" height="915" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/composite-682x1024.jpg 682w, http://www.thehypertext.com/wp-content/uploads/2014/12/composite-200x300.jpg 200w, http://www.thehypertext.com/wp-content/uploads/2014/12/composite.jpg 1000w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>&nbsp;</p>
+<p>After reading <a href="http://www.writing.upenn.edu/~afilreis/88v/burroughs-cutup.html" target="_blank">William S. Burroughs&#8217; essay about the cut-up technique</a>, I decided to implement <a href="https://github.com/rossgoodwin/cutup" target="_blank">an algorithmic version of it</a> into the generator. I also refactored my existing code and added a load screen, with this animation:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif"><img class="aligncenter size-full wp-image-409" src="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif" alt="robotholdingbook" width="250" height="250" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook.gif 250w, http://www.thehypertext.com/wp-content/uploads/2014/12/robotholdingbook-50x50.gif 50w" sizes="(max-width: 250px) 100vw, 250px" /></a></p>
+<p>I am running a <a href="http://www.ubuntu.com/" target="_blank">Linux</a>&#8211;<a href="http://httpd.apache.org/" target="_blank">Apache</a>&#8211;<a href="http://flask.pocoo.org/" target="_blank">Flask</a> stack at the moment. Here&#8217;s a screen shot of the website in its current state:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot.png"><img class="aligncenter size-large wp-image-410" src="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-1024x956.png" alt="screenshot" width="610" height="569" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-1024x956.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/12/screenshot-300x280.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Fiction Generator, Part III</title>
+		<link>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/</link>
+		<comments>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/#comments</comments>
+		<pubDate>Tue, 09 Dec 2014 19:00:04 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[Networked Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational creative writing]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[ficgen]]></category>
+		<category><![CDATA[fiction]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel]]></category>
+		<category><![CDATA[novel generator]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=392</guid>
+		<description><![CDATA[<p>For my final project in Introduction to Computational Media with Daniel Shiffman, I presented my fiction generator (working title: "FicGen"). Since my previous post about this project, I have added a graphical user interface and significantly refactored my code.</p>
+<p><a href="http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><strong>Prior Installments:<br />
+<a href="http://www.thehypertext.com/2014/11/11/fiction-generator/" target="_blank">Part I</a><br />
+<a href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/" target="_blank">Part II</a></strong></p>
+<p>For my final project in Introduction to Computational Media with <a href="http://shiffman.net/" target="_blank">Daniel Shiffman</a>, I presented my fiction generator (working title: &#8220;FicGen&#8221;). Since my previous post about this project, I have added a graphical user interface and significantly expanded/refactored my code, which I moved to a <a title="FicGen on GitHub" href="https://github.com/rossgoodwin/ficgen" target="_blank">new repository on GitHub</a>. I have also submitted this project as my entry in the <a title="ITP Winter Show" href="http://itp.nyu.edu/shows/winter2014/" target="_blank">ITP Winter Show</a>. For my Networked Media final project, which is due Friday, I plan to put FicGen online.</p>
+<p>Here is a screenshot of the GUI, which I implemented in Processing:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM.png"><img class="aligncenter size-large wp-image-394" src="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-1024x640.png" alt="Screen Shot 2014-12-02 at 1.19.28 PM" width="610" height="381" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-1024x640.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/12/Screen-Shot-2014-12-02-at-1.19.28-PM-300x187.png 300w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>When I presented this project in our final ICM class on Tuesday, November 25, the only working elements in the GUI were the text fields and the big red button. Now, most of the buttons and sliders have functionality as well. After pushing the red button, a Python script emails the completed novel to the user in PDF format.</p>
+<p>After creating the GUI above, I expanded the material I am using to generate the novels by scraping content from two additional sources: over 2,000 sci-fi/horror stories from <a href="http://www.scp-wiki.net" target="_blank">scp-wiki.net</a>, and over 47,000 books from <a href="http://www.gutenberg.org/" target="_blank">Project Gutenberg</a>. I then significantly refactored my code to accommodate these additions. My new Python program, <a href="https://github.com/rossgoodwin/ficgen/blob/master/ficgen.py" target="_blank">ficgen.py</a>, is far more object oriented and organized than my previous <a href="https://github.com/rossgoodwin/plotgen/blob/master/novelizer_icm.py" target="_blank">plotgen script</a>, which had become somewhat of a mess by the time I presented my project in class two weeks ago.</p>
+<p>Here&#8217;s the current code:</p><pre class="crayon-plain-tag">import math
+import argparse
+import random
+from random import choice as rc
+from random import sample as rs
+from random import randint as ri
+import string
+import math
+from zipfile import ZipFile
+
+import nltk
+import en
+
+from g_paths import gPaths
+from erowid_experience_paths import erowidExpPaths
+from tropes_character import characterTropeFiles
+from tropes_setting import settingTropeFiles
+from scp_paths import scpPaths
+from firstnames_f import fFirstNames
+from firstnames_m import mFirstNames
+from surnames import surnames
+
+
+# TODO:
+# [X] CLEAN UP TROPE FILE PATHS LIST
+# [ ] Fix "I'm" and "I'll" problem
+# [ ] Add Plot Points / Narrative Points / Phlebotinum
+# [ ] subtrope / sub-trope
+# [ ] add yelp reviews
+# [ ] add livejournal
+# [X] add SCP
+
+# System Path
+
+sysPath = "/Users/rg/Projects/plotgen/ficgen/"
+
+
+# Argument Values
+
+genre_list = ['literary', 'sci-fi', 'fantasy', 'history', 'romance', 'thriller', 
+			  'mystery', 'crime', 'pulp', 'horror', 'beat', 'fan', 'western', 
+			  'action', 'war', 'family', 'humor', 'sport', 'speculative']
+conflict_list = ['nature', 'man', 'god', 'society', 'self', 'fate', 'tech', 'no god', 'reality', 'author']
+narr_list = ['first', '1st', '1', 'third', '3rd', '3', 'alt', 'alternating', 'subjective', 
+			 'objective', 'sub', 'obj', 'omniscient', 'omn', 'limited', 'lim']
+
+parser = argparse.ArgumentParser(description='Story Parameters')
+parser.add_argument('--charnames', nargs='*', help="Character Names")
+parser.add_argument('--title', help="Story Title")
+parser.add_argument('--length', help="Story Length (0-999)")
+parser.add_argument('--charcount', help="Character Count (0-999)")
+parser.add_argument('--genre', nargs='*', help="Genre", choices=genre_list)
+parser.add_argument('--conflict', nargs='*', help="Conflict", choices=conflict_list)
+parser.add_argument('--passion', help="Passion (0-999)")
+parser.add_argument('--verbosity', help="Verbosity (0-999)")
+parser.add_argument('--realism', help="Realism (0-999)")
+parser.add_argument('--density', help="Density (0-999)")
+parser.add_argument('--accessibility', help="Accessibility (0-999)")
+parser.add_argument('--depravity', help="Depravity (0-999)")
+parser.add_argument('--linearity', help="Linearity (0-999)")
+parser.add_argument('--narrator', nargs='*', help="Narrative PoV", choices=narr_list)
+args = parser.parse_args()
+
+
+# ESTABLISH SYSTEM-WIDE COEFFICIENTS/CONSTANTS
+
+# tsv = trope setting volume
+TSV = (int(args.length)/2.0 + int(args.realism)/6.0 + int(args.passion)/3.0)/1000.0
+if 'fan' in args.genre:
+	TSV += 1.0
+TSV = int(math.ceil(2.0*TSV))
+
+# cc = actual number of extra characters / MAKE EXPONENTIAL
+CC = int(math.exp(math.ceil(int(args.charcount)/160.0))/2.0)+10
+
+# chc = chapter count
+CHC = int(math.exp(math.ceil(int(args.length)/160.0))/2.0)+10
+
+# dtv = drug trip volume
+DTV = (int(args.length)/4.0 + int(args.realism)/12.0 + int(args.passion)/6.0 + int(args.depravity)*1.5)/1000.0
+if 'beat' in args.genre:
+	DTV += 1.0
+if 'society' in args.conflict:
+	DTV += 1.0
+DTV = int(math.ceil(5.0*DTV))
+
+# scp = scp article volume
+SCP = int(args.length)/1000.0
+if bool(set(['sci-fi', 'horror']) &amp; set(args.genre)):
+	SCP += 1.0
+if bool(set(['tech', 'no god', 'reality', 'nature', 'god']) &amp; set(args.conflict)):
+	SCP += 1.0
+SCP = int(math.ceil(2.0*SCP))
+
+# den = length (in chars) of project gutenerg excerpts
+DEN = int(args.density)*10
+
+# ggv = gutenberg excerpt volume
+GGV = (int(args.length) + int(args.density))/500.0
+if 'literary' in args.genre:
+	GGV += 2.0
+GGV = int(math.ceil(5.0*GGV))
+
+# chl = chapter length as percent of potential chapter length
+CHL = int(args.length)/1000.0
+
+
+# file text fetchers
+def get_file(fp):
+
+	f = open(sysPath+fp, 'r')
+	t = f.read()
+	f.close()
+
+	return t
+
+def get_zip(fp):
+
+	fileName = fp.split('/')[-1]
+	noExtName = fileName.split('.')[0]
+	txtName = noExtName + ".txt"
+
+	ff = ZipFile(fp, 'r')
+	fileNames = ff.namelist()
+	oo = ff.open(fileNames[0], 'r')
+	tt = oo.read()
+	oo.close()
+	ff.close()
+
+	return tt
+
+
+
+# CLASSES
+
+class Character(object):
+
+	def __init__(self, firstName, lastName):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.introDesc = ""
+		self.scenes = []
+		self.drugTrips = []
+		self.scpReports = [] 
+		self.gbergExcerpts = []
+		self.friends = [] # list of objects
+
+
+class Chapter(object):
+
+	def __init__(self, charObj):
+		self.charObj = charObj
+		self.title = ""
+		self.blocks = []
+
+
+	def title_maker(self):
+		charTitle = ri(0, 2)
+
+		if not bool(charTitle):
+
+			ttl = self.charObj.firstName + " " + self.charObj.lastName
+
+		else:
+			
+			titleSource = ri(0, 3)
+
+			if titleSource == 0:
+				textSource = rc(self.charObj.scenes)
+			elif titleSource == 1:
+				textSource = rc(self.charObj.drugTrips)
+			elif titleSource == 2:
+				textSource = rc(self.charObj.scpReports)
+			elif titleSource == 3:
+				textSource = rc(self.charObj.gbergExcerpts)
+
+			tokens = nltk.word_tokenize(textSource)
+
+			if len(tokens) &gt; 20:
+				index = ri(0, len(tokens)-10)
+				titleLen = ri(2, 6)
+				ttl = ' '.join(tokens[index:index+titleLen])
+			else:
+				ttl = self.charObj.firstName + " " + self.charObj.lastName
+
+		self.title = ttl
+
+
+	def chapter_builder(self):
+		blockList = [self.charObj.introDesc] + self.charObj.scenes + self.charObj.drugTrips + self.charObj.scpReports + self.charObj.gbergExcerpts
+		
+		random.shuffle(blockList)
+
+		stopAt = int(math.ceil(CHL*len(blockList)))
+
+		blockList = blockList[:stopAt]
+
+		self.blocks = blockList
+
+		# self.blocks.append("stuff")
+
+
+
+class Novel(object):
+
+	def __init__(self):
+		self.title = args.title
+		self.characters = [] # list of characters
+		self.chapters = [] # list of chapters
+
+	def generate(self):
+		self.make_chars()
+		self.assemble_chapters()
+		self.make_tex_file()
+
+
+	def make_tex_file(self):
+		# Look at PlotGen for this part
+		outputFileName = self.title
+
+		latex_special_char_1 = ['&amp;', '%', '$', '#', '_', '{', '}']
+		latex_special_char_2 = ['~', '^', '\\']
+
+		outputFile = open(sysPath+"output/"+outputFileName+".tex", 'w')
+
+		openingTexLines = ["\\documentclass[12pt]{book}",
+						   "\\usepackage{ucs}",
+						   "\\usepackage[utf8x]{inputenc}",
+						   "\\usepackage{hyperref}",
+						   "\\title{"+outputFileName+"}",
+						   "\\author{collective consciousness fiction generator\\\\http://rossgoodwin.com/ficgen}",
+						   "\\date{\\today}",
+						   "\\begin{document}",
+						   "\\maketitle"]
+
+		closingTexLine = "\\end{document}"
+
+		for line in openingTexLines:
+			outputFile.write(line+"\n\r")
+		outputFile.write("\n\r\n\r")
+
+		for ch in self.chapters:
+
+			outputFile.write("\\chapter{"+ch.title+"}\n\r")
+			outputFile.write("\n\r\n\r")
+
+			rawText = '\n\r\n\r\n\r'.join(ch.blocks)
+
+			try:
+				rawText = rawText.decode('utf8')
+			except:
+				pass
+			try:
+				rawText = rawText.encode('ascii', 'ignore')
+			except:
+				pass
+
+			i = 0
+			for char in rawText:
+
+				if char == "\b":
+					outputFile.seek(-1, 1)
+				elif char in latex_special_char_1 and rawText[i-1] != "\\":
+					outputFile.write("\\"+char)
+				elif char in latex_special_char_2 and not rawText[i+1] in latex_special_char_1:
+					outputFile.write("-")
+				else:
+					outputFile.write(char)
+
+				i += 1
+
+			outputFile.write("\n\r\n\r")
+
+		outputFile.write("\n\r\n\r")
+		outputFile.write(closingTexLine)
+
+		outputFile.close()
+
+		print '\"'+sysPath+'output/'+outputFileName+'.tex\"'
+
+
+	def assemble_chapters(self):
+		novel = []
+
+		for c in self.characters:
+			novel.append(Chapter(c))
+
+		for ch in novel:
+			ch.title_maker()
+			ch.chapter_builder()
+
+		random.shuffle(novel) # MAYBE RETHINK THIS LATER
+
+		self.chapters = novel
+
+
+	def make_chars(self):
+		# establish gender ratio
+		charGenders = [ri(0,1) for _ in range(CC)]
+		
+		# initialize list of characters
+		chars = []
+
+		# add user defined characters
+		for firstlast in args.charnames:
+			fl_list = firstlast.split('_')  # Note that split is an underscore!
+			chars.append(Character(fl_list[0], fl_list[1]))
+
+		# add generated characters
+		for b in charGenders:
+			if b:
+				chars.append(Character(rc(fFirstNames), rc(surnames)))
+			else:
+				chars.append(Character(rc(mFirstNames), rc(surnames)))
+
+		# establish list of intro scenes
+		introScenePaths = rs(characterTropeFiles, len(chars))
+
+		# establish list of settings
+		settings = rs(settingTropeFiles, len(chars)*TSV)
+
+		# establish list of drug trips
+		trips = rs(erowidExpPaths, len(chars)*DTV)
+
+		# establish list of scp articles
+		scps = rs(scpPaths, len(chars)*SCP)
+
+		# establish list of gberg excerpts
+		gbergs = rs(gPaths.values(), len(chars)*GGV)
+
+		i = 0
+		j = 0
+		m = 0
+		p = 0
+		s = 0
+		for c in chars:
+
+			# make friends
+			c.friends += rs(chars, ri(1,len(chars)-1))
+			if c in c.friends:
+				c.friends.remove(c)
+
+			# add introduction description
+			c.introDesc = self.personal_trope([c], introScenePaths[i])
+
+			# add setting scenes
+			for k in range(TSV):
+				c.scenes.append(self.personal_trope([c]+c.friends, settings[j+k]))
+
+			# add drug trip scenes
+			for n in range(DTV):
+				c.drugTrips.append(self.personal_trip([c]+c.friends, trips[m+n]))
+
+			# add scp articles
+			for q in range(SCP):
+				c.scpReports.append(self.personal_scp([c]+c.friends, scps[p+q]))
+
+			# add gberg excerpts
+			for t in range(GGV):
+				c.gbergExcerpts.append(self.personal_gberg([c]+c.friends, gbergs[s+t]))
+
+			i += 1
+			j += TSV
+			m += DTV
+			p += SCP
+			s += GGV
+
+		self.characters = chars
+
+
+	def personal_trope(self, charList, filePath):
+		text = get_file(filePath)
+		# text = text.decode('utf8')
+		# text = text.encode('ascii', 'ignore')
+
+		if len(charList) == 1:
+			characterTrope = True
+		else:
+			characterTrope = False
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+				charRef = rc([rc(charList), charList[0]])
+				if words[i].lower() == "character" and i &gt; 0:
+					words[i-1] = charRef.firstName
+					words[i] = charRef.lastName
+
+				elif tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+
+				if characterTrope:
+
+					if words[i] == "have":
+						words[i] = "has"
+					elif words[i] == "are":
+						words[i] = "is"
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+			if characterTrope:
+
+				mainCharRef = rc(charList)
+
+				index = string.find(final_text, mainCharRef.firstName)
+
+				if final_text[index+len(mainCharRef.firstName)+1:index+len(mainCharRef.firstName)+1+len(mainCharRef.lastName)] == mainCharRef.lastName:
+					final_text = final_text[index:]
+				else:
+					final_text = mainCharRef.firstName+" "+mainCharRef.lastName+final_text[index+len(mainCharRef.firstName):]
+
+			replacements = {"trope": "clue", "Trope": "clue", "TROPE": "CLUE"}
+
+			for x, y in replacements.iteritems():
+				final_text = string.replace(final_text, x, y)
+
+		except:
+			
+			final_text = ""
+
+
+		return final_text
+
+
+	def personal_trip(self, charList, tripPath):
+
+		fileText = get_file(tripPath)
+		splitText = fileText.split('\\vspace{2mm}')
+		endOfText = splitText[-1]
+		text = endOfText[:len(endOfText)-15]
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc([rc(charList), charList[0]])
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+			final_text = string.replace(final_text, "\\end{itemize}", "")
+			final_text = string.replace(final_text, "\\begin{itemize}", "")
+			final_text = string.replace(final_text, "\\end{center}", "")
+			final_text = string.replace(final_text, "\\begin{center}", "")
+			final_text = string.replace(final_text, "\\ldots", " . . . ")
+			final_text = string.replace(final_text, "\\egroup", "")
+			final_text = string.replace(final_text, "EROWID", "GOVERNMENT")
+			final_text = string.replace(final_text, "erowid", "government")
+			final_text = string.replace(final_text, "Erowid", "Government")
+
+		except:
+
+			final_text = ""
+
+		return final_text
+
+
+	def personal_scp(self, charList, scpPath):
+
+		text = get_file(scpPath)
+
+		text = string.replace(text, "SCP", charList[0].lastName)
+		text = string.replace(text, "Foundation", charList[0].lastName)
+
+		try:
+
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc(charList)
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+		except:
+
+			final_text = ""
+
+		return final_text
+
+
+
+	def personal_gberg(self, charList, gPath):
+
+		full_text = ""
+		while full_text == "":
+			try:
+				full_text = get_zip(gPath)
+			except:
+				full_text = ""
+				gPath = rc(gPaths.values())
+
+		endPart = full_text.split("*** START OF THIS PROJECT GUTENBERG EBOOK ")[-1]
+		theMeat = endPart.split("*** END OF THIS PROJECT GUTENBERG EBOOK")[0]
+
+		theMeat = string.replace(theMeat, "\r\n", " ")
+
+		
+		if len(theMeat) &lt; DEN+5:
+			text = theMeat
+		else:
+			startLoc = int(len(theMeat)/2.0 - DEN/2.0)
+			text = theMeat[startLoc:startLoc+DEN]
+
+		spLoc = text.find(" ")
+		text = text[spLoc+1:]
+
+		try:
+			pos = en.sentence.tag(text)
+			wordtag = map(list, zip(*pos))
+			words = wordtag[0]
+			tags = wordtag[1]
+
+			for i in range(len(words)):
+
+				charRef = rc([rc(charList), charList[0]])
+
+				if tags[i] == "PRP":
+					words[i] = charRef.firstName
+				elif tags[i] == "PRP$":
+					words[i] = charRef.firstName+"\'s"
+				elif tags[i] in ["VBD", "VBG", "VBN", "VBZ"]:
+					try:
+						words[i] = en.verb.past(words[i], person=3, negate=False)
+					except:
+						pass
+				else:
+					pass
+
+			punc = [".", ",", ";", ":", "!", "?"]
+
+			for i in range(len(words)):
+				if words[i] in punc:
+					words[i] = '\b'+words[i]
+
+			final_text = " ".join(words)
+
+		except:
+			final_text = ""
+
+
+		return final_text
+
+
+	def print_chars(self):
+
+		c = self.make_chars()
+		for character in c:
+			print 'INTRO DESC'
+			print '\n\n'
+			print character.introDesc
+			print '\n\n'
+			print 'SCENES'
+			print '\n\n'
+			for s in character.scenes:
+				print s
+			print '\n\n'
+			print 'DRUG TRIPS'
+			print '\n\n'
+			for t in character.drugTrips:
+				print t
+			print '\n\n'
+			print 'SCP REPORTS'
+			print '\n\n'
+			for p in character.scpReports:
+				print p
+			print '\n\n'
+			print 'GBERG EXCERPTS'
+			print '\n\n'
+			for q in character.gbergExcerpts:
+				print q
+			print '\n\n'
+
+
+
+
+foobar = Novel()
+foobar.generate()</pre><p>The program&#8217;s argument values, which I&#8217;m using the Python argparse library to deal with, are designed to be inserted by the GUI. However, they can be inserted manually as well in the terminal.</p>
+<p>Typing <code>python ficgen.py -h</code> in the terminal will yield the following help text:</p><pre class="crayon-plain-tag">usage: ficgen.py [-h] [--charnames [CHARNAMES [CHARNAMES ...]]]
+                 [--title TITLE] [--length LENGTH] [--charcount CHARCOUNT]
+                 [--genre [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} ...]]]
+                 [--conflict [{nature,man,god,society,self,fate,tech,no god,reality,author} [{nature,man,god,society,self,fate,tech,no god,reality,author} ...]]]
+                 [--passion PASSION] [--verbosity VERBOSITY]
+                 [--realism REALISM] [--density DENSITY]
+                 [--accessibility ACCESSIBILITY] [--depravity DEPRAVITY]
+                 [--linearity LINEARITY]
+                 [--narrator [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} ...]]]
+
+Story Parameters
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --charnames [CHARNAMES [CHARNAMES ...]]
+                        Character Names
+  --title TITLE         Story Title
+  --length LENGTH       Story Length (0-999)
+  --charcount CHARCOUNT
+                        Character Count (0-999)
+  --genre [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} [{literary,sci-fi,fantasy,history,romance,thriller,mystery,crime,pulp,horror,beat,fan,western,action,war,family,humor,sport,speculative} ...]]
+                        Genre
+  --conflict [{nature,man,god,society,self,fate,tech,no god,reality,author} [{nature,man,god,society,self,fate,tech,no god,reality,author} ...]]
+                        Conflict
+  --passion PASSION     Passion (0-999)
+  --verbosity VERBOSITY
+                        Verbosity (0-999)
+  --realism REALISM     Realism (0-999)
+  --density DENSITY     Density (0-999)
+  --accessibility ACCESSIBILITY
+                        Accessibility (0-999)
+  --depravity DEPRAVITY
+                        Depravity (0-999)
+  --linearity LINEARITY
+                        Linearity (0-999)
+  --narrator [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} [{first,1st,1,third,3rd,3,alt,alternating,subjective,objective,sub,obj,omniscient,omn,limited,lim} ...]]
+                        Narrative PoV</pre><p>Finally, here are some sample novels generated by the new code (titles chosen by volunteers):</p>
+<ul>
+<li><a href="http://rossgoodwin.com/Alfonzo_Donatello_and_the_Data_Gonzo_Manifesto.pdf" target="_blank">Alfonzo Donatello and the Data Gonzo Manifesto</a></li>
+<li><a href="http://rossgoodwin.com/Quick_Jest.pdf" target="_blank">Quick Jest</a></li>
+<li><a href="http://rossgoodwin.com/Generation_generate_in_general.pdf" target="_blank">Generation generate, in general</a></li>
+</ul>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>ITP Code Poetry Slam</title>
+		<link>http://www.thehypertext.com/2014/12/09/itp-code-poetry-slam-2014/</link>
+		<pubDate>Tue, 09 Dec 2014 08:45:53 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[code poetry slam]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[itp code poetry slam]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[programming]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=381</guid>
+		<description><![CDATA[<p>Several months ago, I asked the question: Who Is Code Shakespeare. On November 14, 2014, I believe the first ITP Code Poetry Slam may have brought us closer to an answer.</p>
+<p><a href="http://www.thehypertext.com/2014/12/09/itp-code-poetry-slam-2014/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<h2 style="text-align: center;">Who Is Code Shakespeare?</h2>
+<h2 style="text-align: center;"><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm.jpg"><img class="aligncenter size-medium wp-image-382" src="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-300x300.jpg" alt="codeshakespeare_sm" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2014/12/codeshakespeare_sm.jpg 400w" sizes="(max-width: 300px) 100vw, 300px" /></a></h2>
+<p>Several months ago, I asked the question above. On November 14, 2014, I believe <a title="Who Is Code Shakespeare?" href="http://www.codeshakespeare.com" target="_blank">the first ITP Code Poetry Slam</a> may have brought us closer to an answer.</p>
+<p>In all the bustle of final projects being due in the past month, I haven&#8217;t had a chance to post anything about the code poetry slam I organized in November. Needless to say, the event was an enormous success, thanks mostly to the incredible judges and presenters. I hope to organize another one in 2015.</p>
+<p>The judges brought a wealth of experience from a variety of different fields, which provided for some extraordinary discussion. They were:</p>
+<ul>
+<li><a title="Bob Holman" href="http://www.bobholman.com/" target="_blank">Bob Holman</a></li>
+<li><a title="Nick Montfort" href="http://nickm.com/" target="_blank">Nick Montfort</a></li>
+<li><a title="Allison Parrish" href="http://www.decontextualize.com/" target="_blank">Allison Parrish</a></li>
+<li><a title="Daniel Shiffman" href="http://shiffman.net/" target="_blank">Daniel Shiffman</a> (in absentia)</li>
+</ul>
+<p>This was the schedule for the slam, as written by me on the whiteboard wall of room 50 at ITP:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard.jpg"><img class="aligncenter wp-image-383 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard-300x240.jpg" alt="whiteboard" width="300" height="240" srcset="http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard-300x240.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/12/whiteboard.jpg 1000w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Rather than providing a blow-by-blow account of proceedings, I&#8217;ll direct you to <a href="http://0x0a.li/code-poetry-at-itp/" target="_blank">Hannes Bajohr, who did just that.</a></p>
+<p>The entries truly speak for themselves. Those who presented (in order of presentation) were:</p>
+<ul>
+<li><a href="http://centrality.herokuapp.com/" target="_blank">Centrality by Aankit</a></li>
+<li><a href="http://www.itp.jasonsigal.cc/724/" target="_blank">The Phrases and Pronunciation by JSON Signal</a></li>
+<li><a href="http://sharangbiswas.wordpress.com/2014/11/01/love-poems/" target="_blank">Love Poems by Sharang Biswas</a></li>
+<li><a href="http://lav.io/2014/05/transform-any-text-into-a-patent-application/" target="_blank">Patent Generator by Sam Lavigne</a></li>
+<li><a href="https://twitter.com/_all_of_us_" target="_blank">@_ALL_OF_US_ by Salem Al-Mansoori</a></li>
+<li><a href="http://www.rbknrbkn.com/workandprogress/?p=658" target="_blank">Recipes of War by Salem Al-Mansoori</a></li>
+<li><a href="https://twitter.com/pentametron" target="_blank">Pentametron by Rajit Bhatnagar</a></li>
+<li><a href="http://www.songhitp.com/?p=339'" target="_blank">tokyo heart / night ordinary / jazz eyes by Song Hia</a></li>
+<li><a href="https://github.com/jaewoongh/thesaurused" target="_blank">Thesaurused by Jade Wooing</a></li>
+<li><a href="http://www.phasesofsputnik.com/blog/scratched-poems-poetic-collaboration-with-a-mind-machine/" target="_blank">Susan Scratched by Caitlin Weaver</a></li>
+<li><a href="http://www.aantiks.com/2014/10/dada-dial-phone-poetry-rememberedremixed/" target="_blank">Dada Dial by Aankit</a></li>
+<li><a href="http://hotwriting.net/inthedark/" target="_blank">Yardley, PA 1997 by Todd Anderson</a></li>
+<li>To release into the ether what was already not there: b1uulyig5hzfwtsxb7bs75wu0 by Jason Dunne</li>
+<li><a href="http://www.appstore.com/todayatextadventureinspace" target="_blank">Today by nsbarr</a></li>
+<li>Wrapper Node Buddha by Lee Frankel-Goldwater</li>
+<li>Click-a-Pet.php by Steve Bull</li>
+</ul>
+<p>&nbsp;</p>
+<hr />
+<p><em>Participants and attendees: Please let me know if any of the names or links above need to be changed. Also, if your name is not linked, and you&#8217;d like me to link it to something, let me know!</em></p>
+<p>If you missed the ITP Code Poetry Slam, you can attend or submit your work for the <a title="Stanford Code Poetry Slam" href="http://stanford.edu/~mkagen/codepoetryslam/" target="_blank">Stanford Code Poetry Slam</a> in January.</p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Fiction Generator, Part II</title>
+		<link>http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/</link>
+		<comments>http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/#comments</comments>
+		<pubDate>Thu, 20 Nov 2014 03:39:13 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[computer]]></category>
+		<category><![CDATA[fiction generator]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[novel generator]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[string manipulation]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=328</guid>
+		<description><![CDATA[<p>After scraping about 5000 articles from tvtropes.org to retrieve descriptions for characters and settings, Sam Lavigne suggested I scrape erowid.org to dig up some exposition material. I proceeded to scrape 18,324 drug trip reports from the site, and integrated that material into the generator.</p>
+<p><a href="http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><strong>For background, see <a title="Fiction Generator, Part I" href="http://www.thehypertext.com/2014/11/11/fiction-generator/" target="_blank">my previous post on this project</a>.</strong></p>
+<p>After scraping about 5000 articles from <a title="tvtropes" href="http://www.tvtropes.org" target="_blank">tvtropes.org</a> to retrieve descriptions for characters and settings, <a title="Sam Lavigne" href="http://lav.io/" target="_blank">Sam Lavigne</a> suggested I scrape <a title="erowid" href="http://www.erowid.org" target="_blank">erowid.org</a> to dig up some exposition material. I proceeded to scrape 18,324 drug trip reports from the site, and integrated that material into the generator.</p>
+<p>While this project remains unfinished—I&#8217;m considering adding more material from many other websites, which is why I&#8217;m calling it a &#8220;collective consciousness fiction generator&#8221;—it is now generating full-length &#8220;novels&#8221; (300+ pages, 8.5&#215;11, 12pt font). I polled my fellow ITP students to insert themselves into novels, and they responded with over 50 suggestions for novel titles. The generated PDFs are <a title="Novels | Google Drive" href="https://drive.google.com/open?id=0B4ahP1irmkVGNndvMGs0cVR2ekE&amp;authuser=0" target="_blank">available for viewing/download on Google Drive</a>.</p>
+<p>I decided to create covers for 3 of my favorite novels the software has generated. Click on the covers below to see those PDFs:</p>
+<p><a title="Infinite Splendour" href="http://www.rossgoodwin.com/infinite_splendour.pdf" target="_blank"><img class="aligncenter wp-image-332 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/11/infinite_splendour-231x300.png" alt="infinite_splendour" width="231" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/infinite_splendour-231x300.png 231w, http://www.thehypertext.com/wp-content/uploads/2014/11/infinite_splendour-791x1024.png 791w, http://www.thehypertext.com/wp-content/uploads/2014/11/infinite_splendour.png 850w" sizes="(max-width: 231px) 100vw, 231px" /></a> <a title="Parallel Synchronized Randomness" href="http://www.rossgoodwin.com/parallel_synchronized_randomness.pdf" target="_blank"><img class="aligncenter wp-image-333 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/11/parallel_synchronized_randomness-231x300.png" alt="parallel_synchronized_randomness" width="231" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/parallel_synchronized_randomness-231x300.png 231w, http://www.thehypertext.com/wp-content/uploads/2014/11/parallel_synchronized_randomness-791x1024.png 791w, http://www.thehypertext.com/wp-content/uploads/2014/11/parallel_synchronized_randomness.png 850w" sizes="(max-width: 231px) 100vw, 231px" /></a> <a title="Tricks of the Trade" href="http://www.rossgoodwin.com/tricks_of_the_trade.pdf" target="_blank"><img class="aligncenter wp-image-334 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/11/tricks_of_the_trade-231x300.png" alt="tricks_of_the_trade" width="231" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/11/tricks_of_the_trade-231x300.png 231w, http://www.thehypertext.com/wp-content/uploads/2014/11/tricks_of_the_trade-791x1024.png 791w, http://www.thehypertext.com/wp-content/uploads/2014/11/tricks_of_the_trade.png 850w" sizes="(max-width: 231px) 100vw, 231px" /></a></p>
+<p>Here is the current state of the code that&#8217;s generating these novels:</p><pre class="crayon-plain-tag">latex_special_char_1 = ['&amp;', '%', '$', '#', '_', '{', '}']
+latex_special_char_2 = ['~', '^', '\\']
+
+outputFile = open("output/"+outputFileName+".tex", 'w')
+
+openingTexLines = ["\\documentclass[12pt]{book}",
+				   "\\usepackage{ucs}",
+				   "\\usepackage[utf8x]{inputenc}",
+				   "\\usepackage{hyperref}",
+				   "\\title{"+outputFileName+"}",
+				   "\\author{collective consciousness fiction generator\\\\http://rossgoodwin.com/ficgen}",
+				   "\\date{\\today}",
+				   "\\begin{document}",
+				   "\\maketitle"]
+
+closingTexLine = "\\end{document}"
+
+for line in openingTexLines:
+	outputFile.write(line+"\n\r")
+outputFile.write("\n\r\n\r")
+
+intros = char_match()
+
+for x, y in intros.iteritems():
+
+	outputFile.write("\\chapter{"+x+"}\n\r")
+
+	chapter_type = random.randint(0, 4)
+	bonus_drug_trip = random.randint(0, 1)
+	trip_count = random.randint(1,4)
+
+
+	# BLOCK ONE
+
+	if chapter_type in [0, 3]:
+
+		for char in y[0]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			elif char in latex_special_char_1:
+				outputFile.write("\\"+char)
+			elif char in latex_special_char_2:
+				if char == '~':
+					outputFile.write("")
+				elif char == '^':
+					outputFile.write("")
+				elif char == '\\':
+					outputFile.write("-")
+				else:
+					pass
+			else:
+				outputFile.write(char)
+
+	elif chapter_type in [1, 4]:
+
+		for char in y[2]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			elif char in latex_special_char_1:
+				outputFile.write("\\"+char)
+			elif char in latex_special_char_2:
+				if char == '~':
+					outputFile.write("")
+				elif char == '^':
+					outputFile.write("")
+				elif char == '\\':
+					outputFile.write("-")
+				else:
+					pass
+			else:
+				outputFile.write(char)
+
+	elif chapter_type == 2:
+
+		for char in y[1][0]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			else:
+				outputFile.write(char)
+
+	outputFile.write("\n\r\n\r\n\r")
+
+	
+	# BLOCK TWO
+
+	if chapter_type == 0:
+
+		for char in y[2]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			elif char in latex_special_char_1:
+				outputFile.write("\\"+char)
+			elif char in latex_special_char_2:
+				if char == '~':
+					outputFile.write("")
+				elif char == '^':
+					outputFile.write("")
+				elif char == '\\':
+					outputFile.write("-")
+				else:
+					pass
+			else:
+				outputFile.write(char)
+
+	elif chapter_type == 1:
+
+		for char in y[0]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			elif char in latex_special_char_1:
+				outputFile.write("\\"+char)
+			elif char in latex_special_char_2:
+				if char == '~':
+					outputFile.write("")
+				elif char == '^':
+					outputFile.write("")
+				elif char == '\\':
+					outputFile.write("-")
+				else:
+					pass
+			else:
+				outputFile.write(char)
+
+	elif chapter_type in [3, 4]:
+
+		for char in y[1][0]:
+			if char == "`":
+				outputFile.seek(-1, 1)
+			else:
+				outputFile.write(char)
+
+	elif chapter_type == 2 and bonus_drug_trip:
+
+		for tripIndex in range(trip_count):
+
+			for char in y[1][tripIndex+1]:
+				if char == "`":
+					outputFile.seek(-1, 1)
+				else:
+					outputFile.write(char)
+
+	else:
+		pass
+
+	outputFile.write("\n\r\n\r\n\r")
+
+
+	# BLOCK THREE
+
+	if chapter_type in [0, 1, 3, 4] and bonus_drug_trip:
+
+		for tripIndex in range(trip_count):
+
+			for char in y[1][tripIndex+1]:
+				if char == "`":
+					outputFile.seek(-1, 1)
+				else:
+					outputFile.write(char)
+
+		outputFile.write("\n\r\n\r\n\r")
+
+	else:
+		pass
+
+
+outputFile.write("\n\r\n\r")
+outputFile.write(closingTexLine)
+
+
+outputFile.close()
+
+
+print '\"output/'+outputFileName+'.tex\"'</pre><p>&nbsp;</p>
+<p><strong>UPDATE: <a href="http://www.thehypertext.com/2014/12/09/fiction-generator-part-iii/" target="_blank">Part III</a></strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/11/20/fiction-generator-part-ii/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>General Update</title>
+		<link>http://www.thehypertext.com/2014/09/29/general-update/</link>
+		<comments>http://www.thehypertext.com/2014/09/29/general-update/#comments</comments>
+		<pubDate>Mon, 29 Sep 2014 06:24:41 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Applications]]></category>
+		<category><![CDATA[Automata]]></category>
+		<category><![CDATA[Computational Media]]></category>
+		<category><![CDATA[Physical Computing]]></category>
+		<category><![CDATA[applications]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[automata]]></category>
+		<category><![CDATA[beethoven]]></category>
+		<category><![CDATA[che55]]></category>
+		<category><![CDATA[chess]]></category>
+		<category><![CDATA[classical music]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[code poetry slam]]></category>
+		<category><![CDATA[code shakespeare]]></category>
+		<category><![CDATA[computational media]]></category>
+		<category><![CDATA[gui]]></category>
+		<category><![CDATA[interactive]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[mechanical turk]]></category>
+		<category><![CDATA[mechanical turk's ghost]]></category>
+		<category><![CDATA[music]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[poetizer]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[presentation]]></category>
+		<category><![CDATA[proce55ing]]></category>
+		<category><![CDATA[processing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[rachmaninoff]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=177</guid>
+		<description><![CDATA[<p>I've been so busy the past two weeks that I failed to update this blog. But documentation is important, and that's why I'm going to take a moment to fill you in on all my recent activities. This post will cover all the projects I've been working on.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/29/general-update/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;ve been so busy the past two weeks that I failed to update this blog. But documentation is important, and that&#8217;s why I&#8217;m going to take a moment to fill you in on all my recent activities. This post will cover all the projects I&#8217;ve been working on, primarily:</p>
+<ul>
+<li>Applications Presentation on September 16</li>
+<li>ITP Code Poetry Slam on November 14</li>
+<li>The Mechanical Turk&#8217;s Ghost</li>
+<li>Che55</li>
+</ul>
+<p>On Tuesday, September 16, I helped deliver a presentation to our class in Applications. Yingjie Bei, Rebecca Lieberman, and Supreet Mahanti were in my group, and we utilized <a title="Poetizer" href="http://www.thehypertext.com/2014/08/31/poetizer/" target="_blank">my Poetizer software</a> to create an interactive storytelling exercise for the entire audience. Sarah Rothberg was kind enough to record the presentation, and Rebecca posted it on Vimeo:</p>
+<p>&nbsp;</p>
+<p><iframe src="//player.vimeo.com/video/106678494" width="610" height="343" frameborder="0" title="Group 3: Applications Presentation // Part 1" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p><iframe src="//player.vimeo.com/video/106679005" width="610" height="343" frameborder="0" title="Group 3: Applications Presentation // Part 2" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p>&nbsp;</p>
+<p>I&#8217;ve also been organizing an <a title="2014 ITP Code Poetry Slam" href="http://www.codeshakespeare.com" target="_blank">ITP Code Poetry Slam</a>, which will take place at 6:30pm on November 14. Submissions are now open, and I&#8217;m hoping the event will serve as a conduit for productive dialogue between the fields of poetry and computer science. Announcements regarding judges, special guests, and other details to come.</p>
+<p><a href="http://imgur.com/egvgAG4"><img class="aligncenter" title="Code Shakespeare" src="http://i.imgur.com/egvgAG4.jpg" alt="" width="400" height="400" /></a></p>
+<p>Various explorations related to <a title="The Mechanical Turk's Ghost" href="http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/" target="_blank">the Mechanical Turk&#8217;s Ghost</a> [working title] have consumed the rest of my time. While I wait for all the electronic components I need to arrive, I have been focusing on the software aspects of the project, along with some general aspects of the hardware.</p>
+<p>The first revision to the preliminary design I sketched out in <a title="The Mechanical Turk's Ghost" href="http://www.thehypertext.com/2014/09/13/mechanical-turks-ghost/" target="_blank">my prior post</a> resulted from <a title="Tony Kesich" href="http://kesi.ch" target="_blank">a friend</a>&#8216;s suggestion. Rather than using conductive pads on the board, I now plan to use Hall effect sensors mounted beneath the board that will react to tiny neodymium magnets embedded in each chess piece. If everything works properly, this design should be far less visible, and thus less intrusive to the overall experience. I ordered 100 sensors and 500 magnets, and I look forward to experimenting with them when they arrive.</p>
+<p>In the meantime, the parts I listed in my prior post arrived, and I was especially excited to begin working with the Raspberry Pi. I formatted an 8GB SD card and put <a title="NOOBS" href="http://www.raspberrypi.org/help/noobs-setup/" target="_blank">NOOBS</a> on it, then booted up the Raspberry Pi and installed <a title="Raspbian" href="http://www.raspbian.org/" target="_blank">Raspbian</a>, a free operating system based on Debian Linux that is optimized for the Pi&#8217;s hardware.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi.jpg"><img class="aligncenter size-medium wp-image-185" src="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-300x199.jpg" alt="r_pi" width="300" height="199" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-300x199.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi-1024x682.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/r_pi.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>The <a title="Stockfish" href="http://stockfishchess.org/" target="_blank">Stockfish chess engine</a> will be a major component of this project, and I was concerned that its binaries would not compile on the Raspberry Pi. The makefile documentation listed a number of options for system architecture, none of which exactly matched the ARM v6 chip on the Raspberry Pi.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM.png"><img class="aligncenter wp-image-182 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-906x1024.png" alt="Screen Shot 2014-09-28 at 10.46.18 PM" width="610" height="689" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-906x1024.png 906w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM-265x300.png 265w, http://www.thehypertext.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-28-at-10.46.18-PM.png 1368w" sizes="(max-width: 610px) 100vw, 610px" /></a>First, I tried the &#8220;ARMv7&#8221; option. The compiler ran for about 10 minutes before experiencing errors and failing. I then tried several other options, none of which worked. I was about to give up completely and resign myself to running the chess engine on my laptop, when I noticed the &#8220;profile-build&#8221; option. I had never heard of <a title="PGO" href="http://en.wikipedia.org/wiki/Profile-guided_optimization" target="_blank">profile-guided optimization</a> (PGO), but I tried using the command &#8220;make profile-build&#8221; rather than &#8220;make build&#8221; along with the option for unspecified 32-bit architecture. This combination allowed Stockfish to compile without any issues. Here is the command that I used (from the /Stockfish/src folder):</p><pre class="crayon-plain-tag">$ make profile-build ARCH=general-32</pre><p>With Stockfish successfully compiled on the Raspberry Pi, I copied the binary executable to the system path (so that I could script the engine using the <a title="Python Subprocess Library" href="https://docs.python.org/2/library/subprocess.html" target="_blank">Python subprocess library</a>), then tried running <a title="ghost.py" href="https://github.com/rossgoodwin/mtg/blob/master/ghost.py" target="_blank">the Python script I wrote to control Stockfish</a>. It worked without any issues:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost.jpg"><img class="aligncenter wp-image-184 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-1024x341.jpg" alt="ghost" width="610" height="203" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-1024x341.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/ghost-300x99.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/ghost.jpg 1111w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>My next set of explorations revolved around the music component of the project. As I specified in my prior post, I want the device to generate music. I took some time to consider what type of music would be most appropriate, and settled on classical music as a starting point. Classical music is ideal because so many great works are in the public domain, and because so many serious chess players enjoy listening to it during play. (As anecdotal evidence, <a title="The Chess Forum" href="http://www.chessforum.com/" target="_blank">the Chess Forum</a> in Greenwich Village, a venue where chess players congregate to play at all hours of the day and night, plays nothing but classical music all the time. I have been speaking to one of the owners of the Chess Forum about demonstrating my prototype device there once it is constructed.)</p>
+<p>Generating a classical music <a title="Mashup | Wikipedia" href="http://en.wikipedia.org/wiki/Mashup_(music)" target="_blank">mashup</a> using data from the game in progress was the first idea I pursued. For this approach, I imagined that two classical music themes (one for black, one for white) could be combined in a way that reflected the relative strength of each side at any given point in the game. (A more complex approach might involve algorithmic music generation, but I am not ready to pursue that option just yet.) Before pursuing any prototyping or experimentation, I knew that the two themes would need to be suitably different (so as to distinguish one from the other) but also somewhat complementary in order to create a pleasant listening experience. A friend of mine who studies music suggested pairing one song (or symphony or concerto) in a major key with another song in the relative minor key.</p>
+<p>Using <a title="YouTube Mixer" href="http://www.youtubemixer.net/" target="_blank">YouTube Mixer</a>, I was able to prototype the overall experience by fading back and forth between two songs. I started by pairing Beethoven&#8217;s Symphony No. 9 and Rachmaninoff&#8217;s Piano Concerto No. 3, and I was very satisfied with the results (play both these videos at once to hear the mashup):</p>
+<p><iframe width="610" height="343" src="http://www.youtube.com/embed/aFkAwFDZGHk?feature=oembed&#038;start=28" frameborder="0" allowfullscreen></iframe></p>
+<p><iframe width="610" height="458" src="http://www.youtube.com/embed/t3217H8JppI?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>I then worked on creating a music mashup script to pair with my chess engine script. My requirements seemed very simple: I would need a script that could play two sound files at once and control their respective volume levels independently, based on the fluctuations in the score calculated by the chess engine. The script would also need to be able to run on the Raspberry Pi.</p>
+<p>These requirements ended up being more difficult to fulfill than I anticipated. I explored many <a title="Python Audio Libraries" href="https://wiki.python.org/moin/PythonInMusic" target="_blank">Python audio libraries</a>, including <a title="pyo" href="http://code.google.com/p/pyo/" target="_blank">pyo</a>, <a title="pyfluidsynth" href="http://code.google.com/p/pyfluidsynth/" target="_blank">PyFluidSynth</a>, <a title="mingus" href="https://code.google.com/p/mingus/" target="_blank">mingus</a>, and <a title="pygame.mixer" href="http://www.pygame.org/docs/ref/mixer.html" target="_blank">pygame&#8217;s mixer module</a>. I also looked into using <a title="SoX" href="http://sox.sourceforge.net/" target="_blank">SoX</a>, a command line audio utility, through the python subprocess library. Unfortunately, all of these options were either too complex or too simple to perform the required tasks.</p>
+<p>Finally, on Gabe Weintraub&#8217;s suggestion, I looked into using Processing for my audio requirements and discovered a library called <a title="Minim" href="http://code.compartmental.net/tools/minim/" target="_blank">Minim</a> that could do everything I needed. I then wrote the following Processing sketch:</p><pre class="crayon-plain-tag">import ddf.minim.*;
+
+Minim minim1;
+Minim minim2;
+AudioPlayer player1;
+AudioPlayer player2;
+
+float gain1 = 0.0;
+float gain2 = 0.0;
+float tgtGain1 = 0.0;
+float tgtGain2 = 0.0;
+float level1 = 0.0;
+float level2 = 0.0;
+float lvlAdjust = 0.0;
+
+BufferedReader reader;
+String line;
+float score = 0;
+
+void setup() {
+  minim1 = new Minim(this);
+  minim2 = new Minim(this);
+  player1 = minim1.loadFile("valkyries.mp3");
+  player2 = minim2.loadFile("Rc3_1.mp3");
+  player1.play();
+  player1.setGain(-80.0);
+  player2.play();
+  player2.setGain(6.0);
+}
+
+void draw() {
+  reader = createReader("score.txt");
+  try {
+    line = reader.readLine();
+  } catch (IOException e) {
+    e.printStackTrace();
+    line = null;
+  }
+  print(line); 
+  score = float(line);
+  
+  level1 = (player1.left.level() + player1.right.level()) / 2;
+  level2 = (player2.left.level() + player2.right.level()) / 2;  
+
+  lvlAdjust = map(level1 - level2, -0.2, 0.2, -1, 1);
+  tgtGain1 = map(score, -1000, 1000, -30, 6);
+  tgtGain2 = map(score, 1000, -1000, -30, 6);
+  tgtGain1 = tgtGain1 * (lvlAdjust + 1);
+  tgtGain2 = tgtGain2 / (lvlAdjust + 1);
+  
+  gain1 = player1.getGain();
+  gain2 = player2.getGain();
+  
+  print(' ');
+  print(gain1);
+  print(' ');
+  print(gain2);
+  print(' ');
+  print(level1);
+  print(' ');
+  println(level2);
+  
+  if (level2 &gt; level1) {
+    tgtGain2 -= 0.1;
+  } else if (level1 &lt; level2) {
+    tgtGain1 -= 0.1;
+  }
+  
+  player1.setGain(tgtGain1);
+  player2.setGain(tgtGain2);
+}</pre><p>The script above reads score values from a file created by the Python script that controls the chess engine. The score values are then mapped to gain levels for each of the two tracks that are playing. I input a chess game move by move into the terminal, and the combination of scripts worked as intended by fading between the two songs based on the relative positions of white and black in the chess game.</p>
+<p>Unfortunately, a broader issue with my overall approach became highly apparent: the dynamic qualities of each song overshadowed most of the volume changes that occurred as a result of the game. In other words, each song got louder and quieter at various points by itself, and that was more noticeable than the volume adjustments the script was making. I attempted to compensate for these natural volume changes by normalizing the volume of each song based on its relative level compared to the other song (see lines 42-45, 48-49, and 63-67 in the code above). This did not work as effectively as I hoped, and resulted in some very unpleasant sound distortions.</p>
+<p>After conferring with my Automata instructor, <a title="Nick Yulman" href="http://nysoundworks.org/" target="_blank">Nick Yulman</a>,  I have decided to take an alternate approach. Rather than playing two complete tracks and fading between them, I plan to record stems (individual instrument recordings) using the relevant midi files, and then create loop tracks that will be triggered at various score thresholds. I am still in the process of exploring this approach and will provide a comprehensive update sometime in the near future.</p>
+<p>In the meantime, I have been learning about using combinations of digital and analog inputs and outputs with the Arduino, and using various input sensors to control motors, servos, solenoids, and RGB LEDs:</p>
+<p><iframe src="//player.vimeo.com/video/107441722" width="400" height="300" frameborder="0" title="Walking Servo" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827.jpg"><img class="aligncenter wp-image-196 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-300x300.jpg" alt="photo 3" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827-50x50.jpg 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/photo-3-e1411971069827.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>In Introduction to Computational Media, we are learning about object oriented programming, and Dan Shiffman asked us to create a Processing sketch using classes and objects this week. As I prepare to create a physical chessboard, I thought it would be appropriate to make a software version to perform tests. <a title="Che55" href="https://github.com/rossgoodwin/che55" target="_blank">Che55</a> (which I named with 5&#8217;s as an homage to Processing&#8217;s original name, &#8220;<a title="Proce55ing" href="https://github.com/processing/processing/wiki/FAQ#why-is-it-called-processing" target="_blank">Proce55ing</a>&#8220;) was the result.</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png"><img class="aligncenter wp-image-195 size-large" src="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-1024x1024.png" alt="che55" width="610" height="610" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png 1600w" sizes="(max-width: 610px) 100vw, 610px" /></a></p>
+<p>Che55 is a fully functional chess GUI, written in Processing. Only legal moves can be made, and special moves such as en passant, castling, and pawns reaching the end of the board have been accounted for. I plan to link Che55 with Stockfish in order to create chess visualizations and provide game analysis, and to prototype various elements of the Mechanical Turk&#8217;s Ghost, including the musical component. I left plenty of space around the board for additional GUI elements, which I&#8217;m currently working on implementing. All of the code is available <a title="Che55 | Github" href="https://github.com/rossgoodwin/che55" target="_blank">on Github</a>.</p>
+<p>Unfortunately, I cannot claim credit for the chess piece designs. Rather, I was inspired by an installation I saw at the New York MoMA two weeks ago called <a title="Thinking Machine 4" href="http://www.turbulence.org/spotlight/thinking/" target="_blank">Thinking Machine 4</a> by Martin Wattenberg and Marek Walczak (also written in Processing).</p>
+<p>That&#8217;s all for now. Stay tuned for new posts about each of these projects. I will try to keep this blog more regularly updated so there (hopefully) will be no need for future multi-project megaposts like this one. Thanks for reading.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.thehypertext.com/2014/09/29/general-update/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Wikipoet</title>
+		<link>http://www.thehypertext.com/2014/09/04/wikipoet/</link>
+		<pubDate>Thu, 04 Sep 2014 17:16:55 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[code poetry]]></category>
+		<category><![CDATA[generative]]></category>
+		<category><![CDATA[natural language generation]]></category>
+		<category><![CDATA[natural language processing]]></category>
+		<category><![CDATA[poem]]></category>
+		<category><![CDATA[poetry]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[wikipedia]]></category>
+		<category><![CDATA[wikipoet]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=77</guid>
+		<description><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+
+<p><a href="http://www.thehypertext.com/2014/09/04/wikipoet/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<p><a title="Wikipoet" href="https://github.com/rossgoodwin/wikipoet" target="_blank">Wikipoet</a> is a program I wrote in Python that generates simple, iterative poems using the raw text from Wikipedia articles (retrieved via the <a title="MediaWiki API" href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API</a>) and <a title="NLTK" href="http://www.nltk.org" target="_blank">NLTK</a>.</p>
+<p>Wikipoet begins with a single word and uses the Wikipedia article for that word to find likely noun and adjective combinations. It then prints a stanza with the following structure:</p>
+<p><code>[word]<br />
+[adjective] [word]<br />
+[adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective] [word]<br />
+[adjective], [adjective], [adjective], [adjective] [word]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun], [word] [noun], [word] [noun]<br />
+[word] [noun / new word]<br />
+[new word]</code></p>
+<p>Wikipoet then repeats this operation for the new word. The stanzas can continue indefinitely.</p>
+<p>Here&#8217;s an example:</p>
+<p><code>computer<br />
+former computer<br />
+flash, military computer<br />
+many, full, best computer<br />
+all, later, more, earlier computer<br />
+computer design, computer help, computer say<br />
+computer reference, computer voice, computer central processing unit<br />
+computer job<br />
+job<br />
+principal job<br />
+risky, creative job<br />
+critical, national, many job<br />
+lowly, steady, poor, primary job<br />
+job satisfaction, job reference, job preparation<br />
+job system, job look, job retention<br />
+job want<br />
+want<br />
+noble want<br />
+four, like want<br />
+more, strong, most want<br />
+human, some, american, many want<br />
+want can, want production, want protection<br />
+want level, want story, want item<br />
+want character<br />
+character<br />
+classical character<br />
+novel, new character<br />
+other, written, first character<br />
+greek, various, practical, set character<br />
+character construction, character actor, character words<br />
+character see, character page, character volume<br />
+character pick<br />
+pick<br />
+game pick<br />
+original, american pick<br />
+used, all, first pick<br />
+bay, star, early, specific pick<br />
+pick brand, pick use, pick set<br />
+pick title, pick people, pick peter<br />
+pick page<br />
+page<br />
+side page<br />
+modern, all page<br />
+other, past, early page<br />
+south, worldwide, beginning, electronic page<br />
+page format, page declaration, page band<br />
+page technology, page business, page address<br />
+page stop<br />
+stop<br />
+three stop<br />
+full, former stop<br />
+total, black, used stop<br />
+top, safe, international, white stop<br />
+stop code, stop nation, stop destruction<br />
+stop period, stop frank, stop part<br />
+stop closure<br />
+closure<br />
+prompt closure<br />
+epistemic, tight closure<br />
+early, short, social closure<br />
+transitive, deductive, other, cognitive closure<br />
+closure operator, closure process, closure rule<br />
+closure operation, closure law, closure map<br />
+closure series<br />
+series<br />
+kind series<br />
+systematic, sequential series<br />
+geologic, former, odd series<br />
+world, fixed, ordered, funny series<br />
+series flora, series movie, series sequence<br />
+series tone, series world, series step<br />
+series year<br />
+year<br />
+actual year<br />
+received, minor year<br />
+mass, cultural, done year<br />
+scheduled, united, martian, keen year<br />
+year consultation, year master, year trend<br />
+year personal, year level, year lord<br />
+year high</code></p>
+<p>Depending on the length of the poem desired and the speed of one&#8217;s internet connection, Wikipoet can take a relatively long time to produce its output. The poem above took approximately 30 minutes to produce with a standard broadband connection.</p>
+<p>While creating Wikipoet, I realized that I could improve the quality of its adjective-noun pairings by producing one set of adjective-noun combinations, then searching those combinations and removing ones that appear fewer than 10 times in Wikipedia search results.</p>
+<p>Here is the code that accomplishes that using the MediaWiki API and the Python <a href="http://docs.python-requests.org/en/latest/" title="Requests" target="_blank">Requests</a> library, where y is a list of adjectives:</p>
+<p></p><pre class="crayon-plain-tag">for i in y[:]:
+    search_string = "\"" + i + ' ' + word + "\""
+    payload = {'action': 'query', 'list': 'search',
+               'format': 'json', 'srsearch': search_string, 
+               'srlimit': 1, 'srprop': 'snippet',
+               'srwhat': 'text'}
+    r = s.get(url, params=payload, headers=headers)
+    json_obj = r.json()
+    hits = int(json_obj['query']['searchinfo']['totalhits'])
+    if hits &lt; 10:
+        y.remove(i)
+    else:
+        pass</pre><p> </p>
+<p>The primary utility of Wikipoet is its ability to find meaningful adjectives to pair with nouns and nouns to pair with adjectives. I plan to integrate this process into future projects.</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>

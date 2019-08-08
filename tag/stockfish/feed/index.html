@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>stockfish &#8211; THE HYPERTEXT</title>
+	<atom:link href="http://www.thehypertext.com/tag/stockfish/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.thehypertext.com</link>
+	<description></description>
+	<lastBuildDate>Thu, 10 Dec 2015 06:10:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.0.4</generator>
+	<item>
+		<title>The Mechanical Turk&#8217;s Ghost, Part III</title>
+		<link>http://www.thehypertext.com/2014/10/19/the-mechanical-turks-ghost-part-iii/</link>
+		<pubDate>Sun, 19 Oct 2014 22:01:50 +0000</pubDate>
+		<dc:creator><![CDATA[rg]]></dc:creator>
+				<category><![CDATA[Automata]]></category>
+		<category><![CDATA[arduino]]></category>
+		<category><![CDATA[art]]></category>
+		<category><![CDATA[artifical intelligence]]></category>
+		<category><![CDATA[automata]]></category>
+		<category><![CDATA[chess]]></category>
+		<category><![CDATA[itp]]></category>
+		<category><![CDATA[mechanical turk]]></category>
+		<category><![CDATA[mechanical turk's ghost]]></category>
+		<category><![CDATA[physical computing]]></category>
+		<category><![CDATA[programming]]></category>
+		<category><![CDATA[python]]></category>
+		<category><![CDATA[raspberry pi]]></category>
+		<category><![CDATA[stockfish]]></category>
+
+		<guid isPermaLink="false">http://www.thehypertext.com/?p=228</guid>
+		<description><![CDATA[<p>We have begun work on our midterm assignments for Automata, and we were asked to present our concepts for this week's class. I have decided to pursue my chess idea, the Mechanical Turk's Ghost, and will discuss its implementation in this post.</p>
+
+<p><a href="http://www.thehypertext.com/2014/10/19/the-mechanical-turks-ghost-part-iii/">Read More...</a></p>]]></description>
+				<content:encoded><![CDATA[<h3>CONCEPT</h3>
+<p>My midterm project will be a chess set that generates music and ejects pieces from the board based on Stockfish chess engine analytics. My eventual plan is to implement a physical (hardware) version of the chess set, using magnets in the pieces, Hall Effect sensors in the board, and solenoids beneath the board. However, I may rely on a software version (a chess GUI rather than a physical board) as my initial prototype. Such a version would still be connected to a physical board with solenoids beneath it to demonstrate that aspect of the project.</p>
+<h3>COMPOSITION</h3>
+<p>The chess board will be connected to the Stockfish chess engine &#8212; the world&#8217;s most powerful chess engine, which also happens to be open source. The engine will provide real-time analytics for games-in-progress, providing a score (above 0 if white is winning, below 0 if black is winning), along with the &#8220;best move&#8221; from any given board position. Mapping these variables to music will provide auditory feedback for players, turning an otherwise normal game of chess into &#8220;advanced chess&#8221; (chess where both players have access to engine analytics), but without the traditional chess engine interface. The solenoids beneath the board will provide an element of surprise and a unique way to signal that the game has ended, due to one player coming within range of a checkmate.</p>
+<h3>CONTEXT</h3>
+<p>Creating an auditory interface for the game of chess could have interesting consequences, both for chess itself and the possibility of applying such an interface to other games. I am not sure how auditory feedback will effect the game, but I hope it will make players more acutely aware of their relative strategic positions at all times. Ideally, it would provide an avenue for improvement by helping people think more like the computer chess engines.</p>
+<h3>BILL OF MATERIALS</h3>
+<p>Chess board &amp; housings for Hall Effect sensors<br />
+64 Hall Effect sensors<br />
+32 (or more) magnets<br />
+4 solenoids<br />
+1 Arduino Mega<br />
+1 Raspberry Pi<br />
+16 multiplexor ICs<br />
+64 LEDs (if &#8220;best move&#8221; feature implemented)</p>
+<h3>TECHNICAL DRAWINGS &amp; IMAGES</h3>
+<p>Initial Drawing (with conductive pads instead of hall effect sensors):<br />
+<a href="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23.jpeg"><img class="aligncenter wp-image-139 size-medium" src="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-300x185.jpeg" alt="image_23" width="300" height="185" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-300x185.jpeg 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_23-1024x633.jpeg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/image_23.jpeg 1108w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>&nbsp;</p>
+<p>Rendering of Hall Effect Sensor Enclosure (for laser cutter):</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl.png"><img class="aligncenter size-medium wp-image-234" src="http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl-300x300.png" alt="halleffectencl" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/10/halleffectencl.png 465w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Hall Effect Sensor Enclosure Prototype:</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150.jpg"><img class="aligncenter size-medium wp-image-235" src="http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150-300x300.jpg" alt="photo" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150-300x300.jpg 300w, http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150-290x290.jpg 290w, http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150-1024x1024.jpg 1024w, http://www.thehypertext.com/wp-content/uploads/2014/10/photo-e1413756055150-50x50.jpg 50w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Chess GUI (software version):</p>
+<p><a href="http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png"><img class="aligncenter size-medium wp-image-195" src="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-300x300.png" alt="che55" width="300" height="300" srcset="http://www.thehypertext.com/wp-content/uploads/2014/09/che55-300x300.png 300w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-290x290.png 290w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-1024x1024.png 1024w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55-50x50.png 50w, http://www.thehypertext.com/wp-content/uploads/2014/09/che55.png 1600w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<h3>SIGNAL CHAIN</h3>
+<p>Magnets &gt;&gt; Hall Effect Sensors &gt;&gt; Multiplexors &gt;&gt; Arduino &gt;&gt; Raspberry Pi (&gt;&gt; Music) &gt;&gt; Arduino &gt;&gt; Multiplexors &gt;&gt; Solenoids/LEDs</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>
